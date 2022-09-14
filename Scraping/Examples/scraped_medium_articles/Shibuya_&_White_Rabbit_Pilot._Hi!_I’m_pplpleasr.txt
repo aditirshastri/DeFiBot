@@ -1,0 +1,47 @@
+url: https://medium.com/@shibuya.xyz/shibuya-white-rabbit-pilot-c901e8bb76a4
+
+Title: SHIBUYA & WHITE RABBIT PILOT. HI! I’M PPLPLEASR
+by Shibuya.xyz
+
+INTRODUCTION
+
+Shibuya &amp; White Rabbit Pilot
+Hi! I’m pplpleasr
+I dabble in NFTs, DAOs, and web3 in general. Before crypto, I worked in Hollywood visual effects and Blizzard cinematics. I’m here to tell you about my latest project, Shibuya, what it is, and why we’re building it.
+Random scribble by pplpleasr
+In the attention economy, I often think about how incredible it is that despite our busy lives, growing egos, and shortening attention spans, many of us still dedicate our undivided attention to watching long-form content, whether it be a short film, movie, or tv series. The problem is, this type of content is extremely expensive and time consuming to create.
+In the NFT world, we have saturated and overwhelmed the market with PFPs, jpegs, and micro content, such as 4 second animation loops. While the content may be high quality, its worth is often dictated by a speculative market that deems pieces worth hundreds of thousands of dollars arbitrarily. This is not sustainable and is a game that benefits very few.
+Speculation and ridiculous appraisals of value will always exist, even in web3, as they do in the traditional art market. But surely the wonderful technology behind NFTs can be used for much more! A desire formed within me for a space for long-form content on the blockchain. This is where the idea of Shibuya came about, a web 3 experiment where long-form content is free to watch, but monetized on the blockchain to allow viewer participation on the creative process and also shared ownership.
+Images courtesy of Studio Ghibli, Disney
+My love for art and great storytelling stemmed from a childhood of watching anime and Disney/Pixar films. I sought out a career in the hopes of being part of these epic creations- what I quickly learned though, was that funding in Hollywood is extremely political and a career in vfx is very unstable. In fact, this exact problem caused me to be unemployed in 2020 and thus tumbling down the crypto rabbit hole and making my own animations for DeFi protocols that summer.
+The creator first economic model of NFTs ascended my career pretty quickly when one of my animations went viral and spawned PleasrDAO. This then led me to helping crowdfund the Ethereum documentary via a series of NFTs. These events would later become the pillars of inspiration for Shibuya.
+
+“SHIBUYA IS A WEB3 VIDEO PLATFORM ALLOWING USERS TO ENGAGE, FUND, VOTE ON THE OUTCOME AND BECOME OWNERS OF LONG-FORM CONTENT. “
+Named after the crossing, Shibuya is place where cultures and ideas meet. It is designed to have many screens and content that everyone can go see. Artwork by fungusamongus and spazdotjay
+
+WHITE RABBIT
+
+In order for this idea to work, the content must also be really good. And there is no better collaborator for this than legendary artist and director Maciej Kuciara. If you’ve ever watched his short Showtime, you’ll see why. He’s also produced concept art for Marvel, The Last of Us, live action Ghost In The Shell, and many more.
+White Rabbit will be the first webseries to launch on Shibuya.
+It is a labor of love that combines our zeal for anime, Black Mirror, Love Death + Robots, and web3. You make the choices as we illustrate the experience of going down the crypto rabbit hole in a free-to-watch, stake to pick your own path webisode. By we I mean myself, Maciej, and our gigabrain devs aka PleasrDevs (taipeicity.eth: ex Instagram, metagee: ex big tech, &amp; alex: ex Stripe/YC), the team that are bringing Shibuya to life.
+
+The concept of the pilot is simple: our main character will come across two doors and behind each door is an alternate ending to the pilot. To watch/vote for an ending, users will need to mint a Producer Pass (ERC1155 NFT) and stake it in the door of their choosing. As users purchase Producer Passes, it also helps fundraise for the film’s production. For the pilot of White Rabbit, the majority vote will decide the future fate of our main character and her development in the plot.
+Good doodle by taipeicity.eth
+When you vote by staking your Producer Pass, you earn $WRAB, an ERC20 token which represents fractional ownership of White Rabbit. $WRAB is populated by creating a fractionalized vault that mints a fixed supply of tokens we distribute to the community as the film progresses.
+The art of the Producer Passes are inspired by traditional Japanese wood block prints. Each chapter will have its own unique Producer Pass.
+When voting concludes for an chapter, you’ll be able to unstake the NFT and keep it as a souvenir in your wallet. Since there will be a new one for each chapter, users will have a “paper” trail in their wallet of all the chapters they participated in. This can be useful for others to seek out tastemakers in the future as well.
+
+WEB 3 NATIVE MEDIA
+This media lives on web 3, so why not make it interactive and fun? On top of the fact that it’s a pick your own path storyline, there are many ways to gamify the mechanics of voting. For starters, users who voted on the popular side will receive bonus $WRAB tokens. Additionally, to prevent voting hesitation, voting early also rewards extra $WRAB tokens. Early voting bonus &gt; Popular vote bonus. (Goal is to reward early voting and participation.) We’re also actively collaborating with the big brains over at DegenScore to customize viewing experiences (for future chapters) based on wallet history/on chain activity.
+Prototype for dynamic credits/producers leaderboard.
+We’re also really excited about building what we’re calling “dynamic credits”, which is essentially a leaderboard that updates in real-time the top producers, and would love to explore cameos of top producers in future chapters. The sky is the limit :)
+
+PRODUCERS ROOM
+Thanks to DegenScore we will be pushing out Producer Pass gated telegram chats very soon. Those who hold passes will be able to read, and those who have staked will be able to write in the channel as well. As Shibuya grows (hopefully), we can imagine each IP to be their own little DAO/community with gated channels for chapter discussions.
+
+TL;DR
+Films (especially animation) are super expensive to make. By providing infrastructure and a platform, Shibuya gives digital creators the opportunity to turn passive viewers into active participants and go direct to fans for funding.
+Imagine being able to prove the fact that you “watched Squid Game before everybody else”. With Producer Passes you can say not only that, but also that you helped contribute to the final story.
+True to the ethos of web 3 we are building a new age ‘D2C’ — direct to community platform that gives digital creators a simple way to lean on their communities for support instead of legacy institutions in a fun and interactive way.
+Less talk, more show; go experience White Rabbit for yourself here.
+*updated terminology from episode to chapter to clear up some confusion*

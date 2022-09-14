@@ -1,0 +1,52 @@
+url: https://medium.com/@EnsoExchange/ens%C5%8D-the-beginning-after-the-end-bd99a484f256
+
+Title: ENSŌ: THE BEGINNING AFTER THE END
+by Ensō
+
+INTRODUCTION
+
+Ensō: The Beginning After the End
+
+
+INTRO
+Ensō is an experimental AMM launching on Avalanche inspired by Solidly. Ensō makes some key changes to the Solidly model that we believe will allow for a more sustainable, community driven protocol.
+In essence, Ensō seeks to be to DeFi what Loot is for NFTs. Instead of being a general purpose AMM with a top-down approach of accumulating the deepest liquidity for every token, Ensō takes a bottom-up approach by targeting specific protocols that align with the communities value’s by incentivizing them to build on top of the protocol.
+
+BACKGROUND
+As many of you might know, Solidly is a new protocol launched by Andre Cronje that allows low cost, near 0 slippage trades on uncorrelated or tightly correlated assets. The goal of the protocol is to align emission to incentives; it achieves this by incentivizing fees instead of liquidity, which in turn incentivizes liquidity.
+How does the model work?
+Solidly, at its core, revolves around the concept of ve(3,3) — ve stands for vote escrowed, a popular DeFi primitive created by Curve Finance. In essence users stake their LP tokens in return for emissions of the protocols native token, which in Solidly’s case is SOLID; they can then lock those tokens in exchange for veSOLID. With veSOLID they receive trading fees from the pools they voted for, a boost as well as voting power to direct SOLID emissions.
+Locks can last between one month and four years and can be extended at any time, the amount of time you lock your SOLID for will effect how much veSOLID you receive:
+1 SOLID locked for four years = 1 veSOLID1 SOLID locked for two years = 0.5 veSOLID1 SOLID locked for six months = 0.125 veSOLID
+
+PROBLEMS WITH THIS MODEL
+Although we believe Solidly is a groundbreaking protocol and clearly a step forward for AMMs, we have identified several problems with the model:
+Solidly can be gamed — Anyone can arbitrarily whitelist a token, meaning someone who controls a lot of voting power can create a pool with two worthless tokens then vote for their own pool, thereby siphoning SOLID emissions while providing no value. Just as this person did.Top Down Approach — Solidly airdropped their initial veNFTs to the top protocols on the Fantom Network. This lead to the creation of DAO’s whose sole purpose was to accumulate enough TVL to qualify for a veNFT airdrop. While this approach is not a bad idea, It does little to add value to the network or the community at large other than create a temporary, short lived, boost in TVL.
+
+Token Inflation — SOLID emissions are HEAVILY front loaded with emissions dropping drastically after just 10 weeks. As mentioned in the thread linked above, the war for who controls most of the protocol was won shortly after launch, so there’s no need to fight over the left overs i.e. there are no longer meaningful emissions to direct after a short period of time.
+
+ENSŌ
+We think that Solidly is a great protocol and have done our best to improve it with the following changes / additions:
+Return to a DAO
+Solidly was not created with the intention of being a DAO and its tokenomics reflect that. Meaning, when a user locks their SOLID for a veNFT they will get 1 veNFT whether they lock 1 SOLID or 1M SOLID; this makes it hard to vote for proposals.
+Ensō allows for the value of ones holding to be extrapolated from their veNFT so holders vote can be heard. We achieve this by introducing a 3rd token into the protocol. From a user perspective it works as such:
+Users stake their LP tokens to earn WABIUsers can then lock their WABI to receive SABI (Ensōs version of a veNFT)Users can then convert their SABI to ENSO on a 1:1 basis. Meaning if their SABI NFT has 1,000 WABI locked into it, they will get 1,000 ENSO upon converting.
+ENSO are the governance token of the Ensō DAO and how users will decide which pools to direct WABI emissions to.
+Addition of a Treasury
+This new model allows for community members to vote on proposals and, perhaps just as importantly, the creation of a treasury which is not possible with Solidly.
+When users convert their SABI to ENSO, their SABI will start to accumulate in the DAO’s treasury. Users will vote how SABI in the treasury should be allocated, i.e. which pools should be voted for. This model should have the effect of the treasury accumulating the most voting power, thereby giving the community unilateral control on which pools to incentivize in addition to the ability to vote down any bad actors who try to exploit the protocol for emissions.
+The treasury will accumulate the fee’s from each of the pools and distribute 90% of the proceeds to ENSO holders while keeping 10% for operations. Seeing as how fees are paid out in the native tokens of each pool, this means the treasury will not have to sell any of Ensō’s native token to facilitate operations; thereby avoiding the parasitic relationships that most protocols have with their tokens.
+Bottom Up Approach
+As mentioned in the intro paragraph Ensō seeks to be to DeFi what Loot is for NFTs. In practice, what this means is that the protocol is designed to incentivize projects to build on top of Ensō and gain the favor of Ensō DAO members.
+The community will vote for which projects they want to incentive on the platform targeting ones that create the most value for Ensō. This should have the effect of inspiring protocols to gain the favor of Ensō DAO members with generous “gifts” so they will vote for their tokens pools.
+veNFT Distribution
+Instead of distributing the veNFTs (SABI) to the top protocols on the network by TVL like Solidly did, Ensō will distribute 80% of the veNFTs at launch to the community and 20% to protocols that builds on Ensō before Phase 2 in order to incentivize development on Ensō from day 1.
+
+TIMELINE
+We have done our best to move as expeditiously as possible. This has the obvious pro’s and cons of us getting to market faster while at the same time sacrificing security.
+In order to balance speed with security we think that it would be best to roll the protocol out in phases:
+Phase 1: Deploy the basic AMM functions i.e swaps and liquidity creation. (1 Week)Phase 2: Airdrop SABI (Ensōs) veNFTs to community members. (2 Weeks)Phase 3: Start WABI emissions while onboarding protocols to Ensō. (2 Weeks)Phase 4: Begin SABI to ENSO conversions, have the DAO vote for the first protocols to be incentivized. (4–6 Weeks)
+*All times are a estimation
+
+CONCLUSION
+Ensō’s bottom up approach allows for a more sustainable, community driven AMM that has not yet been explored in this space. We are very excited to bring Loot’s ethos to DeFi.

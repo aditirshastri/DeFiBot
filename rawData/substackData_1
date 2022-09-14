@@ -1,0 +1,33 @@
+Introduction
+
+The earliest known example of commodity trading was in Sumer between 4500 BC and 4000 BC. Sumerians used clay tablets and tokens to denote the number of goods, likely crops and livestock, to be delivered at a certain date. This closely resembles what we now know as a futures contract. A commodity is a basic good, usually a resource, that is interchangeable with other goods of the same type. The primary categories of commodities include energy, agriculture, fertilizers, and metals. Much more so than any other financial market, commodity trading has long represented a genuine connection with the daily lives of people around the world. Even with that in mind, many will find it incredible that commodities are a multi-trillion dollar market.
+
+Commodity trading is arguably the most natural and important form of market. It brings fungibility and financial abstraction to critical life resources such as oil and corn, but also to coveted precious metals. Most commodities are organic goods that people consume or interact with every day.
+
+The thoughts and thesis behind this piece certainly rely on the continued growth of the digital asset (i.e. crypto) industry. If for example, Bitcoin and Ethereum are one day used by more than 50% of the world, surely everyone will want a stake in each of those networks. Owning BTC or ETH is one method of gaining exposure to the network’s success but controlling blockspace is arguably a more foundational way to do so.
+
+Blockspace as a Commodity
+
+Blockspace is a unit of compute and storage that makes up a blockchain. For the most popular networks such as Bitcoin and Ethereum, it is an increasingly scarce asset with exponentially growing demand. Lower cost alternatives to Bitcoin and Ethereum do exist, but the security and performance of the underlying blockchain are a key component in determining the value of the blockspace. Potentially the most difficult feature to replicate is the community around a blockchain — that is, the users and developers.
+
+Countless companies that decried the use of cryptocurrencies just a few years ago now offer access to them as a key service or business function. The crypto industry is generally considered to be at a point of “crossing the chasm” from early market to the mainstream market. As demand continues to grow, some participants will choose to hold spot tokens on their balance sheet and others will choose to become a miner or validator. Hedging out the volatility of market conditions is a key component of proper risk management. Financial primitives become a key product to grow this area, which is exactly the place for blockspace to step in as the next great commodity. The commoditization of blockspace represents an enormous opportunity to build a vital product for the crypto sector.
+
+Miners and validators are the two clear participants that would benefit from blockspace as a commodity, but centralized exchanges (CEX) and service providers also represent a potential customer base. Miners and validators need a way to lock-in their returns upfront and hedge against uncertainties. CEXs are constantly changing network fees for withdrawals in times of network congestion. Rather, they could use blockspace derivatives to hedge against uncertainty and offer a constant network fee. A CEX could buy swaps roughly equivalent to how much blockspace they use. Let’s say that Binance uses 1% of Ethereum blockspace, they could buy swaps equal to 1% of the network validation power at a fixed price. Binance still pays network fees but expects to earn 1% of Ethereum block rewards. This action isolates network activity and eliminates the volatility of network fees. And these are only the obvious use cases for blockspace as a commodity — the experimentation with structured financial products around blockspace may yield market opportunities that no one has thought about.
+
+The Alkimiya Thesis
+
+Alkimiya is a permissionless, open-source protocol for consensus capital markets. Consensus producers, such as Proof of Work (PoW) miners and Proof of Stake (PoS) validators, seek to capture the profit margin between block rewards and the cost of resources. Resource costs are relatively stable (hardware, electricity, etc.) while block rewards are highly variable (market prices, reward mechanism). Alkimiya offers financial instruments to hedge against this volatility by creating a protocol that enables miners to sell their hashpower, and by employing a structured products engine that enables users to restructure the contracts into other yield-generating assets backed by the cash flow of the rewards.
+
+Alkimiya’s current product offerings include Silica and Hash Vaults. Silica represents a swap between an upfront payment that the buyer agrees to purchase the hashpower contract with and the mining rewards produced by the amount of hashpower specified during the contract period. Sellers receive payment each day after “delivering” the required amount of mining rewards. Hash Vaults are structured products built on top of the Silica commodity swaps. They are pools of Silica with additional smart contract logic to repackage the commodity swaps into more useful assets (fixed-income bonds, perpetual swaps, etc.).
+
+Few applications in crypto find any product market fit or solve a real problem — I believe Alkimiya is one of those products that does. As discussed in the previous section, there are many instances where blockspace as a commodity could become a critical component of enterprise’s crypto strategies. Alkimiya does not have a token, but it has been heavily hinted that they will have in the future. Imagining potential tokenomics, I would like to see protocol fees applied to Hash Vaults while Silica remains feeless; attract users with Silica and monetize usage with Hash Vaults. Regardless of how the tokenomics play out, the Total Addressable Market (TAM) for this product is tremendous.
+
+Commoditizing blockspace is a difficult problem and Alkimiya may not be the one to solve it at a large scale. There have been attempts to commoditize blockspace in the past that either failed technically or did not gain traction. Alkimiya having a live product in an area with very few competitors (possibly only Lumerin) puts them in an exciting position while we endure this bear market (i.e. buidl market). Alkimiya isn’t only a way to hedge mining and staking rewards, it’s a bet on blockspace being the primary commodity of the metaverse and I’m excited to watch their development in the next few years.
+
+Additional Readings
+
+Blockspace: An Introduction with Chris Dixon
+
+Consensus Capital Markets
+
+Ethereum Blockspace - Who Gets What and Why

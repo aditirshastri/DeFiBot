@@ -1,0 +1,65 @@
+url: https://medium.com/@pedronv/polygon-zero-the-most-performant-zk-rollup-a3c53b786364
+
+Title: POLYGON ZERO: THE MOST PERFORMANT ZK-ROLLUP
+by Pedro
+
+INTRODUCTION
+
+Polygon Zero: The Most Performant zk-Rollup
+
+Last month, I wrote a deep dive article on Polygon. While doing my research on the project, I quickly realized that there was no way I was going to be able to go over everything in one go.
+If you’re familiar with Polygon, you know just how much they’re working on over there. Like I’ve been saying, they’re the Swiss Army Knife of L2 scaling solutions.
+Although their Polygon PoS chain is the one we’re most familiar with today, there’s a whole suite of zk-rollups being developed right now, waiting to be rolled out in the near future.
+For the past couple of weeks, I’ve been going over these different zk-rollup solutions one by one: Hermez, Nightfall, and Miden.
+In this article I’ll be going over the fourth zk solution, Polygon Zero. I’ll be talking about what Polygon Zero is, how it got to where it is now, and what makes them different from any other zk solution.
+
+QUICK TIMELINE
+In 2019, Brendan Farmer and Daniel Lubarov started Predicate Labs, which was the development team that built the first version of the Mir protocol (now Polygon Zero).
+According to this article they published a couple of years ago:
+“Mir is a platform for decentralized applications that’s powered by zero-knowledge proofs. Mir has a simple goal: to empower developers to build scalable and private decentralized apps.”
+Whenever a program was executed on the Mir network, a recursive zk-proof of validation would be generated. In short, recursive proofs is like generating a proof of a proof. So it involves generating a single zk-proof, that verifies a set of transaction proofs were valid.
+Recursive proofs are a very young technology that were first introduced in theory in 2014.
+In 2019, Mir was able to generate recurisve proofs in 2 minutes. This is a long time to generate a proof obviously, and there was no way something like this wold be able to scale. For this to actually scale, the time to generate a recursive proof would have to be a lot lower.
+In 2020, Mir took a huge leap forward thanks to advancements from the Aztec team, which figured out how to generate recursive proofs in 60 seconds.
+Following this breakthrough from the team at Aztec, the Mir team developed Plonky, a proving system that allowed the Mir protocol to generate recursive proofs in 15 seconds.
+Then in December 2021, Polygon purchased Mir for $400 million. This acquisition included the whole team of cryptographers and developers:
+
+According to Mir co-founder Brendan, they were impressed by Polygon’s vision for the future, and their commitment to zk scaling. Of course we know by now about the $1 billion pledge Polygon made towards zk scaling.
+Initially, Mir was building a zk enabled chain (so their own separate L1 chain), but now they’ll be building a decentralized zk-rollup on top of Polygon.
+This acquisition also came with a name change, from the Mir protocol, to Polygon Zero.
+In January 2022, not long after the acquisition, the team announced Plonky2, which allowed for recursive proofs to be generated in just 170 ms… on a Mac-Book Pro. This was the fastest implementation of recursive proofs ever.
+So in a matter of 3 years or so, recursive proofs went from taking 2 minutes to generate, to 170 ms (about 300 ms on a Mac-book Air) — this was huge!
+These advancements in recursive proofs were all in service of developing Polygon Zero: “the most scalable zkEVM powered by Plonky2.”
+
+WHAT IS POLYGON ZERO
+Polygon Zero is a zk L2 solution, powered by the most fast and efficient recursive proof system, Plonky2.
+Before I go any further, I want to mention that I’m not a cryptographer by any means, so instead of me trying to explain how everything works, I’ll just leave links to certain topics incase you feel like diving deeper on the subject.
+This section probably isn’t too important for most of us, so feel free to skip down to where I talk about what is acually being built using Plonky2.
+Plonky2:
+Plonky2, is an iteration of Plonky1, which was an advancement from the proving system Aztec built in 2020.
+
+
+The one common denominator between all three of these is Plonk, so let’s look at that first:
+Recall that a zk-proof involves generating a proof of a certain computation, without revealing anything other then the proof of the validity of that computation. So no info gets revealed, just the proof.
+There are two major families of zk-proofs: SNARK’s and STARK’s. Without going into detail here, the major difference includes the fact that SNARK’s rely on elliptic curves for security, while STARK’s rely on hash functions for security — using hash functions means quantum resistance. Plus, another difference is the fact that STARK’s are transparent, while SNARK’s are not.
+Plonk is the name of a proving system — in short, it’s a type of SNARK.
+Now let’s look at the different types of commitment schemes that were combined with Plonk:
+
+If we recall, Aztec used Plonk + KZG, for recursion proof time of 60 seconds.
+Plonky1 used Plonk + Halo, for recursion proof time of 15 seconds. Halo was first introduced by Zcash in 2019, and was the first recursive proof scheme that didn’t require a trusted setup. The downside with using Halo here, was that it was not Ethereum compatible, which is why Mir initially wanted to build their own seperate L1 chain.
+Plonky2 uses Plonk + FRI, for recursion proof times of 170ms. In 2021, co founder Daniel mentioned the idea of combining FRI with Plonk, instead of Halo. FRI is a commitment scheme used for STARK’s, which means that by using FRI, you’re essentially turning Plonk into a STARK (recall that Plonk was initially a type of SNARK), which also means you’re adding transparency to the system. At the time, there was only one other project (Fractal) that had implemented recursive FRI proofs, and the proving times for that protocol was about 10 minutes — not scalable. That being said, the Polygon Zero team was able to get recursive proofs down to 170 ms using FRI. So basically, Plonky2 takes the first version of Plonky, and replaces that commitment scheme (Halo) with a new one, FRI. If you look at the chart above, the proving speed for FRI is “variable.” That’s because the FRI model uses something called the Blowup Factor, which basically means how much data you want to cmmit to. The less data you commit to, the faster proving you get. Of course there’s also the fact that with less data, means a little bit less security.
+So what’s being built with Plonky2?
+As mentioned earlier, “all of this is in service to developing Polygon Zero…the most scalable zkEVM powered by Plonky2.”
+
+Basically, they’ll be building a zk-rollup — and every zk-rollup needs a zkEVM to actually be able to process computations. The zkEVM used for Polygon Zero’s zk-rollup will be powered by Plonky2, the most efficient, fastest zk prover system today.
+Developers will be able to deploy their smart contracts on top of Polygon Zero, and leverage its very high performance level, while also leveraging the security of Ethereum. According to one of the co-founders, apps on this L2 (Polygon Zero), can run more opcodes and functionalities.
+Also, think of how decentralized a zk-rollup like this can get when you allow for such low proving times — on a MacBook. No fancy hardware or anything, I’ll literally be able to generate very fast proofs on the computer I’m typing this article on.
+What’s the difference between Polygon Zero and Starkware?
+Most rollups, including Starkware, involves taking a bundle of ttransactions, and generating a proof that proves that every transaction inside that bundle was valid.
+With Polygon Zero, recursive proofs are used. So a bunch of very fast proofs are made simultaneously for every transaction. Then these individual transaction proofs are bundled together to create a bigger proof. A proof that verifies the validity of other proofs.
+This essentially means that Polygon Zero can scale horizontally. So if you have a bunch of machines generating these transaction proofs in parallel, adding more machines (Macbook for example) means more transactions can be proved. What this all means is that by using recursive proofs here, you can scale to a large number of transactions, without sacrificing latency.
+Here are some of the Polygon Zero stats listed on their website:
+
+
+ROADMAP — WEN LAUNCH?
+According to a recent blog article released by the Polygon team: “Polygon Zero is moving toward a testnet in Q4 2022, with mainnet to follow.”

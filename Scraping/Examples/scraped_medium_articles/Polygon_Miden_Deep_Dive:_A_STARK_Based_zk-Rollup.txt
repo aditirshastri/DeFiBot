@@ -1,0 +1,94 @@
+url: https://medium.com/@pedronv/polygon-miden-deep-dive-a-stark-based-zk-rollup-600564264613
+
+Title: POLYGON MIDEN DEEP DIVE: A STARK BASED ZK-ROLLUP
+by Pedro
+
+INTRODUCTION
+
+Polygon Miden Deep Dive: A STARK Based zk-Rollup
+
+Over the past weeks, I’ve been going over the different zk solutions within the Polygon framework one by one: Hermez, Miden, Nightfall, and Zero.
+I started this series by going over Polygon Hermez, a zk rollup optimized for cheap, secure transfers and payments on Ethereum. Then followed this up by going over Polygon Nightfall, a privacy enabled zk rollup for enterprises.
+Today I’ll be continuing on this series by going over Polygon Miden, a STARK based zk rollup.
+First, I wan’t to point out that there wasn’t too much information about Polygon Miden, so I’m sure there’s a lot that I missed. That said, most images and info I took for this article can be found in this video presentation here.
+
+FROM THE BEGINNING
+Bobbin Threadbare is in charge of the development of Polygon Miden.
+He made several contributions to the zk space, including leading the development of Distaff VM, and Winterfell — both of which are core components of the Polygon Miden framework.
+GenSTARK:
+His jorney into the whole world of STARK based systems, began in 2019 when he developed GenSTARK, a STARK based prover that was able to generate proofs for any kind of computation. However the issue with this tool was that it wasn’t developer friendly, so he wanted to find a way to fix this.
+Distaff VM:
+He started thinking more about a STARK based VM and how something like this could even be possible to make. This resulted in him writing a piece called: “A sketch for a STARK based VM,” in February of 2020 — and only a couple years later, he decided to build his own STARK VM using the ideas from this piece he wrote, as a way to prove that it could actually be done.
+This led to the development of Distaff VM in April 2020, which ended up being a foundational piece for the current Miden project.
+Distaff VM is a zero knowledge virtual machine.
+Whenever a program is executed inside a zk-VM, a zk-proof of execution is generated to verify that the program ran correctly, without having to actually run that program. There are two methods in which knowledge can be proven here — either using a SNARK proof, or a STARK proof.
+Distaff is a STARK based virtual machine.
+According to their github page:
+“For any program executed on Distaff VM, a STARK-based proof of execution is automatically generated. This proof can then be used by anyone to verify that a program was executed correctly without the need for re-executing the program or even knowing what the program was.”
+What Miden VM does, is take this Distaff VM, and adds a more efficient proving system to it — Winterfell.
+Winterfell:
+A year after the development of Distaff VM, Bobbin led the development of Winterfell over at Facebook.
+“Winterfell is is a fully-functional, multi-threaded STARK prover and verifier for arbitrary computations.” — essentially a much more performant, up to date version of GenSTARK.
+Both Distaff VM and Winterfell, are foundational pieces of Polygon Miden.
+
+WHAT IS POLYGON MIDEN
+Polygon Miden is a general purpose STARK based general purpose zk-rollup. Now let’s break this down.
+zk-rollups:
+Most of you probably already know what a zk rollup is, but incase you don’t, here’s a very brief explanation:
+In a zk-rollup, users (you and I), send our transactions to system operators, who aggregate as many transactions as possible into a giant batch. Once this batch is executed, a zk-proof is generated, proving that all the transactions that were executed within the single batch, were done so correctly. These zk-proofs represent the state change in the ledger.
+There are several advantages to using zk-rollups, including:
+100x Lower fees: We get lower fees because instead having to execute transactions 1 by 1, a whole bundle with thousands of transactions included, gets executed all together. Meaning the gas fee is split between everyone whos transaction was included in the bundle. This also means that the more transactions that are included inside a bundle, the cheaper it gets for the individuals.High security: zk-rollups derive their security from their L1 chain, in this case Ethereum.High throughput: Bobbin mentioned in an interview that 20k TPS after sharding is a possibility.
+zk-rollups rely on validity proofs, and there are two ways in which one can achieve these validity proofs: SNARK’s, or STARK’s. Both are acronyms for the method by which the two parties prove their knowledge.
+Both SNARK’s and STARK’s are zero knowledge proof technologies, which means one individual can prove to another individual that something is valid, without having to disclose any information aside from the validity of the statement (the proof). This means that zk technologies can be both a privacy preserving solution, and a scalability solution.
+STARK based:
+Remember that when a batch of transactions gets executed in a zk-rollup, a proof is generated proving that all transactions were valid. These zk proofs let me prove to you that I performed some action correctly, without having to disclose any of the actual information within the transaction. It works something like this:
+
+A prover runs the program, in this case executes a bunch of transactions, and generates a proof for all the transactions.He then sends this proof to a verifier to check for correctness. No information about the actual transaction gets disclosed, only the single proof is shown.
+SNARK’s:
+zk-SNARK’s were first coined in January 2012, by a professor at UC Berkeley named Alessandro Chiesa. Considering SNARK proofs came first, they had a bit of a head start in terms of adoption. Z-Cash frist popularized the usage of SNARK’s within its own blockchain community — plus Loopring and JP Morgan also adopted SNARK technology. Because of the wider adoption within this technology, SNARK’s have more published code, developer libraries, projects, and developers for people to use and learn from.
+SNARK’s rely on elliptic curves for security, which already is a diffference between the two zk proof technologies. All we need to know about the use of elliptic curves here, is that it means SNARK’s are not quantum resistant.
+One of the biggest differences between the two proof technologies, is that SNARK’s require a trusted setup to kickstart the whole proof system. It’s basically like stating the rules. When these rules are established, keys are generated — and these keys generate the SNARK proofs and also verifies these proofs. So if someone has access to these keys, they’d be able to generate false proofs and cheat the system essentially. That’s why it’s very important for the keys to be destroyed immediately after this initial trusted setup phase. We’re trusting that the parties involved in this trusted setup, actually destroyed these keys.
+Finally, the proof size for SNARK’s are smaller, which means less on chain data storage, which means less gas paid by end users.
+STARK’s:
+Although SNARK’s are more developer friendly and require less gas to the end user, STARK’s offer some unique advantages, which actually led to Vitalik himself calling them the “newer, shinier cousin.”
+Eli Ben-Sasson, Iddo Bentov, Yinon Horeshy and Michael Riabzev first coined STARK’s in 2018.
+STARK’s rely on hash functions instead of elliptic curves, which already is one of the advantages for them. Using hash functions means STARK’s are quantum secure, which I would imagine will be pretty important in the future.
+Another huge advantage with STARK’s is transparency, which means no trusted setup is required.
+These advantages are great, however they come at a cost — gas. With STARK’s, proof sizes are a lot bigger, which means it takes longer to verify them, which means more gas paid by the end user:
+
+Ultimately, STARK systems are superior in my opinion, however the technology hasn’t been as widely adopted as SNARK’s. This is why I’m super bullish on projects like Starkware and Polygon Miden, that are actually working on bringing this STARK technology mainstream.
+General Purpose:
+
+There are 2 types of zk-rollups one can develop, a specialized rollup, or a general purpose rollup.
+Specialized rollups specialize in a certain field or action. For example one zk-rollup could be built to handle payments, while another rollup could be built to handle NFT minting and sales.
+Then there’s general purpose rollups that can handle any type of logic. So in a general purpose rollup, all logic executed on Ethereum, could be executed on a rollup as well. Building a general purpose zk-rollup is harder to accomplish because it requires a zk virtual machine (zkVM).
+
+WHAT’S A ZKVM:
+
+A virtual machine takes some initial state and set of programs, executes them, and gives you a final state along with a proof that everything was correct. The crucial piece is that the VM could take any number of different programs, and execute them all at once, generating a proof that verifies all the programs.
+Polygon Miden has the Miden VM:
+Miden VM is essentially Distaff VM, with Winterfell as the backend prover.
+Some of the Miden VM highlights include:
+Developer friendly: The goal is to make it so that developers don’t even have to learn anything about cryptography, or zk-proofs, in order to run smart contracts on top of this zkVM.Multi Language Support: The team is working on adding support for multiple programming languages, while keeping Solidity as the “first class citizen.”Safety Centric Design: According to Bobbin, his goal is to make this Miden VM, “safer than EVM itself.”Privacy Focused: Although this isn’t the focus right now, the Miden team is already putting the pieces in place so that privacy could be added at some point in the future. According to Bobbin, privacy should come after recursive STARK’s.
+
+POLYGON MIDEN ARCHITECTURE:
+
+All our transactions get sent to Miden operators.These operators bundle up 5,000 of our transactions at once, into 1 single block, and generates a STARK proof200 of these blocks get aggregated together, and 1 single STARK proof is generated, proving these 200 bundled blocks (filled with 5,000 transactions each) are validThe single STARK proof is the sent to L1 Ethereum for consensus &amp; finality.
+
+POLYGON MIDEN STATS:
+
+
+ROADMAP
+
+Miden v0.1 was released in December last year.
+The goal over the next couple of months is to keep building on top of this version by adding more and more functionality. So v0.2 involves adding memory, v0.3 involves adding storage, etc.
+Mainnet launch is expected to happen in Q1 2023.
+
+WRAPPING IT ALL UP
+The goal of Polygon Miden is to build a zk-rollup using Miden VM. Again, this VM is what makes it possible to run zero knowledge logic.
+Any project will be able to deploy their smart contracts on top of this zk-rollup.
+The difference between this zk-rollup and most others, is the fact that Miden generates STARK proofs. Although using STARK proofs is more expensive, they’re ultimately more secure.
+Plus, as Miden founder Bobbin mentioned, at some point in the future he’s going to start working on recursive STARK proofs — making the STARK based rollup cheaper! A recursive STARK is basically just taking let’s say 1,000 SNARK proofs, and generating a STARK proof of those 1,000.
+Once we get recursive proofs on Polygon Miden, the team will start working on adding privacy to the network.
+It’s going to be very interesting to see the adoption for Polygon Miden once mainnet launch happens. Projects like DYDX, and Immutable are great examples of the success that could come with STARK based systems.
+Anyways, I’m very excited for the potential of a STARK based zk-rollup built on top of a super user friendly platform like Polygon.

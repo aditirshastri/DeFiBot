@@ -1,0 +1,41 @@
+url: https://medium.com/starkware/damm-decentralized-amm-59b329fb4cc3
+
+Title: DAMM (DISTRIBUTED AMM). A CROSS-L2 AMM
+by StarkWare
+
+INTRODUCTION
+
+
+dAMM (distributed AMM)
+A Cross-L2 AMM
+
+TL;DR
+AMMs on L2 face a liquidity fragmentation problemdAMM, a cross-L2 AMM that shares liquidity across layers, solves thisdAMM enables ZK-based L2s (e.g., DeversiFi, Loopring …) to asynchronously share liquidity — exposing LPs to more tradesdAMM enables LPs to serve L1 AMM such as Uniswap while partaking in L2 trading =&gt; scaling without compromisedAMM harnesses the permissionless nature of L1, mitigating against liquidity fragmentation due to disparate L2s
+
+DAMM (FORMERLY KNOWN AS CASPIAN)
+We first presented dAMM in March 2021 as Caspian but, due to a trademark issue, Caspian was renamed (long live dAMM). This release of dAMM represents a collaboration between StarkWare and Loopring. dAMM is an L2 AMM that aggregates liquidity in a single L1 pool and enforces logic with an L1 contract. This brings better capital efficiency and tremendous development flexibility — while enjoying L1 security.
+
+PRESENTING DAMM’S EXTENDED DESIGN — CROSS-L2 ASYNCHRONICITY
+dAMM’s functionality has been extended to enable a cross-L2 AMM, allowing the same liquidity pool to be used across multiple L2s asynchronously. This design supports the scaling of AMMs without liquidity fragmentation.
+By asynchronicity, we mean the ability for one L2 to process dAMM transactions without mandatory communication with other L2s using the same dAMM L1 liquidity pool. This asynchronicity is a core feature of dAMM, making shared AMMs practical for the first time.
+How do we achieve this? dAMM separates the liquidity pool from the pricing state. In such a design, the contract agrees to provide whatever price is offered by the state as long as it has enough liquidity to fulfill the quote.
+Since we decouple funds and state, we can put multiple states on top of the same liquidity pool. Then, by assigning each L2 its own dAMM state, we facilitate an asynchronous cross-L2 AMM.
+Support for Multiple, Independent Markets:
+
+The role of the participants is retained as per the original design. Uniquely, the new design supports multiple independent markets; some on L2 and some on L1 — all sharing the same AMM infrastructure and liquidity.
+Finally, with a small modification, we allow liquidity on L1 (e.g., trading on Uniswap/Sushiswap) to be used as dAMM liquidity. To do so, we allow L1 LP tokens (e.g., from UniSwap ETH/DAI) to be deposited directly to the corresponding pool on dAMM (e.g., ETH/DAI).
+
+WHAT ARE THE BENEFITS OF EXTENDING DAMM?
+The advantages are pretty straightforward, and they create a virtuous cycle:
+Since the AMM is available on multiple markets, it benefits from more tradesMore trades mean more feesMore fees for the same liquidity means better capital efficiencyMore liquidity means a better price
+
+WHAT ABOUT IMPERMANENT LOSS?
+In an AMM, LPs take on the risk of an impermanent loss (IL). In dAMM, this risk is greater; in fact, its risk grows linearly with the number of markets the LPs are exposed to. In an IL-neutral environment (think Curve Pools), an LP would not risk much. For any other pool type, the LP’s IL risk could be high.
+To mitigate against this, the maximum amount of IL that can be suffered by LPs will be limited by the dAMM smart contract, using a parameter we call the dAMM Health Factor. This mechanism will be explained in a separate post.
+
+CONCLUSION
+We predict that dAMM will become one of the most fundamental primitives to scaling DeFi. Furthermore, we believe this design proves something more fundamental; it is a potent example of permissionless connectivity between disparate L2 systems. dAMM demonstrates how the permissionless nature of L1 can be harnessed to reverse the liquidity fragmentation that some feared would follow the rise of L2s.
+And, Thanks
+This permissionless design is the result of close collaboration between independent L2 teams. 
+We greatly enjoyed the joint effort and are certain we will continue to invent, design, build, and operate together.
+Louis Guthmann (StarkWare) &amp; Brecht Devos (Loopring)

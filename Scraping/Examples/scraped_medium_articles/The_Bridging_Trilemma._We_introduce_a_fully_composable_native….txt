@@ -1,0 +1,37 @@
+url: https://medium.com/stargate-official/the-bridging-trilemma-d80788cce4ef
+
+Title: THE BRIDGING TRILEMMA. WE INTRODUCE A FULLY COMPOSABLE NATIVE…
+by Ryan Zarick
+
+INTRODUCTION
+
+The Bridging Trilemma
+tldr; we introduce a fully composable native asset bridge with unified liquidity and instant guaranteed finality built on top of LayerZero
+In designing a bridge there are three attractive features architects strive to include:
+Instant Guaranteed Finality: the guarantee of funds on the destination chain when a transaction is successfully committed on the source chain.Unified Liquidity: the shared access of a single liquidity pool between multiple chains.Native Assets: the user-desired assets (native or most liquid synthetic) on the destination chain.
+The Bridging Trilemma
+These three properties make up the Bridging Trilemma: in which designers are currently forced to choose only one or two. Let’s discuss architectures constrained by the Bridging Trilemma.
+
+LOCK + MINT AND BURN + REDEEM
+A synthetic asset bridged using a lock+mint and burn+redeem mechanism achieves Instant Guaranteed Finality since assets are minted on the destination chain having no chance of reversion due to lack of liquidity. Unfortunately, users receive a synthetic asset and have to swap it for the asset they actually need.
+
+
+NATIVE ASSETS AND UNIFIED LIQUIDITY
+A bridge could also be designed using pools of native assets with unified liquidity, meaning a single USDT pool on Chain A and additional pools on Chains B-F. All chains share access to each other’s liquidity resulting in orders of magnitude greater capital efficiency vs. pairwise pools. However, this also means that if Chain A sends a transaction to Chain C requesting $X it’s possible that some of the other chains get there faster and drain Chain C or put it in a state of not being able to fulfill Chain A’s request. This creates a cumbersome process for both the user and developers trying to implement applications across this bridge. Handling reversion requires bridges to let the user manually revert the state (painful), collect enough gas upfront from the user (expensive and inefficient), or finance the reversion costs themselves. None of these are great options, and the latter exposes them to an attack vector of spammed transactions to a drained pool. This solution without the added benefit of Instant Guaranteed Finality will always struggle to achieve the true nature of composability that it aims for.
+
+
+Δ ALGORITHM
+The ideal bridge would have all three properties of the Bridging Trilemma but unfortunately, all existing bridges have been forced to choose only one or two.
+
+Introducing the Delta (Δ) algorithm, a novel resource balancing algorithm that enables unified native asset pools on all chains while also providing Instant Guaranteed Finality. Delta (Δ) is the first algorithm capable of solving the Bridging Trilemma. Let's discuss what this unlocks!
+
+COMPOSABILITY
+Solving the Bridging Trilemma unlocks true composability, allowing bridges to enable transfer and call on the destination chain. Applications can now wrap a Delta (Δ) Algorithm Enabled Bridge (ΔBridge) to perform actions like swap -&gt; bridge -&gt; swap all in one single transaction from the source chain. For example, suppose a SushiSwap user wanted to swap wBTC on Ethereum for JOE on Avalanche. In that case, they could now do this in a single transaction on the source chain and without ever leaving the SushiSwap UI. This enables a complete unified experience for multichain applications like SushiSwap, Abracadabra, and many more.
+
+
+BRIDGING AS IT’S MEANT TO BE
+With the Bridging Trilemma solved, we no longer need the lock &amp; minting of synthetic assets or have fragmented liquidity. Instead, we can simultaneously have deep pools of native assets tied to all chains, creating orders of magnitude greater capital efficiency. LPs will be able to stake into a singled-sided asset pool with no impermanent loss and collect fees from all incoming transfers regardless of their source chain. Users no longer need to swap out undesirable synthetics on the destination chain or have a scenario where a transfer fails due to state change.
+
+STARGATE
+
+Finally, introducing Stargate: a fully composable ΔBridge co-launching with the LayerZero protocol. In the coming weeks, we will be providing video demonstrations of Stargate and wrapped AMMs for cross-chain swaps. Following this, we will be releasing the Delta (Δ) algorithm whitepaper and testnet demonstrations. We welcome you to join our community, come talk to us on Telegram, Discord, Twitter, and our Website.

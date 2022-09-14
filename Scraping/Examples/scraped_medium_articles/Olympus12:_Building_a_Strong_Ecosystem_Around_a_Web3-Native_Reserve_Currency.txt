@@ -1,0 +1,19 @@
+url: https://olympusdao.medium.com/olympus12-building-a-strong-ecosystem-around-a-web3-native-reserve-currency-416f58175e74
+
+Title: OLYMPUS12: BUILDING A STRONG ECOSYSTEM AROUND A WEB3-NATIVE RESERVE CURRENCY
+by OlympusDAO
+
+INTRODUCTION
+
+Demonstrating Impact and Reporting on Our Progress
+The Olympus12 Action Plan will help to strengthen OHM’s role as a reserve currency and:
+Demonstrates how the Treasury is being deployed to add value to the Olympus ecosystem: Showcases how the DAO’s economic power (its Treasury) is being utilized in service of everyone in the Olympus ecosystem; specifically, how ecosystem participants are benefiting from its growing strength, accelerating network effects, support of initiatives that drive utilization of OHM across DeFi, and is used to preserve and enhance OHM’s premiumBolsters the sustainability and strength of Olympus: Illustrates how the Treasury, DAO contributors, and our partners help to build a strong foundation for the protocolOutlines the specific steps Olympus is taking to become a decentralized reserve currency: How we are working to preserve OHM’s purchasing power, drive liquidity, foster its use as a unit of account and become a trusted backing
+Given the scale and scope of Olympus’ activities, it can be difficult for the community to monitor and evaluate the DAO’s performance. In addition to creating new dashboards and metrics outlining and measuring the DAO’s activities, we will publish quarterly reports on the Olympus12 Action Plan beginning in late Q1 2022/early Q2 2022.
+Also, progress on the Olympus12 Action Plan will be regularly reported during community calls, our newsletter, Twitter and other channels.
+— — —
+¹See “What is a Reserve Currency”, The Balance, https://www.thebalance.com/what-is-a-reserve-currency-1978926; “Here’s How Reserve Currencies Have Evolved Over 120 Years”, Visual Capitalist, https://www.visualcapitalist.com/cp/how-reserve-currencies-evolved-over-120-years/; “Purchasing Power”, Investopedia, https://www.investopedia.com/terms/p/purchasingpower.asp
+— — —
+
+ABOUT OLYMPUSDAO
+Olympus is a decentralized financial reserve protocol that provides sustainable compounding interest through its community-owned and protected treasury.
+Twitter | Discord | Medium | Forum

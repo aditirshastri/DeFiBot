@@ -1,0 +1,77 @@
+url: https://medium.com/neworderdao/the-l2-landscape-d3bcb8b0f422
+
+Title: THE L2 LANDSCAPE. DURING THE MOST RECENT BULL RUN…
+by Zee
+
+INTRODUCTION
+
+
+TYPES OF ROLLUPS
+There are several types of rollups, but we will be primarily focusing on Optimistic Rollups and ZK Rollups as they’re the most adopted and of course briefly cover the others.
+Optimistic Rollups
+Optimistic Rollups function in a way that they assume that transactions are valid by default (hence the name). However, in the case of a malicious actor sending wrong transactions, there are watchers of the rollup blocks that exist to watch for fraud. If fraud is detected, a fraud proof is generated and sent to L1 to roll back the transactions in question, while the transaction proposer gets his stake slashed.
+Zero-Knowledge (ZK) Rollups
+ZK Rollups run their complex computation off-chain through a ZK circuit that provides a validity proof (SNARKS, STARKS etc). This validity proof is then posted to the L1 (settlement layer) to prove that the rollups have executed the transactions correctly alongside the state update, but without actually posting the transaction data itself.
+Validiums
+Validiums are off-chain data availability (DA) layers that exist for rollups to send their transaction data to as a cheap alternative. However, there are various trade-offs by doing so — primarily the loss of shared security. Examples of these types of solutions are layers built with StarkEx such as ImmutableX, dYdX, Sorare and DeversiFi.
+Enshrined Rollups
+Enshrined rollups, on the other hand, are rollups that are built-in as applications of the blockchain itself. These rollups function symbiotically with the settlement layer, which verifies the proofs sent by the sequencers. Examples of this type of rollup are Transaction Rollups built on Tezos and dYmension’s Enshrined Rollups on Cosmos.
+Plasma Rollups
+There are also the fabled Plasma rollups, which are rollups that keep all the transaction data and computation off-chain while sending state updates to Ethereum. Plasma rollups primarily handle high-throughput payment transactions and don’t handle smart contract like others do. Plasma rollups are also often referred to as sidechains of Ethereum itself, like OMG and Polygon. Sidechains are self-contained and interact with Ethereum through a bridge contract that keeps the funds locked and then minted on the sidechain. Another example of this is the Axie Infinity sidechain that not long ago got exploited since it wasn’t secured properly through MPC.
+
+EIP-4844
+Rollups are dependent on call data to post their transactions data and state updates to Ethereum, for which there’s only a certain amount per block. This means that even rollups in their current state are very dependent on gas prices on Ethereum and the competitiveness of the blockspace. Fees can get quite high even on rollups during congestion and still hovers around a dollar in most cases. However, with EIP-4844, the Ethereum Foundations wants to allocate more data per block dedicated to rollups through blob transactions — which should lower fees on rollups to minuscule amounts. EIP-4844 will dedicate the majority of blockspace to rollups while implementing data expiry since otherwise, state bloat would become too big of an issue. The state expiry means that either archival nodes will have to store state for rollups or have a decentralized service such as Laconic that stores old data for apps that need it. There are also other optimizations being made to lower the amount of call data being sent to Ethereum by teams from both Arbitrum and Optimism, so that they can provide even lower fees prior to blob transactions.
+The rollup centric roadmap from the Ethereum Foundation which includes Blob Transactions, state expiry and sharding signifies a major move for the future of Ethereum — that being a future where the majority of execution on the Ethereum blockchain is going to be handled by rollups off-chain while using Ethereum as the settlement and data availability layer.
+
+TOTAL-VALUE-LOCKED (TVL) OF ROLLUPS AND CURRENT FEES
+The current active TVL landscape of L2 rollups on Ethereum looks like this. However, keep in mind that a large part of the TVL is actually from the native token of the rollup when looking at Optimism, Loopring, Metis, Boba, Immutable X, and DeversiFi.
+TVL locked on Ethereum rollups
+The fee landscape is also quite competitive between the rollups and various methods. Keep in mind that Metis is not included in the table and we will explain why later.
+Fees for sending a transaction to a EOA and for a token swap
+
+ZK-ROLLUP LIMITATIONS
+Because of the fact that you have to run the validity proof through a circuit, you can’t just copy the Ethereum-Virtual-Machine (EVM) and then use it on a ZK rollup. For ZK rollups, you have to build out what we call a ZK-VM. In most cases, as with ZKSync, Aztec and Scroll, they’re building out a version of EVM, but for ZK circuits. This is what is coined zkEVMs. There are other ZK rollups that have decided to forego the compatibility with EVM and instead decided to build out their own VM without limitations. These include Starkware (with Cairo) and Fuel (With FuelVM/Sway).
+ZK technology is still very early and is actively being worked on to become sounder and faster. We already see this with the fact that there are new types of proofs being developed every year — all with different verification times and techniques.
+Hardware acceleration was previously a massive limitation of ZK rollups and VMs. However, in the past couple of months there have been great strides made in the development of GPUs and ASICs which will make proving much more efficient.
+Cool stuff is being worked on in regards to various VMs, especially Risc Zero — who is working on an interesting non-EVM VMs that can handle new and interesting types of applications.
+
+OPTIMISTIC ROLLUP LIMITATIONS
+One of the largest limitations of current Optimistic Rollups is the fact that withdrawals take ~7 days from the rollup to Ethereum L1 because of fraud proofs (especially in the current competitive landscape of blockspace on Ethereum). Although, there are a plethora of bridges that take the third party risk of providing instant bridging and with it charge a small fee such as Hop, Connext, etc.
+Another limitation to the current implementation of Optimistic Rollups is that for some large transaction blocks, fraud proofs are large and require more gas than the gas limit of Ethereum — meaning they must be split into several transactions.
+It’s also important to keep in mind that rollups such as Boba and Metis are forks of Optimism and don’t bring that much uniqueness to the table. What Optimism and Arbitrum are trying to build is much further ahead than any of the current Optimistic Rollups on the market.
+Metis is defined as an off-chain protocol which utilizes the same layer for both settlement and DA. It doesn’t have on-chain DA and doesn’t utilize call data on Ethereum — it’s more of a validium in its current form.
+There are also significant limitations in regards to MEV, especially the democratization of sequencers — which Arbitrum is trying to solve through Fair Sequencing Services together with Chainlink, and Optimism is trying to solve with auctioning of MEV.
+
+CURRENT ROLLUP LANDSCAPE
+This section will serve as an overview of the various rollups currently in production, both active and in stealth, and possibilities that might present themselves on L2s.
+Arbitrum
+Arbitrum, an Optimistic Rollup, is currently the biggest rollup in regards to TVL and user activity. It has first mover advantage, and has kept itself out of trouble and negative limelight. Arbitrum is compatible with the EVM at the bytecode level and is quite easy to build on for the average user, with significant vendor-lockup and we’ve thus seen quite a healthy grassroots community form on it.
+After the Optimism Token Airdrop was announced, we’ve seen a steady increase in TVL (despite the worth in USD being down, the amount of ETH is up) on Optimism as well as Arbitrum as people are situating themselves to take advantage of following airdrops from the various protocols on top. On Optimism, we’ve especially seen a lot of interest in Synthetix, Lyra and Perp, which are all major players in derivatives. We’ve also seen some interest in more crypto-native applications such as ZipSwap and others. Because of this, we find it extremely likely that we’ll get a similar reaction to the eventual Arbitrum token (which will be even more hyped than OP). The ball is definitely in Arbitrum’s hands now as they can perfect their token model to compete with OP.
+It would be interesting to see a model that attempts to tokenize the blockspace of the rollups, similar to the road that Fuel is taking. If attempted, it’s a fair assumption that a certain amount of tokens will be airdropped to applications on Arbitrum. Here, projects such as Umami, GMX, IMX, Hundred, etc are of interest.. They’re all extremely active in the Arbitrum ecosystem and will most likely gain heavily from the Arbitrum hype. These applications are also all working closely together, which shows that there’s a great community on top of Arbitrum.
+We’ve also just had the announcement for the start of Arbitrum Oddysey, which will be a community event focused on bringing transaction activity to various protocols that reside and utilize Arbitrum. These events will reward users with NFTs, other goodies, and possibly even preferential treatment for future airdrops.
+Arbitrum’s TVL counted in ETH.
+If interested in looking further into Arbitrum analytics, here are some resources below:
+https://dune.com/luigy/Arbitrum-Analyticshttps://dune.com/0xlovebug/Arbitrumhttps://defillama.com/chain/Arbitrum
+Optimism
+Optimism is the second largest rollup by TVL, though this is including the native token OP itself. Optimism is also an optimistic rollup and has seen a plethora of other rollups fork their codebase. They’ve also built out a quite impressive ecosystem, especially in regards to the derivatives market with applications such as Lyra, Synthetix and Perp.
+Optimism had major issues in regards to the execution of the airdrop itself since they didn’t open it up to everyone on time, but rather let people claim through the backend contract earlier than through the frontend. This led to people setting up their own frontends and sharing it with people. As a result, there were rampant scams going around and the price was volatile as no one could really sell due to the extremely low liquidity. Once the official airdrop frontend opened, there were major issues with the RPC endpoint of Optimism and lots of delays and shortcomings. However, the sequencer itself performed beautifully and fees were consistently low by magnitudes of that on Ethereum even during extremely heavy loads.
+Optimism also had a minor mishap in the execution of their liquidity provider in Wintermute, which hadn’t set up their Gnosis multisig on Optimism prior to receiving their transactions. This was exploited, but the funds were eventually returned — but not without doing significant damage to the reputations of both.
+If interested in looking further into Optimism analytics, here are some resources below:
+https://dune.com/optimismpbc/Optimism-Overviewhttps://dune.com/optimismpbc/Optimismhttps://dune.com/optimismpbc/Optimism-Project-Deep-Divehttps://dune.com/optimismpbc/Optimism-Project-Usage-Trendshttps://defillama.com/chain/Optimismhttps://dune.com/Marcov/Optimism-Ethereum
+Fuel
+Fuel was actually the first optimistic rollup live on Ethereum and was completely permissionless. Fuel is currently building out a modular execution layer, which will be able to utilize a DA layer to send transaction data to. They’re also building out their own VM and their own domain specific language in Sway, which is derived from Rust like with Cairo on Starkware. Fuel is utilizing a UTXO model unlike other rollups and Ethereum which use accounts. This can allow for parallel transactions and all kinds of interesting atomic applications.
+Starkware
+Starkware is a ZK rollup that has built out their own VM with their own domain specific language in the form of Cairo (which is quite similar to Rust). Starkware is using STARKs as their validity proofs, which have shorter prover times but larger proof sizes.
+Starkware already has a strong ecosystem of developers that are building a variety of applications. They’ve especially built out a very strong community in Israel, which is where the founders are from. They have a very strong BD team and have been actively working on multiple types of partnerships, despite still being in stealth.
+They’ve also seen considerable success through their validiums-as-a-service product through popular applications like dYdX, ImmutableX, DeversiFi, and Sorare all being built with StarkEx.
+Last but not least, Starkware has raised a significant warchest for ecosystem building at an $8B valuation. As a result, we can probably expect a lot of TVL to flow here once they go live.
+Albeit, there are some negatives such as the fact that Cairo, while being open-source, is not allowed to be built and improved upon by the wider community. There are also significant vendor-lockups, which mean users are very reliant on the team instead of the wider grassroot community.
+Scroll
+Scroll is taking a rather unique approach to building their ZK rollup, though it is still in development. Scroll is building a zkEVM that is an exact replica of Ethereum opcodes to zkEVM opcodes, which should make porting over Ethereum applications extremely straightforward. This means that the only thing that needs to be built on top is middleware infrastructure.
+ZKSync
+ZKSync is a ZK rollup that uses SNARKs as their validity proofs and is building out their own unique version of a zkEVM. Their zkEVM will keep EVM semantics, but is not an exact replica of the opcodes from Ethereum such as with Scroll.
+ZKSync is also building out a validium called zKPorter, which is where their token will most likely reside and function as the token utilized in a PoS-validium that secures the chain storing transaction data from ZKSync — this method should increase their TPS quite considerably.
+Aztec
+Aztec is a ZK rollup that is focused on privacy. They utilize a double circuit model for privacy, which does mean that their proving times and sizes are quite considerable. We even saw an issue they had lately with the 128Kb transaction limit of the Go-Ethereum client with large transactions. Aztec is primarily designed for transactions, and not building out EVM compatible applications with ZK-circuits such as with ZK, Starkware, and Scroll.
+Loopring
+Loopring is a ZK rollup that functions as a DEX protocol on top of Ethereum. They utilize SNARKs as well, and other kinds of unique technologies like order rings and order sharing. This means that Loopring is focused on building DEXs for Ethereum and the wider rollups ecosystem with ZK functionalities.

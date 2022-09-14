@@ -1,0 +1,100 @@
+url: https://drakedanner.medium.com/wrap-it-up-what-yesterday-and-todays-nfts-could-look-like-tomorrow-96f45b992136
+
+Title: WRAP IT UP: WHAT YESTERDAY AND TODAY’S NFTS COULD LOOK LIKE TOMORROW
+by Drake Danner
+
+INTRODUCTION
+
+Wrap It Up: What Yesterday and Today’s NFTs Could Look Like Tomorrow
+
+In 2021 we saw NFTs come into the public consciousness, we saw developers earn their wings, and then we learned that the underlying contracts sucked.
+
+DISCLAIMER
+I don’t know if this is technically accurate. I’ve spoken to developers within my network about various implementation aspects but I am certainly grasping at straws. Consider this non-technical writing about technical concepts — I am attempting to explore potential paths forward and their implications.
+Feel free to roast me on Twitter for not knowing anything!
+
+
+TODAY’S NFTS
+I’ve spent the better part of the past six months trying to keep up with everything NFTChance has been publishing and developing. As far as I am concerned, he’s leading the space — not with flashy color palettes or gimmicky release mechanisms — with true optimization and new implementations that push the boundaries on what an NFT should be and what it can be.
+In December 2021, Chance released an article about how to develop a more gas optimized contract for NFTs. In his words: OpenZeppelin ERC721Enumerable is wildly inefficient.
+The Gas-Efficient Way of Building and Launching an ERC721 NFT Project For 2022These simple practices save a community millions of dollars. Not over months; Instantly. Yet, this article is not just…nftchance.medium.com
+If you skew technical, take a look at his article and his code to dig into the nitty-gritty of his adjustments. If not, then stick around here and I’ll share some quick highlights.
+Nuclear Nerds launched with a gas optimized contract. When the team minted their allocated items, they minted 111 items using .11 ETH in gas (call it .001 per item). The market loved it.
+
+So naturally all developers started implementing this new code to make things more affordable for their holders, right? No, of course not.
+
+Chance likes to say: You can lead a horse to water, but you can’t make it drink. I prefer to recognize the reality that you cannot force standardization across a decentralized industry overnight. Or maybe that you can’t control the way technology is used — you can build a classroom but that does not mean people will learn in it.
+This made me wonder though… could developers mitigate these failures by offering an optimizing wrapper contract later?
+Sure, the mint is over and potential gas savings at that stage can never be realized, but could steps be taken to make subsequent on-chain interactions with that token more affordable in the future?
+
+NFT WRAPPING: A RESPONSE
+I don’t think we have ever seen a project launch with the goal of wrapping later. Wrapping is a response, not a plan.
+CryptoPunks launched initially as an ERC20 in 2017. This was prior to the introduction of the ERC721 standard. As the ERC721 standard became commonplace and NFT marketplaces came into being — a path needed to be created to enable CryptoPunk holders to use these marketplaces. Enter Wrapped CryptoPunks: a way to wrap your ERC20 Punk in exchange for an ERC721 representation. The ERC721 immediately fits into more slots in NFT infrastructure than the ERC20.
+Wrapping is a response, not a plan — the way wrapping is designed, deployed, and used can be extremely impactful to the cohesiveness of NFT collections
+
+MIMETIC METADATA: FUTURE PROOF NFTS
+In February 2022, Chance released a new article on how to create an extendable NFT collection. He took aim at the Doodles team’s approach to launching Space Doodles through a one-for-one wrapping mechanism.
+Remarkably, the market managed to find another implementation that is just as bad for creators and holders! The Doodles team has decided that instead of increasing the total supply of tokens in the ecosystem, the holders will have an option to forfeit their token into a vault in return for a new token from the Generation 2 collection.
+Chance also touched on a concept that I’ll get to in the Trifurcation section…
+However, wrapping tokens into new collections makes this a monumental task for every market participant. Every step along the way, we introduce a new collection to be sifted through, and the generational art is not even natively explorable at any given time. Meaning that you cannot see your Space Doodle or the attributes of that Space Doodle through the initial Doodle Contract. Instead, you will need a second-level tool like OpenSea or a personal gallery.
+Mimetic Metadata: How To Create A Truly Non-Dilutive NFT Collection In 2022Preface: This article is the first piece in a series in finding the best way to create extendable collections. Today…nftchance.medium.com
+Chance’s solution to this is called “mimetic metadata” — I’m still working on wrapping my head all the way around how it works and for the time being, I’ll leave further explanation to him. Read his article and check out his code while I dance around the concept and pontificate on my understanding of it.
+GitHub - nftchance/nft-nondilutiveNote: This code is unaudited and a work of a midnight conversation. There does exist the ability to do this with…github.com
+Again, though, the market noticed and acted upon Chance’s work — remember I told you he’s pushing the boundaries.
+The Fluffy Polar Bears team read about mimetic metadata and saw a path forward to mitigate some of the impacts felt by their historical implementations. The team has three contracts live (two ERC721s and an ERC1155) and through mimetic metadata have devised a way to merge these collections while leaving themselves flexibility to future evolution.
+Introducing: The Fluffy Movement!This article is curated by our amazing dev @dotyigit to give more details about the Fluffy Movement development side…fluffypolarbears.medium.com
+The Fluffy Polar Bears team was managing three contracts and looking to create a cohesive collection.
+
+Not only does the team recognize that existing contracts use to much gas for transfer functions, that their ERC1155 contract didn’t play nice with NFT infrastructure built for ERC721s, they demonstrated that wrapping is not only a way to upgrade a single collection — it can be a way to bring many disparate contracts together into one collection.
+I suggest taking a look at how this migration process will take place — there are some top down actions that could mitigate (or exacerbate) concepts discussed in the next section.
+In the case of CryptoPunks and Fluffy Polar Bears, wrapping is presented with a specific goal — that goal can be to expose the items in new spaces, to optimize them, and/or to coalesce items from multiple collections into one.
+
+TRIFURCATION: THE FRACTURING OF NFT COLLECTIONS
+
+Fluffy Polar Bears took action as a team to migrate their projects. What happens when the community takes action to migrate items?
+We all spent way too much time talking and thinking about Pudgy Penguins in 2021. When it became apparent that the team behind Pudgy Penguins was not living up to the expectations of their holders, a community fork became available. Holders were then able to exchange their Pudgy Penguins for a new Wrapped Penguin. Similar to Doodles and Space Doodle, the collection was being split. Dissimilar, however, was why the split was happening and the subcultures that came into being through the split.
+
+You’ve heard of the trilemma but what about trifurcation? It’s not truly a 3-way split but it attempts to communicate the reality of stasis vs. optionality. Some holders will not take action resulting in static items that remain on the original contract — others who are more active will likely face a wave of wrapping contracts to place their NFTs in new spaces.
+So far we’ve discussed 3 types of migrations:
+Optimization (CryptoPunks, Fluffy Polar Bears)Coalescent (Fluffy Polar Bears)Community Fork (Pudgy Penguins)
+But that’s not it. Let’s take a look at NFT bridging.
+
+Wormhole allows users to move their NFTs from one chain to another. An NFT minted on Ethereum can be moved to Solana. The original item is locked in a contract on Ethereum and a representation is minted on Solana. The item now lives in the Solana ecosystem and can be bridged back to Ethereum to unlock the original ERC721 at any time.
+But that’s not it. Let’s look at NFT unbundling.
+
+LootLoose allows users to unbundle the items in the Loot bag into individual pieces, those individual pieces can then be traded or moved around in any way that is supported by an ERC1155. If a user collects all of the items needed, they can re-bundle them to claim the Loot ERC721 from the contract. What’s to stop someone from launching a contract that allows you to take any of the ERC1155s and bundle them for a new ERC721?
+Split two ERC721 into many ERC1155s, mix and match those ERC1155s to create two new ERC721s. To access the original ERC721s, both of the new items must be unbundled and re-assembled. This is all to say that while we’re cleaning things up and migrating items to optimized contracts, we’ll likely also make new messes as we explore the functionality that can be possible through various wrappers.
+We’re likely going to trend towards a place of user optionality. Holders will have multiple options when deciding what to do with their items: team sanctioned wrappers that optimize and coalesce, community forks (and potentially multiple), bridges, unbundling, and new options that have not been brought to market yet. Despite all of this optionality, users may not take any action!
+My hypothesis is that existing NFT collections will begin to exist in multiple states despite team attempts to bring collections into more a cohesive and optimized state.
+
+MARKET IMPACT
+In traditional high value collectibles, we may see items fall into three or more categories — privately owned, institutionally owned, and destroyed.
+When the items are initially created, they exist in a state where they can begin to move into the hands of collectors. Over time, some of these collectibles may be lost, destroyed, or forgotten — through this the supply available to collectors shrinks. If the collectible is highly valued — potentially seen as historically important — then institutions and syndicates may begin to try to buy them up too. Again, the supply available to private individuals shrinks and the original collection is now split into three categories of availability.
+I am not saying that the institutions are going to buy your bags.
+I am trying to demonstrate how traditional collections trifurcate and to begin to think about how we may see this happen with on-chain collections.
+Consider NBA Top Shot — a closed ecosystem with one marketplace. Items are for sale or they are not, holders are attentive or they are not. Items cannot be truly lost, but access to them can be. Collections that exist in a more composable space such as Ethereum mainnet, however, can begin to enter many varying states of availability.
+Once the original collection is distributed there are simple realities such as lost private keys that take assets out of circulation. There are optimizing wrappers to increase composability such as ERC20 CryptoPunks being wrapped for ERC721s. There are bridge wrappers that allow a user to lock their asset on one chain to instantiate it on another. We’re just scratching the surface of NFT wrapping…
+
+Consider a collection that had a community fork which wrapped some of the original assets for a new token. At the same time, a new chain has made this collection available through bridging, which requires wrapping the original asset on the originating chain before minting it on another. The original project creators have not given up in this case, however, and have also launched an optimized contract wrapper which gives owners a gas optimized and more future-proof version of their existing asset. Despite all of these options, some holders simply will not act on any of them and will retain the original asset.
+The collection now exists in many states:
+OriginalOptimizedCommunity Fork(s)BridgedUnbundledBundledetc
+The collector base to buy and sell these items is split. Each state of the collection has a smaller collectible set than the original collection. Each sub-community has split and started to develop their own subculture of the original collection.
+
+We’ve seen these subcultures come into being with traits in the past — but the distinctions were based on attributes of the items, rather than state that the item exists in. Moving between trait based subcultures is far more fluid than moving between state based subcultures.
+There’s the Cheetah Gang — a cross collection grouping of assets and holders that prefer cheetah traits.
+
+This is just organization of holders based on a trait, there is no real technical distinction of these items — they exist in the same state even if they exist across multiple collection contracts.
+The Pudgy Penguins community fork, however, is a technical split resulting in differing integrations.
+
+
+SO WHAT?
+Nothing. Hope you have fun. Just kidding. Kind of.
+Keep your eyes on projects that might move this way, consider the potential outcomes and cost of acting or not acting. But I think more than anything…
+Recognize that we are always iterating and we cannot always plan for the next step
+I am personally more interested in the accumulation of actions taken by holders rather than top down implementations foisted upon holders.
+The contract owner can likely force changes to holders through freezing the transfer of original items and minting replacement items that follow the optimized contract implementation. But how will holders react? They’ve been drinking immutability and self-custodial kool aid from the likes of 6529 and other influencers peddling the future of collectibles. How will they react if the project owner forces a change to their assets?
+How will assets that are stored in liquidity pools (NFTX, NFT20) and syndicated escrow accounts (Fractional.Art) handle a case where the contract owner freezes actions related to the original tokens? How big of a mess can we make and how will we continue to find new ways to clean up those messes before making new ones?
+We’ll likely see more teams work to clean up their existing messes through the introduction of wrappers — and we’ll certainly see more and more messes be created.
+
+Want to send me some unwrapped NFTs? I’ll accept fungible tips too.
+0xf32C6D263E6d7758429495F3c7Db4Ad353865242

@@ -1,0 +1,104 @@
+url: https://medium.com/@pedronv/polygon-nightfall-deep-dive-a-private-rollup-for-enterprises-a01b298721c5
+
+Title: POLYGON NIGHTFALL DEEP DIVE: A PRIVATE ROLLUP FOR ENTERPRISES
+by Pedro
+
+INTRODUCTION
+
+Polygon Nightfall Deep Dive: A Private Rollup For Enterprises
+
+This is my second week into this whole Polygon zk solutions journey, and honestly the more research I do on these different zk solutions for Polygon, the more and more bullish I become on the project.
+For those that are new, I wrote this article going over the whole Polygon project in general, in which I mentioned that I would spend the following weeks going over all of the different zk solutions Polygon will offer, one by one.
+A lot of people still look at polygon today and assume all they have is a PoS chain, but it’s important to know that Polygon is way more than a PoS chain. This PoS chain was done more to keep users and developers on Ethereum while further scalability solutions were accomplished, and considering the amount of adoption they’ve gained, it seems like this worked.
+Like I said, Polygon is much more than a PoS chain. They’re literally a Swiss Army knife.
+Below you can see a spectrum of the different solutions Polygon will provide:
+
+On the far right of the spectrum we see all the zk solutions they’re currently working on: Hermez, Miden, Nightfall, and Zero. All these zk solutions bring something unique to the table, and so I thought each solution deserved to be looked at individually in greater depth.
+This zk journey started with polygon Hermez last week, which if you’re interested in learning more about, you can check that out here.
+Continuing on this zk journey, I wanted to look at Polygon Nightfall this week and go through everything they’re currently working on, and how they add their own unique value not only to Polygon, but for the whole Ethereum ecosystem in general.
+Nightfall is a privacy enabled rollup focused on making it easy to onboard enterprises on chain.
+It basically lets me send someone an asset without you or anyone else being able to see what that asset was, how much value was sent, where it was sent to, or anything.
+
+FROM THE BEGINNING
+In 2019, EY (a global professional services and technology firm) announced the first version of Nightfall, which was a set of protocols allowing for private transactions on Ethereum. So just think of the Hermez payment platform that I talked about last week, but now imagine that with prvacy included within each transaction. This means that Alice can send Bob an asset, but no one else will be able to see what the asset was, how much value was included, or where it went.
+The reason they wanted to focus in on privacy is because this was something that was crucial for the main type of clientele they were aiming for, enterprises.
+Why Do Enterprises Need Privacy
+As we all know, everything we do on a blockchain is made public for anyone to see.
+That’s why they need privacy.
+If we look at a typical business relationship, it usually involves someone with money, and someone else with the goods. The issue with this type of relationship taking place on chain is that the details within this busines agreement should probably be kept secret. If you own a business, you probably don’t want your competition being able to see what you bought, how much you bought, how much money you have, etc. This is one reason we don’t have too many enterprises jumping in yet.. but that’s also why the potential for Nightfall is insane in my opinion.
+So for about six years, EY has been researching and developing different technologies to help improve privacy on chain.
+Nightfall Is Born
+The first version of Nightfall was announced in 2019, enabling privacy on Ethereum. However the issue was that it was still too expensive for any project to start using.
+According to Paul Brody, it took them $3,000 to do a sample set of transactions in the first supply chain protocol they built using Nightfall. This was when gas fees were a lot cheaper too. Turns out it’s way to expensive to have privacy directly on Ethereum.
+One of the big use cases for Nightfall is supply chains, and if they’re goal is to put everything involved in this process on chain, from sourcing raw materials, to manufacturing, transportation, etc. They need to be able to scale hundreds of millions of transactions per day (at peak levels).
+In Comes Polygon
+After realizing building enterprise chains was to expensive to have on chain, they decided to start building on L2. Considering EY has brought a lot to the space, they were a very attractive opportunity for any L2 to partner with.
+They had several options too choose from, but eventually landed with Polygon because of their understanding of how to build enterprise chains, and because of their strong commitment to Ethereum.
+
+The goal of the partnership was to build private enterprise chains on Polygon, using the Nightfall tachnology.
+At this point Nightfall had iterated a couple more times, until they landed on Nightfall 3, the version integrated into the Polygon framework.
+
+Each iteration of Nightfall has been about improving efficiency.
+The main difference I want to point out about version 3, is that this uses a combination of optimistic rollups and zk cryptography. So we’re getting the scalability provided by optimistic rollups, along with the privacy provided by zk proofs.
+What Exactly Is Polygon Nightfall
+Polygon Nightfall is a optimistic rollup that leverages zk cryptography for privacy. A defi project, or any big enterprise could deploy on top of Polygon Nightfall to leverage privacy.
+Really, all Nightfall covers is the private exchange of money and assets. It doesn’t take care of making the actual business rules of the contract private (what you paid, etc.) That’s where Starlight and other technologies EY has developed come into play.
+The partnership between Polygon and EY involves using the Nightfall technology to build industry chains that allow enterprises to have anchored side chains connected to L1 with predictable low fees, and under regulatory guidelines.
+The goal is to take the different technologies that EY has developed over the years (all with a focus on privacy for enterprises), and put them together to create the ideal private chains enterprises need, while leveraging Polygon for low fees and scalability.
+So using Nightfall, I’ll be able to send someone tokens (erc-20, erc-721, erc-1155) without anyone being able to see the contents within that transaction. You cant see what I sent, how much I sent, who I sent it to, etc. All you can see is that some transaction took place on chain, that’s it.
+In order to have private business logic, we need another technology EY is developing, Starlight.Starlight is a general purpose compiler for zk circuits. So I put a solidity contract in, and a private version comes out on the other side (kind of — I don’t want to get too into detail here).
+Two other EY developed technologies that will be used to create these enterprise chains, include a locations service that allows for the adding of location information into tokens (essential for companies with physical assets). Plus the baseline product EY has developed, which basically allows companies to post proofs and links on chain, instead of the actual contents of their transactions. This is a technology Microsoft has integrated into their blockchain. No big deal right?
+So all these pieces together make it safe and reliable for companies to start deploying on chain.
+
+HOW NIGHTFALL WORKS
+Let’s start by looking over at this image I took from the Nightfall team during one of their video presentation:
+
+I’m going to try and keep this short and simple here. Basically, the bottleneck issue in scalability comes down to “state”, or the fact that storing data on chain is expensive. So the goal of a scaling solution is to keep lowering the amount of data stored on chain.
+One of the first questions a solution answers is whether or not they want to store data on or off chain. Off chain would be through validiums, side chains fall somewhere in between the two, and on chain would be through rollups.
+The advantage of storing data off chain is more scaling, but the tradeoff is security, because of the trust assumptions required with storing data off chain.
+From here there are two types of rollups a solution one can use: a zk rollup, which uses zero knowledge proofs, or an optimistic rollup which uses fraud proofs. With optimistic rollups we assume all transactions are good, but if anyone thinks one of the transactions should be invalid, then they have 7 days to submit a challenge using a fraud proof, which proves if the transaction was invalid or not. With zk proofs there is no 7 day challenge period, a transaction has to be valid from the beginning to even be included inside a block. This is the beauty with using zk rollups, but the issue is that it’s expensive to compute the zk proofs.
+Finally the solution decides if they want the transactions to be private or not. So looking at the image above, you would add an extra layer of zero knowledge cryptography if you want privacy — “zk” would be private, and “non zk” not private.
+Nightfall vs. Aztec
+
+Above is an image displaying two different approaches for enabling privacy. Polygon Nightfall on the left, which uses optimistic rollups with zk cryptography, and Aztec on the right, which uses zk rollups and zk cryptography. Ultimately, the ideal solution would be a zk/zk approach similar to Aztec, but the issue with this approach today is that zk is too expensive.
+Eventually, I’m sure Aztec or some other project will figure out how to reduce fees, but until then, Nightfall will continue using the optimistic/zk approach.
+I do want to note that the Nightall team is planning on switching to a zk/zk approach once fee reduction issues are solved.
+Nightfall vs Hermez
+If you’ve read my previous article on Polygon Hermez, you may remember that they also have a payments platform.
+So what’s the difference?
+The difference is privacy.
+Hermez uses zk rollups, but without adding the extra layer of privacy. In the image above, they would fall under the same area as zkSync, opting for scalability rather than privacy.
+There’s obviously a lot more to Hermez, so just check out my article if you’re interested in learning more about that.
+
+ACTORS INVOLVED
+Below we can see the architecture of Nightfall, and who the actors involved are:
+
+Keeping this simple:
+There’s transactors (the poeple actually transacting) that submitt transaction requests. These get picked up by block producers who take as many of these transactions as they can, validates them, rolls them up into blocks, and provides a proof that all the transactions these block producers included in the rolled up batch, were done so correctly. This is done on L2 and is how we get cheap fees.
+That proof then gets sent to the L1 main chain. Once it reaches L1, there’s a 7 day challenge period where any challenger can submit a challenge saying “hey this transaction isn’t valid, here’s the fraud proof I made to prove my claim.” If the challenger was correct, then the block producer that submitted this invalid transaction gets slashed, and the challenger receives this slashed bounty as reward.
+The other actors are liquidity providers, who allow us to have instant withdrawals. Usually with optimistic rollups, you have to wait 7 days for your tokens to be withdrawn (the 7 day challenge period I talked about earlier). However Nightfall avoids this issue by giving users the option for “instant withdrawal.” The way this works is that the liquidity providers essentially switches spots with you. He gives you the funds for your instant withdrawal, and he takes your spot in the 7 day wait period.
+
+USE CASES
+There are several use cases for Nightfall:
+One of the obvious ones is for financial enterprises and institutional investors. If you think about it, big institutional buyers want to transact in privacy without having to affect the market too much. This creates a big opportunity to onboard portfolio management firms that want to keep their transactions and swaps private.Another use case is supply chain traceability, which means how they deal with supplies, carry out sales orders, how they pay for them, etc. Supply chains is one of the bigger segments they want to tackle, and there’s actually a beer company today that already uses EY tech for traceability. This company produces an NFT for every batch of beer they produce (Polygon can make this cheap), and this would keep track of how much beer there is, where it is (I think that location product I mentioned earlier comes in play here), how much beer is getting shipped, etc — privately. I was listening to this video interview where Paul Brody, Global Blockchain Leader at EY, mentions that their biggest traceability client today, a pharmaceutical company, generates 60,000 NFT’s per day. One for every product in their production line. Just think about that — that’s just one company. Imagine how many NFT’s will be minted on Polygon in the future.ESG is another big use case, and one that is actually in play already. There’s a platform using this technology to create secret ballets essentially, where users can donate to a certain charity without disclosing that exact charity. Funds are transferred using Nightfall to keep this information private. Not only that, but by adding the supply chain of charities on chain, we would be able to tell if what they claim they’re doing with the money, is actually being done.Us users can benefit a lot from a platform like Nightfall. I mean I’m sure there’s some transactions you want to keep private.
+I really want to make it clear that the goal of this Polygon + EY partnership is all about building private blockchains for enterprises, using the Nightfall technology, along with other pieces of technology EY has developed over the years. They want to build industry chains.
+So if I’m understanding that correctly, it would be like having a blockchain solely dedicated for wine products (I live in Napa okay), where other wineries can just plug into. There could be a token involved that uses zk technology to prove a buyer is over the age of 21, without having to show their birth date. Basically optimizing the chain to make the business of wine as easy as possible. They’re not including things that’ll help with loans, or trading or anything — solely adding features that’ll make the process of buying and selling wine easy. This could just be one of the enterprise chains that are built, however there can also be an enterprise chain more tailored towards insurance, or warehousing — you get the point.
+
+WHAT ABOUT REGULATIONS?
+Well for one, EY is also an audit firm that has alredy developed a tool called a EY CryptoPrep, which takes your private transaction data and matches it to data and proofs on chain, allowing you to verify simple questions like: Did you do what you said you did?
+So a compnay could have their own KYC list, which basically matches the name on that list to the proofs on chain.
+Also, the zk-proof technically is the audit — it’s the proof that the input matches the output. Remember that zk-poofs don’t allow for any invalid transactions to begin with.
+The team at Polygon Nightfall has made it very clear that the point isn’t to keep infomation private from regulators, but to keep enterprise information private from competition.
+
+WEN LAUNCH
+Polygon Nightfall is currently under testnet, and is expected to go live this year.
+
+CONCLUSION
+I’m starting to realize there’s too much to cover with just one of the Polygon zk solutions alone. There’s a lot more I missed regarding Nightfall, so maybe I’ll write some more content around this solution over time.
+For example I didnt go over the fact that a lot of the enterprise chains that will be built on Polygon Nightfall will use Polygon Avail for data availability. So maybe a topic for another day?
+There’s a lot to cover, so I’m sorry if I missed anything important.
+That said, Nightfall got me so hyped for the future of Polygon. Paul Brody from EY said that he plans on getting over half of the companies he works with to transition 100% on chain by 2030.
+Not only that, but Polygon co-founder Sandeep also mentioned that he sees huge adoption within Polygon Nightfall over the next 12–18 months, and I can see why now. I mean if they can make dedicated industry chains, that are both private and cheap, and if they can make it extremely easy for any company to plug right into the network — then the potential is insane.
+In terms of how the MATIC token will be used in Nightfall, there’s no official mechanism as of now, but if I had to guess — I would imagine the MATIC token gets used by the block producers to take part in validating the network.
+Nightfall is a optimistic rollup that uses zk cryptography to allow for the private transfer of tokens. Using Nightfall, along with other technologies, the Polygon and EY team will build private enterprise chains, allowing for companies to start leveraging blockchain technology at ease.
+It’s very clear the focus with this rollup will be enterprises, however users like you and I can benefit extremely from private transactions.

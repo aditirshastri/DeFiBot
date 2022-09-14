@@ -1,0 +1,46 @@
+url: https://medium.com/starkware/fractal-scaling-from-l2-to-l3-7fe238ecfb4f
+
+Title: FRACTAL SCALING: FROM L2 TO L3. IT’S LAYERS ALL THE WAY DOWN
+by StarkWare
+
+INTRODUCTION
+
+
+Fractal Scaling: From L2 to L3
+It’s layers all the way down
+
+TL;DR
+Recursive proofs open up surprising and novel design optionsIntroducing L3, the application-specific layer, built recursively over L2L3 serves the bespoke needs of apps, such as hyper-scalability, better control of the tech stack, and privacyStarkEx, currently serving customers as an L2 solution, will be ported to L3Standalone instances of StarkNet will also be available as L3
+
+WHY L3?
+The prohibitive cost of transactions on Ethereum is driving it to become a settlement layer for L2. We (and others) believe that, in the near future, end-users will conduct the majority of their activity on L2 due to the significantly reduced transaction costs, the growing support for DeFi tools, and the increased liquidity that L2 provides.
+L2s boost scalability with reduced gas cost per transaction, and improved transaction rates. At the same time, L2s retain the benefits of decentralization, general-purpose logic and composability. However, some applications need specific tailoring that may better be served by a new and separate layer: Enter L3!
+L3 relates to L2 just as L2 relates to L1. L3 can be realized using validity proofs as long as the L2 is capable of supporting a Verifier smart contract. When the L2 also uses validity proofs submitted to L1, as StarkNet does, this becomes an extremely elegant recursive structure where the compression benefit of L2 proofs is multiplied by the compression benefit of L3 proofs. In other words, if each layer achieves, for example, 1000X in cost reduction, L3 can reach 1,000,000X reduction over L1 — while still retaining the security of L1.
+Imagine, transactions for a fraction of one gas!
+The main benefits of L3 are:
+Hyper-scalability: leveraging the multiplicative effect of recursive proving.Better control by the app designer of the technology stack:
+a. More deterministic performance and cost,
+b. Customized data availability models (e.g., Validium-based or app-specific compression of on-chain data),
+c. Faster feature and technological velocity (e.g., introducing new functionality not yet ready for general availability).
+3. Privacy: e.g., Zero Knowledge Proofs applied to privacy-preserving transactions over a public L2.
+4. Cheaper/simpler L2-L3 interoperability: On/off-ramping flows currently used between L1 and L2 are notoriously expensive. In contrast, due to the cost effectiveness of L2, these flows, when applied to L3, become not only extremely attractive, but also straightforward to implement. While the latency of moving assets between L2 and L3 may be longer than between applications deployed on the same L2, the cost and throughput is comparable.
+5. Cheaper/simpler L3-L3 interoperability: Independent L3s will interoperate via L2, not L1. L2 is obviously expected to be cheaper than its L1. Absent L3, these would all function as L2s, and as such, would have to interoperate via the considerably more expensive L1.
+6. L3 as a “Canary” network for L2: New innovations may be put to test on L3 prior to being made available to the general public on L2 or L3 (much like the role Kusama plays for Polkadot).
+
+L3S AND FRACTAL LAYERING
+Multiple L3s will ride on top of an L2. Moreover, additional layers (L4, etc.) may be built upon L3 for fractal layering solutions.
+Diagram 1: A layered ecosystem
+An example of such an ecosystem is depicted in Diagram 1. Its L3s include:
+A StarkNet with Validium data availability, e.g., for general use by applications with extreme sensitivity to pricing.App-specific StarkNet systems customized for better application performance, e.g., by employing designated storage structures or data availability compression.StarkEx systems (such as those serving dYdX, Sorare, Immutable, and DeversiFi) with Validium or Rollup data availability, immediately bringing battle-tested scalability benefits to StarkNet.Privacy StarkNet instances (in this example also as an L4) to allow privacy-preserving transactions without including them in public StarkNets.
+
+THE BUILDING BLOCKS OF AN L3 SOLUTION
+Diagram 2 depicts the classic L2 architecture that includes the following components:
+A smart contract tracking the L2 state root on L1 (e.g., the StarkNet smart contract on Ethereum).For a validity proof-based L2, a Verifier smart contract for verifying the validity of state transition proofs.Bridge contracts on L1 managing deposits and withdrawals of tokens to/from L2.Token contracts on L2 acting as the counterparties of L1 token contracts (e.g., ERC20, ERC721).
+Diagram 2: Building blocks of an L2
+Diagram 3 depicts the relationship between L3 and its underlying L2 and L1. By implementing state tracking and Verifier smart contracts on L2, L3 can ride securely on L2.
+Diagram 3: Building blocks of an L3
+
+SUMMARY AND CREDITS
+L3 promises hyper scalability, better control of the technology stack for various needs, and privacy, while maintaining the security guarantees provided by Ethereum (L1). The recursive concept it employs may be extended to additional layers for fractal layering solutions.
+StarkEx, currently operating as an L2, will be ported to L3. Also, instances of StarkNet will be available as L3.
+Thanks to Polynya and Alex Connolly (Immutable) for their comments and review of this post. A special thanks to Pierre Duperrin (Sorare) for his valuable insights.

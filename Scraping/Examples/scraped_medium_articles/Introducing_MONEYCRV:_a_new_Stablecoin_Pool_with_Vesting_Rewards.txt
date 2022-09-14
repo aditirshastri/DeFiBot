@@ -1,0 +1,36 @@
+url: https://yieldyak.medium.com/introducing-moneycrv-a-new-stablecoin-pool-with-vesting-rewards-a9a24f84e1e1
+
+Title: INTRODUCING MONEYCRV: A NEW STABLECOIN POOL WITH VESTING REWARDS
+by Yield Yak
+
+INTRODUCTION
+
+Introducing MONEYCRV: a new Stablecoin Pool with Vesting Rewards
+
+Introducing compounding MONEYCRV, a new stablecoin pool from Moremoney which introduces a unique reward element tied to vesting rewards which favours long-term pool participants.
+The strategy accepts Curve LP tokens, which you receive for adding liquidity using any combination of MONEY, DAI.e, USDC.e and USDT.e. The strategy compounds MORE rewards back into the underlying pool.
+What is unique about this strategy compared to others on Yield Yak is that the rewards for this farm, MORE, vest over 60 days. This means:
+The pool accrues locked MORE which vesting linearly over 60 daysAs MORE unlocks, the strategy compounds it with the usual community-driven reinvest mechanism, adding to your MONEYCRV position
+Autocompounding cycle of the MONEYCRV strategy
+
+HOW DOES VESTING AFFECT YIELD CAPTURE?
+The presence of a vesting mechanism introduces a new dynamic which tends to reward long-term stakers:
+The pool accrues locked rewards. Users who stay in the pool earn unlocked rewards. Users who withdraw abandon those rewards which will become available in the future. This strategy rewards long-term participantsUsers entering the pool are entitled to unlocked rewards accrued from before their deposit, and contribute to future rewards for the strategy.
+This means yield builds over time. At launch, the pool’s yield is based on the tokens unlocked by the first deposits. Later, the pool’s yield is based on later deposits plus the compounding effects from previously unlocked tokens.
+These dynamics create a balance. At launch, rewards may be lower and with time yield builds up. A long-term participant is likely to receive at least the same APR from their deposits as the base farm, plus the compounding effect from Yield Yak.
+The strategy’s benefit to long-term stakers should incentivise stable liquidity in the base farm, benefitting the Moremoney protocol and its MONEY stablecoin.
+
+HOW TO DEPOSIT INTO THE FARM
+Go to the MONEYCRV farm on Yield YakClick on “Add Liquidity” which will direct you to Curve’s pageDeposit any of the stablecoins (DAI.e, USDC.e, USDT.e, MONEY)Head back to Yield Yak and deposit your tokens in the MONEYCRV poolA MetaMask window will pop-up asking you to approve and confirm the transactionWith every reinvest you’ll see your balance increase on the withdraw tab
+
+Pro Tip: When deciding whether to deposit either MONEY or DAI.e/USDC.e/USDT.e, you can check to see if one has less liquidity provided than the other. If so, you’ll receive a bonus for providing the less liquid of the two.
+You can use Yield Yak Swap to swap for the most profitable stablecoin to deposit.
+
+
+ABOUT YIELD YAK
+Yield Yak makes numbers go up. Ape into new autocompounder farms with quick releases and high yields. Swap on Yak for the best prices on trades with zero aggregator fees. Sit back and just earn, including big APYs on stablecoin farms.
+Web | Twitter | Docs | Telegram | Discord
+
+ABOUT MOREMONEY
+Moremoney is a protocol for borrowing against your liquidity pool tokens and other interest and non-interest bearing tokens, while still earning a healthy Interest on the collateral. The protocol has the ability to convert most popular tokens e.g ETH, WBTC, USDT, AVAX into interest-bearing tokens (ibTKNs).
+Twitter | Discord

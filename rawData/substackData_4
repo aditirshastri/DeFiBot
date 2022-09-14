@@ -1,0 +1,45 @@
+What is an IRO?
+
+Interest rate options (IROs) are financial derivatives similar to equity options that allow investors to directionally speculate on interest rates. Dopex is one of the first to introduce IROs in DeFi via their IR vaults. Option strikes are based on the annualized interest/reward rates for different Curve pools. Note that these reward rates vary and are paid out in return for providing liquidity to the pool. (This article will continue on the assumption the reader is familiar with Curve, veCRV tokenomics, gauge rewards, etc.)
+
+IROs are cash-settled and bought or sold based on notional amounts opposed to a numerical amount of contracts. You are able to use these options at 100-500x leverage which allows for some huge opportunities in comparison to solely receiving yield on your Curve position. For example, just 1% of a 100k pool position ($1k) could write up to $500,000 worth of options. Later we will look at different strategies, risk profiles and settlement scenarios for writing these options as it can all sound incredibly intimidating. Easily enough, you could also just purchase calls to long interest rates/reward APY or purchase puts to short interest rates. IROs are priced using the Black-76 model, a variant of the Black-Scholes model used for pricing derivatives like interest rate and futures options. Furthermore, Dopex charges a fee of 0.005% or 0.5bp on the notional amount of all options flow and then returns those fees back out to veDPX holders. Doesn’t sound like much but if the platform could generate even 10% of Curve’s TVL (currently at ~$10b) weekly, that would amount to about $50,000 every week back to holders or $2.6m paid out annually. And remember, if we assume an average of 250x leverage it would only take $4m worth of deposits to reach $1b notional.
+
+**On a bullish sidenote, many speculate Curve’s TVL could easily reach $100b as the deepest liquidity platform in DeFi along with its superior tokenomics. In conjunction, IROs could easily reach $100m TVL ($25b notional assuming an average of 250x leverage). Imagine the annual fees collected at those levels and the secondary effects on DPX/veDPX’s value.**
+
+Using IROs
+
+Using the IRO UI is easy enough and if not, the Dopex team has written a great user guide to their IROs here. Here we will go over strategies for IROs and simulate some trades using this spreadsheet, another great resource from the team. All of these scenarios will assume we are using options priced with 14 days till expiration and an implied volatility of 100%. These strategies have been written about in Dopex blogs, but we will try to go in-depth and calculate some different settlements.
+
+Synthetic CRV Position via Rate Options
+
+In this scenario we will be using rate options to go long CRV (inverse could be done to short). We will buy calls on the MIM3CRV pool, which is currently the only pool available with beta IROs. Ultimately reward rates majorly depend on the price of CRV if gauge weight and TVL of the pool remain the same. Note: Dopex uses the average TVL over the epoch to calculate reward rate, which prevents manipulation close to option expiry. In practice, it would be best to use this strategy only if you expect gauge weight and TVL to remain stable.
+
+The MIM pool has a current TVL of $312m we will assume remains stable, as mentioned earlier, over the epoch. This pool also has a 6.53% gauge weight meaning 6.53% of all CRV emissions go to liquidity providers in this pool. We are going to be buying IR calls to go long CRV @$1.16, because for one reason or another, we expect a ~15.5% price increase to $1.34 by expiration, which will positively impact pool reward rates by about 1%.
+
+Annual Emissions * Price Average TVL
+
+(16,298,880 * 1.16) / (312,000,000) = 6.05% reward APY
+
+(16,298,880 * 1.34) / (312,000,000) = 7.00% reward APY
+
+Note this is excluding yield from fees earned on trading activity
+
+Lets purchase $10m worth of calls with a strike @ 6% and 14 DTE, this will cost us a premium of $1900.21. 14 days later we were right, CRV is @$1.34 and reward rates are @7.00%. Our calls are now worth $3,835.62 at expiration, making us $1935.41, a 101% return. However, this is a quite risky and heavily exposed position so let's also write some OTM calls to hedge ourselves.
+
+At the beginning of the epoch, we will deposit $40k into the rate vault and sell $10m worth of calls with a strike @ 6.5% and 14 DTE, giving us $1,138.62 to collect in premium. Upon expiration these calls expired ITM so we must pay our option buyer the difference, totaling about $779.19 which will come out of our initial deposit. This puts our net profit at $2,294.84, a much more modest 2.7% return since we did have to risk the premium we paid for calls + 40k in option writing.
+
+Let's look at a different settlement scenario, in case we aren’t quite right on our bullish CRV estimate. 14 days later, the pool’s reward rate is only 6.5%, about half of what we had expected. Our calls are now worth only $1,917.81, but we get to keep the premium we collected earlier for writing those OTM calls. All together, we still made $1,156.22. Even if the reward rate falls to ~5.5%, we would only take a net-loss of ~$761 or -1.8% , instead of the full $1900 we paid for the calls.
+
+Balancing reward rates as a liquidity provider
+
+Let’s say we have a $100k LP position in the MIM pool and we’re happy earning our 6% APY. By selling ATM calls we could cap our profits but secure our rate. If we deposit just $1k into the IR vault, we can write $500k worth of calls (6% strike, 14 DTE, 100% IV) and collect $89.76 as premium. We will also buy $500k worth of calls (7% strike, 14 DTE, 100% IV) to hedge against our written calls, costing us $29.85 in premium paid.
+
+Two weeks again go by and the reward rate is now at 5%. Our purchased calls are now worthless but we get to keep our collected premium. Our Curve weekly rewards were obviously not as much as we wanted, we typically receive 6% APY and earn $230 in bi-weekly rewards. At 5% APY, we only earned $192. Using IROs though, we were able to net ~$60 and make up for our lost rewards, even outperforming our typical rewards by 10% with a net bi-weekly gain of $252.
+
+Now a different scenario, reward rates actually shoot up to 7% on the MIM pool. We lost ~$102 from the calls we wrote as well as the $29.85 premium we paid for buying the other calls since they expired worthless, putting us at a total loss of ~$132. However, with the reward rate increase, we earned $269 from our LP position which is an additional 39$ compared to what we typically expect. The increase allows you to minimize your losses to $93, only 0.1% of your entire Curve portfolio.
+
+Conclusion
+
+All in all, IROs are incredibly powerful. There are dozens of use-cases and strategies to try and we will definitely see DAOs/big whales taking advantage of these opportunities, all while earning veDPX holders huge fees and bringing even more value to the Dopex ecosystem. SSOVs, IROs and OTC options trading on-chain are the future of DeFi and will see huge growth with generalized adoption thanks to Dopex being at the forefront of innovation.
+
+Share

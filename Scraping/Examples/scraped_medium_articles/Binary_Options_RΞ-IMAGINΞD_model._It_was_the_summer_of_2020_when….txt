@@ -1,0 +1,80 @@
+url: https://thalesmarket.medium.com/binary-options-r%CE%BE-imagin%CE%BEd-model-bae39d5a5b4f
+
+Title: BINARY OPTIONS RΞ-IMAGINΞD MODEL. IT WAS THE SUMMER OF 2020 WHEN…
+by Thales
+
+INTRODUCTION
+
+Binary Options RΞ-IMAGINΞD model
+It was the summer of 2020 when Synthetix Binary Options were released.
+OG Spartans remember.
+Bid! Bid! Bid!
+Everyone was out there bidding on markets, claiming or exercising options. Several markets were created by community members, some even decided to create markets to heavily bet on their conviction. Many of those individual markets made it to 6 or even 7 digits of TVL (Total value locked).
+However, with the first hints of Autumn, it was noticed by Synthetix core contributors that the scope of this platform would need a whole dedicated team to make it blossom and address some much-needed changes to make the model more attractive for everyone involved.
+The potential was huge.
+That’s where we pitched in and Thales was born.
+After the initial phase, the community has raised some very important pitfalls of the model as it was and how it can be improved. The three most notable being:
+Bidding phase was too volatile and had no incentive for early biddersThe supply of options on a specific market was capped after the bidding phaseThe trading phase had no UI support for the actual trading
+We, at Thales, have done a lot of R&amp;D on how to improve these aspects and this is what we have come up with.
+
+NO MORE BIDDING PHASE
+Deciding the optimal length of the bidding phase was no small feat and the most usual approach was taking the default time of one week.
+Potential bidders would rightfully ask:
+“Why would I bid on the first day when I can wait to bid just before the end of the bid phase where I don’t expose myself to the skew volatility”?
+When enough people started asking this we started seeing fewer and fewer bids. Early liquidity for newly created markets dried up. Unfortunately, without early liquidity, the markets themselves lose attractiveness.
+So, what to do?
+What do you think of the bidding phase, Jack?
+Instead of doing a bidding phase, we decided to take a different approach where the user gets 1 long and 1 short option for every sUSD he deposits.
+This allows us to:
+Lose the bidding phase and start the trading phase as soon as the market is createdHave an unlimited supply of options per market
+This model focuses on binary options trading first and it gives a lot of flexibility to both market makers and traders.
+Unlike other models out there which expose liquidity providers to a significant impermanent loss risk, our model is very easy to hedge, as liquidity providers and market makers have total control of their liquidity at all times.
+The crucial driver for the success of our model is having a powerful and intuitive trading platform.
+This is where 0x limit orders come into the equation.
+
+ALL EYES ON TRADING PHASE
+We chose to develop on top of 0x SRA limit orders which provide off-chain order books with on-chain settlement.
+This mechanism is very intuitive and familiar to anyone who ever used a CEX order book with a few nuances:
+To create a limit order you sign a message proving you have ownership of the wallet submitting the order. This is gasless.Alongside the quantity and price of your order, you also need to define how long your order will be valid. In our case, the maximum valid time for an order is until the end of the trading phaseYou can cancel your order at any time. This operation requires gas.
+
+MARKET CREATOR PERSPECTIVE
+When a market is created there is a minimum deposit of 1000 sUSD. This means the creator gets 1000 long options and 1000 short options.
+Let’s walk through both possible result scenarios.
+If the creator just keeps both options until maturity, and the market resolution is LONG at maturity, then his LONG options will be worth and exercisable for 1000 sUSD, while the SHORT options won’t be exercisable and worth 0.
+Conversely, if the market resolution is SHORT at maturity and he keeps both options, his LONG options will be worth 0 and won’t be exercisable. The SHORT options will be worth 1000 sUSD in this scenario.
+However, the market creator can sell the options he doesn’t want to hold on the order book creating a more flexible approach for market makers.
+For example, he could sell his short options for 40c apiece, getting 400 sUSD for his initial batch of SHORT options. Assuming that the market resolution is LONG, at maturity, he gets an additional 1000 sUSD more from LONG options on that market.
+In this case, the market creator has earned a net profit of 400 sUSD plus the fees from any additional options minted on the market he created.
+Experienced market makers be like…
+
+LIQUIDITY PROVIDER PERSPECTIVE
+From the moment the market is created and up until maturity, anyone can mint options on that market by depositing sUSD.
+For every sUSD someone deposits, he gets 0.99 LONG and 0.99 SHORT binary options as there is a 1% minting fee (more about fees and token economics in an upcoming post).
+If someone deposits 100 sUSD in a market he gets 99 LONG and 99 SHORT binary options.
+He can then proceed to provide liquidity to the order book by offering his LONG binary options at 51c and his SHORT binary options at 51c, effectively earning 2% if both his orders are filled.
+This is just an example of a very simple strategy, we are confident many will arise.
+Liquidity providers are expected to be experienced order book experts and at the very least they could easily break even sUSD wise and earn THALES rewards by providing liquidity.
+There are lots of possibilities for creative play taking advantage of the order book in volatile markets.
+Your brain facing Thales order book.
+
+TRADER AND HOLDER PERSPECTIVE
+The majority of Thales users are expected to use the platform to buy, hold or trade options.
+For example, someone might find buying an option BTC&gt;100k@2021.12.31 at 20c (5:1 odds) a bargain, so he fills that order and holds the option.
+If the market is LONG at maturity that person has made 5x on his investment.
+However, during the length of the trading phase, there would be plenty of opportunities to sell his LONG binary options for profit during potential bull runs where other people would gladly pay more than 20c per LONG binary option.
+This opens up so many possibilities for traders.
+Are you excited about Thales, yet?
+The man, the inspiration, galaxy brain.
+
+THALES UX
+User experience is sometimes a neglected aspect of the DeFi experience that could help boost engagement and usage of the different platforms.
+We are giving special attention to the trading phase as Thales’ primary focus at this point is to leverage the familiarity with order books to engage people in binary options trading.
+Here is a sneak peek of our trading UI 👀.
+And looking slicker every day…
+
+WHAT’S NEXT?
+We are incredibly excited to work on Thales and can’t wait for the MVP launch.
+We believe the model we have created is one of a kind in the DEFI landscape and is a perfect fit alongside the trading platform we have built.
+If you want to join us for the ride, get the latest updates on Thales’ development or want to ask us a question then our Discord is the place for you.
+Happy to engage and keep building!
+Danijel

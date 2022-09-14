@@ -1,0 +1,93 @@
+url: https://medium.com/opyn/introducing-opyn-developer-toolkit-2bfd5bcc7a92
+
+Title: INTRODUCING OPYN DEVELOPER TOOLKIT
+by Wade Prospere
+
+INTRODUCTION
+
+Introducing Opyn Developer Toolkit
+
+tl;dr — Today we are announcing the release of Opyn’s Developer Toolkit, a suite of resources to make it easier for developers to build options products in DeFi.
+BUIDLIng in DeFi just got easier! Since launching v2, we’ve been talking to some amazing devs about building really cool projects on top of Opyn. You can check out some of our previous blogs (What to BUIDL I, What to BUIDL 2) for some idea inspiration. We’ve been protocol-first for a while and we want to improve the developer experience even more!
+Recently with the launch of awesome projects such as Ribbon and Opeth and Dave White’s Everlasting Options paper, we’ve received a bunch of interest from developers wanting to build the ideas we’ve listed out, but had a hard time getting started. To make building easier, we’ve taken inspiration from Austin Griffith’s Scaffold ETH and Uniswap’s Periphery contracts to create a suite of resources that make it easier for developers to get started. We plan to keep adding to the Developer Toolkit, so expect more resources, templates, and starter contracts soon! We’d also love to get your feedback, so please hop into the Opyn discord, we’re happy to answer qs in #dev.
+
+LEARNING RESOURCES
+Options are an incredibly versatile financial instrument — in fact you can create any financial payoff using just put and call options. Options can also earn money in any market condition, pretty cool right? Here are some great resources to get started with learning about options:
+Khan Academy video seriesInvestopedia’s Options Guide
+
+OPYN DEVELOPER TOOLKIT
+The purpose of the Developer Toolkit is to provide developers with a suite of resources to make it easier to build options products in DeFi. Below are the initial pieces of the toolkit we are releasing at launch. We plan to continue building tools, templates and utilities to improve the developer experience on Opyn.
+
+VESTING CALL OPTIONS
+Vesting Options (Convexity Protocol) RepoVesting Options (Convexity Protocol) Docs
+Use Opyn v1 to create physically settled vesting options for DAOs to emulate options given to startup employees for equity.
+An employee option is the right for employees to buy shares of stock in the company at a predetermined price in the future. Or put another way, options are the way in which you purchase shares of stock in the startup. For DAOs, vesting options are a way to align incentives and reward stakeholders. DAO vesting options can help:
+Attract and retain the best possible talentPromote the achievement of key strategy and financial performanceMotivate long-term value creation; andAlign the interests of parties receiving token compensation with all stakeholders
+
+LIQUIDATION BOT
+Liquidation Bot RepoReadme from Gamma RepoLiquidation Bot Docs
+Opyn is launching the first-ever on-chain margining system for partially collateralized options on Tuesday, June 29. The upgrade will allow options to be collateralized with less than their max loss (&lt;1 asset for call, &lt;strike for puts), increasing capital efficiency and leverage for DeFi options.
+Sellers must maintain a minimum amount of collateral in their vault to secure the options they have sold. If a seller fails to do so, their vault may be liquidated: their collateral will be seized and auctioned off to repay their debts.
+Liquidation bots can be used to discover undercollateralized vaults and earn a profit by liquidating someone at a price that is higher than the fair price in the market.
+With partial collateralization, sellers must maintain a minimum amount of collateral in their vault to secure the debt they owe. If a seller fails to do so, their vault may be liquidated and their collateral will be seized and auctioned off to repay their debts.
+We’ve included an open source implementation that developers can start with or modify to run their own bot for Opyn’s partially collateralized options. The liquidation bot would permit anyone to initiate the liquidation of an undercollateralized vault. The action liquidates vaults via a reverse Dutch auction that is triggered via a Chainlink price with a specific timestamp.
+
+UNISWAP V3 PARTIALLY COLLATERALIZED OPTION LIQUIDITY POOL FOR OPETH
+Uniswap V3 can be a very capital efficient AMM for assets that have bounded prices. One such product that has recently launched is Opeth, which combines an Opyn option with ETH, to create a minimum value structure.
+With the launch of Opyn’s partially collateralization, we will be launching a partially collateralized 31-Dec 1280 Opeth vs ETH univ3 pool that will allow people to protect their ETH by swapping from ETH to Opeth as well as trade the underlying option that makes up the Opeth in the pool. This is meant as a proof of concept experiment and framework to demonstrate how option structures with bounded values can be traded on Univ3 in a more capital efficient manner, especially so when less capital is required to mint the options as compared to max loss margin.
+ETH vs Opeth has a minimum price of 1 ETH per 1 Opeth, which occurs when the option is worthless and 1 ETH = 1 ETH. It does not have a maximum price as if ETH goes to 0 infinite ETH would be required to purchase 1 Opeth, as Opeth’s minimum value is the option strike.
+However, you can LP on univ3 with tighter bands if you have confidence in the asset range. For our pool, we plan to seed with a LP range of 1–1.71, which corresponds to an ETH price of ~750 and higher at expiry of the option. If ETH drops to lower than 750, LPers using a range of 1–1.71 will own 100% ETH and will have sold all of their Opeth. This breakeven is higher prior to expiry, due to time value, so if ETH dropped tomorrow, you would own 100% ETH at a higher price than 750.
+In conjunction with the bounded liquidity, we will be launching this pool using partially collateralized options, which will allow more capital efficiency from a pool of this structure.
+The LP profile is fairly benign as IL is well bounded, particularly above the strike of the option and in many scenarios with sufficient trading volume LPs could make a positive return on capital, especially since we can reduce capital requirements by partial collateralization as well as Univ3 ranged liquidity.
+
+PERPETUAL VAULT TEMPLATES
+Perpetual Vault Template RepoPerpetual Vault Template Docs
+As part of Opyn’s Developer Toolkit, we created resources that can be used as starter code or inspiration for building different types of perpetual strategies using options.
+We’ve had a number of developers interested in building different types of options strategies, but many of them have had to repeat work or had trouble getting started. These resources can allow teams to more quickly develop option-based strategies or can be used as starter code tailored for different use cases.
+Some of the ideas below can serve as inspiration or examples of how products can be built with Opyn’s smart contract architecture. This could mean integrating with protocols like Compound or Yearn or building out perpetual strategies such as covered calls, the wheel or principal protected notes, just to name a few!
+Perpetual Vault Options Strategies:
+Sell covered call options and earn premiums on ETH
+A covered call is a popular options strategy used to generate yield from options premiums. Create a perpetual vault that sells some % OTM call options on a weekly or monthly basis.
+Sell Puts and earn premiums on USDC
+Selling puts is another popular options strategy used to generate yield from options premiums. Create a perpetual vault that sells some % OTM Put options on a weekly or monthly basis.
+Sell physically settled puts (WIP)
+Sell OTM ETH Puts which are physically settled. This is a similar behavior to placing limit orders on ETH. If ETH drops in value, you get cheap ETH, and if not, you earn % premiums on USDC.
+Arbitrary collateralized put or call options using Compound
+Supply ETH, BTC, or any arbitrary asset to Compound and borrow USDC to sell put or borrow ETH to sell call options.
+Principal-Protected Note with Compound
+Create structured products such as principal protected notes, by lending on Compound and using interest from Compound deposits to buy or sell options.
+Principal-Protected Note using Yield.is (WIP)
+Supply DAI which is used to buy zero coupon yTokens on Yield that redeem for 100% at maturity and use the excess DAI to buy options
+Trading Options
+To make trading options as flexible as possible we’re providing different ways for dev teams to enable options, such as Airswap, 0x limit and rfq, and auctions. You can plug in these trading venues into your “vault” based on your design.
+Airswap
+Airswap enables peer-to-peer trading on Ethereum. Trade oTokens with all peers on the AirSwap network or execute large OTC trades with market makers.
+0x Limit and RFQ
+Limit Orders
+0x Orderbook enables free limit orders for options and peer to peer liquidity
+RFQ
+0x’s Request for Quote (RFQ) system allows teams and professional market makers to bring CEX liquidity directly to DEX users to support great pricing for medium and large options trades
+Auctions
+Using Opyn v2 and Gnosis Auction, enable fair price discovery for options. The aim is to make it easy for teams building on top of Opyn to discover a fair price for options, allowing auctioneers to determine a minimum price they are willing to sell their options for, and bidders to set the maximum price they are willing to pay for options.
+Example Use Cases + Ideas to Build
++ Your amazing new idea
+The possibilities with options are limitless — we’re so excited to see what new ideas you’ll come up with! We’re more than happy to brainstorm ideas and answer any questions :) You can find us in the Opyn discord
+Security
+The Opyn Developer Toolkit is in a relatively early stage of its development cycle, so none of the contracts or utilities have been fully formally audited. We’ve gone through some peer review with security experts on parts of the codebase and will continue to do so but that’s not equivalent to an audit. We’re scheduling an audit at the moment for the perp vault templates, we will update the security status once we have any of the contracts audited. We are releasing these initial parts of the Opyn Developer Toolkit to allow teams to start building and experimenting, but caution should be used until more formal review and audits are conducted.
+Security Details
+
+EXISTING PROJECTS BUILDING ON OPYN
+Ribbon Finance
+Earn high yield on your cryptoassets with automated option strategies
+Opeth
+Fuse put options with underlying collateral to issue stablecoin loans
+Fontis
+Earn high yield on ETH. Each week Fontis’ vault mints Out Of The Money (OTM) call options for depositors.
+Optional
+Optional lets users deposit funds into managed vault-style tokens. Depositors earn yield while the social trader manages the vault strategy. Optional’s first vault uses a covered call strategy.
+Opyn Trade Bot
+Twitter bot that that tweets live trades and platform analytics. Created by Krugman.
+Gamma Portal
+Advanced options chain, oToken Factory, and OTC trades
+Opyn Monitor
+Powerful interface for users to keep track of their Opyn v1 positions and engage in advanced trading

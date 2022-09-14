@@ -1,0 +1,58 @@
+url: https://medium.datadriveninvestor.com/decentralized-society-what-is-desoc-c0b74e66a234
+
+Title: DECENTRALIZED SOCIETY, WHAT IS DESOC?
+by Geoffrey Gardiner
+
+INTRODUCTION
+
+Decentralized Society, what is DeSoc?
+Decentralization comes to Society, what is it all about?
+
+In 2022, Decentralized Society: Finding Web3’s Soul was released.
+Read the full paper here: Official Link
+It is a 37-page PDF, and for a quick understanding and breakdown, the following article will summarise it.
+
+INTRODUCING “SOULBOUND” TOKENS (SBTS)
+In the abstract, SBTs or Soulbound Tokens are introduced.
+SBTs are based on the idea of relationships, and our general interactions in society. Where NFTs (nonfungible tokens) represent items and property to be bought and sold, SBTs represent trust in a person or company and what they can offer.
+Very similar to credit scores, where a Bank works with companies and will update a customer's credit, the banking group (customer, business, bank) form a rating that can be achieved and attached to a profile, with trust given after time.
+If a customer pays their bills and pays off their debts on time, they can receive a higher trust or credit.
+SBTs help store this credit or trust, so that customers can access markets and be seen as good, rather than high risk.
+Credit scores are seen very much as a web 2.0 system, reliant on banking and third parties, which is why SBTs are seen as the way to push this away form old models, into the new Web 3.0 and Blockchain way of things. Geoffrey Gardiner
+
+HOW DO SBTS WORK?
+Firstly, they are non-transferable tokens.
+This makes sense because if Joe Blogs can buy someone's trusted account, which we see happen a lot on platforms like Reddit, Facebook and Twitter, it would completely destroy the vision of building up trust that can be accepted by others.
+“soulbound” tokens (SBTs) represent commitments, credentials, and aliations. Such tokens would be like an extended resume, issued by other wallets that attest to these social relations.
+Also, if Joe Blogs begins to destroy his trust, and stops paying his bills or reneging on agreements, his SBTs for that level of trust can be removed.
+They do not last forever but allow for a live check on anyone's status.
+This would not be limited to credit scores but can be used for memberships, or access to any marketplace that rewards users for following the rules and abiding by good principles.
+In education, Colleges, Universities and other trusted issuers could become SBT allocators. Giving learners SBTs from their body (soul) proves they are a part of that organization and can be seen as trusted to hold the qualifications they say they have.
+Trust can be confirmed and then shared or shown quickly. In current systems, to confirm if someone holds a degree, or qualification, it would take large amounts of effort, yet with a digital fully visual SBT, it can be sent to view globally 24/7 365.
+Lying about what university you attended, or what grade you got, would be a thing of the past.
+
+HOW WILL SBT USAGE START?
+As discussed, SBTs will hold very personal data, including education, credit and other important credentials. This means that if holders what to share their information, they must make this visual to people/organizations on the blockchain.
+Initially, in the paper, CVS are stated as the initial step into this level of sharing information, where connecting and then working with others becomes feasible.
+Joe Blogs shares his CV confirmed by Employers, or Educational providers, and others can trust to hire, and work with Joe.
+This could also prove to be enough to find funding for projects, and starting new business ventures if someone / some business wanted to invest in this persons knowledge, idea and skills.
+
+SBTS IN MARKETING AND GROWTH
+In current models, airdrops are the largest and best way to increase communities and grow networks. As we know, they have flaws and normally end up in a mixture of users' hands, who are unlikely to ever use or want the free token now in their wallet.
+Souldrops, the new SBT version, combats this because if we can confirm where someone has studied, what memberships they have, and what activity they are doing, it is very easy to find the right users to give offers to.
+For example, a sports team wants to ask fans to come on tour. Searching for SBTs, where someone is a fan, has attended games, holds membership, and has bought this season's merchandise, the very best people can be sent or found who would want to be involved.
+This applies to university courses, where learners have studied in one field and could be asked to attend employment events for their dream jobs, or for environmental rallies where people want to come together and partake in helping.
+It is a very sure way of confirming who would fit and would benefit best from being a part of anything. Bringing souls together who have the same goals.
+
+DEFI VS DESOC
+Rather than build on DeFi’s trustless premise, DeSoc encodes trust networks that underpin the real economy today and enables us to harness them to generate plural network goods resilient to capture, extraction, or domination.
+In Defi we have trustless-based systems, but in DeSoc, we bring in trust through confirmed parties to offer a CV/Credit report that can prove the risk or legitimacy of people and companies on a live and updating basis.
+Over time, we will see new matrices of cooperation between physical and digital networks, reliant upon and extending the social interconnections they are built on. It is precisely this intersecting, partly nested structure of ever growing network cooperation across digital and physical worlds that DeSoc enables.
+People and who you know, or who you can trust is a huge part of how many of us partake in business and make decisions. Social systems are key to our lives, and bringing that one step further with Decentralized systems, is why DeSoc has value.
+Sharing that trust and knowledge with others through visual and open systems, can help more than just small networks, but grow it on a larger scale to help others solve the same problems.
+Everyday questions such as;
+What plumber can I trust to do a good job? 
+Which charity can I work with to help what I'm passionate about? 
+Which person should I hire for my company?
+DeSoc aims to create a decentralized society where people can connect and work towards the same objectives.
+For those who have time, reading the paper is advised as it dives into more aspects, examples and use cases for how and why this would benefit current systems.

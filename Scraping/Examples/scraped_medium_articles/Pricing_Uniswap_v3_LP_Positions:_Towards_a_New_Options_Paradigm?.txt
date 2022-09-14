@@ -1,0 +1,51 @@
+url: https://lambert-guillaume.medium.com/pricing-uniswap-v3-lp-positions-towards-a-new-options-paradigm-dce3e3b50125
+
+Title: PRICING UNISWAP V3 LP POSITIONS: TOWARDS A NEW OPTIONS PARADIGM?
+by Guillaume Lambert
+
+INTRODUCTION
+
+To establish a Uniswap v3 LP position, one has to lock an asset (eg. ETH) and a numéraire (eg. DAI) between a user-specified range defined by a lower tick tL and an upper tick tH. The value of such a Uniswap v3 LP position is
+
+where S is the price of the asset in terms of the numéraire, K is the strike price √(tL*tH), and r is the range factor √(tH/tL). The range factor determines how “sharp” the transition between holding the asset and the numéraire is.
+I described in details in several other posts how the value of a Uniswap v3 position is analogous to a short put for narrowly defined (ie. single-tick) positions.
+What about Long options? If one is able to borrow a Uni v3 LP position and pay it back at a later time, this is equivalent to the purchase of a long put. The user would pay a fixed premium when borrowing the LP position.
+
+What should that premium be? Can we use an established framework like the Black-Scholes model to price a Uni v3 position directly?
+The answer is Yes.
+In this post, we will show how we can achieve this by decomposing V(S) into a short put component, which corresponds to a single-tick position, and a range component, which only exists between the upper/lower ticks.
+
+OPTIONS PRICING FROM FEYNMAN-KAC
+Before deriving the price of a Uni v3 option, it is worth revisiting how regular options are priced. There are many ways to derive the price of a regular call option using the Black-Scholes model. My favorite way is to use the Feynman-Kac formula, which states value of an option u(S,t) is given by:
+
+where V(x, T) is the payoff function at expiration and the average ⟨ ⋅ ⟩ is taken over the probability measure of a Geometric Brownian Motion.
+Understanding the meaning of the Feynman-Kac formula is simple: the value of an option at a time T is found by computing the average value of the payoff function over all possible price movements between now and a time T in the future.
+Physicist Richard Feynman initially developed a similar equation in the context of the path integral formalism of quantum mechanics, where the “expected” location of a particle is determined by the weighted sum of all possible paths the particle can take. Mark Kac realized that they were working on a similar problem when he heard a talk by Feynman when they were both at Cornell, and out of that collaboration emerged the Feynman-Kac formula (source).
+So, computing the Feynman-Kac formula directly, we get:
+
+For a call option, the payoff V(S,T) = max(S-K,0) and for a put option V(S,T) = max(K-S, 0). Thus, the value of a call and put option at time t is given by:
+
+Proving that this agrees with the Black-Scholes pricing is left as an exercise to the reader.
+
+PRICING UNISWAP V3 OPTIONS
+The Feynman-Kac formula makes it easy to compute the value of exotic options. We will apply the Feynman-Kac formula to find the value of a Uniswap v3 option.
+To make things a bit simpler, let us first decompose the value of a Uni v3 LP position into two distinct components V(S, t) = V_p(S, t) + V_ρ(S, t), where V_p=-max(K-S, 0) is the payoff of a short put option, and range payoff V_ρ is given by:
+
+We can graphically see how the put and range payoffs are related to the value of a Uni v3 position: the range payoff is maximum at the strike price and reaches zero at the upper/lower ticks (I’m plotting the negative of the range payoff for simplicity).
+
+Using this decomposition, we can explicitly solve for the value of a Uni v3 option at a time t using the Feynman-Kac formula. Doing this, we get:
+
+where Put(S, t) is the familiar price of a short put option at strike K given by Black-Scholes.
+The “range option “ ρ(S,t) component is a strictly positive term that corresponds to the value of the ranged part of an LP position. Solving the Feynman-Kac formula, we obtain a rather complicated expression for ρ(S,t):
+Yep, you read that right. Erf.
+Although we’re not interested in the details of ρ(S, t) for now, we can graphically see that ρ(S,t) looks like this:
+
+Can we make this expression simpler?
+The expression for the value of a Uni v3 position is rather complex. Luckily, we can simplify the analysis significantly.
+As shown in my post about creating perpetual options in Uniswap v3, a good approximation for a Uni v3 LP position with range factor r is a regular put option at time T_r, where
+
+Therefore, we can reduce the expression for the option pricing given by the Feynman-Kac formula to a much simpler expression that’s taking advantage of the range factor/DTE relationship above. Specifically, we get:
+
+In other words, the value of a Uniswap v3 option is equivalent to a short put option that expires at a fixed number of days to expiration (DTE) so that DTE &gt; 0 at expiration.
+The price of a Uni v3 option is still subjected to theta decay before expiration, but gamma would be capped at the gamma of a 45DTE option.
+How accurate is this approximation? We can see in the figure below, which compares the fixed-DTE approximation with the computed value of a Uni v3 option, that the difference between the fixed-DTE put approximation and the exact solution is not significant for range factors less than about 2:

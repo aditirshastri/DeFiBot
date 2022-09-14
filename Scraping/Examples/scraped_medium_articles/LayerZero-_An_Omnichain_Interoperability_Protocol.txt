@@ -1,0 +1,53 @@
+url: https://medium.com/layerzero-official/layerzero-an-omnichain-interoperability-protocol-b43d2ae975b6
+
+Title: LAYERZERO- AN OMNICHAIN INTEROPERABILITY PROTOCOL
+by Ryan Zarick
+
+INTRODUCTION
+
+LayerZero- An Omnichain Interoperability Protocol
+tldr; Interoperability that actually works
+
+For cross-chain bridging and messaging, almost every existing approach falls into one of two broad categories. The first is having a consensus forming middle chain validate and forward messages between chains. The second is running a light node on-chain. Let’s discuss.
+
+MIDDLE CHAIN
+Middle chains receive, validate, and forward messages between chains. In this model, the middle chain is granted full signing power to all messages, making it a single point of failure. In the event of consensus corruption, all liquidity can immediately be stolen on all chains. With today’s middle chains bonding only hundreds of millions of dollars while securing tens of billions, as these chains become increasingly decentralized, it is not a matter of if but when this massive honeypot will be exploited.
+
+ON-CHAIN LIGHT NODE
+
+On-chain light nodes receive and validate every block header for each pairwise chain on the opposing chain. Transaction proofs containing messages are forwarded and validated on chain against the block headers. This is the most secure way to transmit messages between chains. Unfortunately, it’s also the most expensive costing tens of millions of dollars per day per pairwise chain to run an on-chain light node on Ethereum.
+
+ULTRA LIGHT NODE
+On-chain light nodes are extremely secure but also extremely expensive. Middle chains are inexpensive but less secure.
+
+Introducing the Ultra Light Node (ULN), the security of a light node with the cost-effectiveness of middle chains. This is achieved by performing the same validation as an on-chain light node; but instead of keeping all block headers sequentially, block headers are streamed on demand by decentralized oracles.
+
+LAYERZERO
+LayerZero is a User Application (UA) configurable on-chain endpoint that runs a ULN. LayerZero relies on two parties to transfer messages between on-chain endpoints: the Oracle and the Relayer. When a UA sends a message from chain A to chain B, the message is routed through the endpoint on chain A. The endpoint then notifies the UA specified Oracle and Relayer of the message and it’s destination chain. The Oracle forwards the block header to the endpoint on chain B and the Relayer then submits the transaction proof. The proof is validated on the destination chain and the message is forwarded to the destination address.
+
+
+SECURITY PROPERTIES
+In breaking up responsibilities between the Oracle and Relayer, LayerZero leverages the security properties of the established oracles (Chainlink and Band) with an additional layer of security via the open relayer system. While this may seem only a small difference at first glance, its implications are quite profound. First, it means that the worst-case security of this new network still reduces to being as secure as the oracle. If you use Chainlink as your oracle any malicious action in the system is still predicated on first being able to defeat the Chainlink DON (no easy task). Even if the Oracle’s consensus is corrupted, it also requires that the Relayer is actively colluding. For example, in the most extreme case where the Oracle A’s consensus is corrupted and the Relayer A is colluding, all of this risk is only borne by those User Applications accepting messages from Oracle A and Relayer A. All User Applications using Relayer B-Z, running their own Relayer, or using Oracle B-Z remain completely unaffected. This is a massive transformation in terms of risk model from the previously described middle chain systems.
+
+
+USE CASES
+Today cross-chain messaging is synonymous with bridging, but there is much more you can do with LayerZero than simply bridging assets. LayerZero enables cross-chain {state sharing, bridging, lending and borrowing, swaps, governance} And much more!
+
+STATE SHARING
+SushiSwap exists on twelve different chains with each instance running in a siloed ecosystem. If they want to sync state with their main Ethereum instance, they’ll have to write code for using Wormhole, Rainbow Bridge, Polygon Network Bridge, Avalanche Bridge, etc. The end result is eleven sets of code, with eleven unique interfaces and eleven different security properties. Since the ecosystem of bridges and new L1/L2s is constantly in flux, this becomes an unmanageable proposition.
+
+When using LayerZero, SushiSwap would have one single interface and code base for all cross-chain pairs. They only need to implement send and receive functions. Send consists of forming a message for the destination chain and receive simply interprets that message.
+
+UNIFIED LIQUIDITY BRIDGE
+Bridges today compete to attract liquidity providers (LPs), fragmenting liquidity between bridges and their individual pairwise pools. Instead of having one pool that provides liquidity for an asset to all connected chains, LPs must choose a single pool that connects to one chain. LayerZero enables the holy grail of bridging: unified liquidity across all chains with guaranteed finality on the source chain. This means when a user transfers an asset from Chain A to Chain B, the user is guaranteed the asset on Chain B and the LP providers receive fees from all incoming transactions to Chain B regardless of the source chain.
+
+
+SWAPS
+Existing AMMs can be wrapped to perform cross-chain swaps from one asset to another without the need to modify any existing code. User’s will be able to swap from ETH on Ethereum to SOL Solana in one single transaction from the source chain.
+
+LENDING AND BORROWING
+Currently, if a user has money on chain A but wants to farm on Chain B the user would have to collateralize on Chain A, borrow, bridge (fee), swap (fee), farm on the destination chain, swap back (fee), bridge back (fee), repay the loan, and un-collateralize. With LayerZero you can collateralize on Chain A, borrow on the destination chain, farm, repay, and the collateral is unlocked; skipping the four bridging and swapping fees.
+
+
+THE OMNICHAIN FUTURE
+LayerZero will connect all chains seamlessly, having users unaware they are even using it. It will enable current and new Decentralized Applications to expand beyond the borders of EVM or Non-EVM, creating the world’s first omnichain applications. We welcome you to join in the omnichain revolution, come talk to us at Telegram, Discord, Twitter, Website.

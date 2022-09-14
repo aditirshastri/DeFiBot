@@ -1,0 +1,66 @@
+url: https://medium.com/dydxderivatives/decentralized-lending-an-overview-1e00fdc2d3ee
+
+Title: DECENTRALIZED LENDING: AN OVERVIEW
+by Antonio Juliano
+
+INTRODUCTION
+
+Decentralized Lending: An Overview
+
+To date, the biggest sector by far for decentralized applications has been lending &amp; borrowing crypto assets. Several high quality products have been built that allow users to borrow and lend directly on the Ethereum blockchain with no intermediaries. Decentralized lending products are available to anyone, anywhere, and require only an Ethereum wallet to use. These products are already seeing real usage today with total USD volumes in the hundreds of millions.
+
+USE CASES
+Lending
+Crypto holders can lend on decentralized lending platforms to earn passive income on their holdings through interest fees paid by borrowers. This is an attractive option to lenders as they can earn relatively low risk interest on their existing holdings without entrusting their private keys to a 3rd party centralized service.
+Borrowing
+The dominant use case for borrowing crypto is margin trading. Borrowing allows traders to get leverage which multiplies gains and losses while trading, as well as short selling, a trading strategy which makes money when the price of an asset goes down.
+Margin trading involves borrowing an asset, and then immediately selling it. For example, you could borrow DAI (a stablecoin) and then buy ETH with it, which would let you buy more ETH than you would otherwise be able to (giving you leverage on ETH). Of the 4 top lending protocols discussed below, all except for dYdX focus on just the borrowing &amp; lending side of margin trading, meaning traders have to go to other exchanges to execute the sell of the borrowed funds.
+
+COLLATERALIZED BORROWING
+Currently, all relevant decentralized lending platforms use a form of borrowing called collateralized borrowing. Collateralized borrowing means that borrowers must lock up collateral of greater value than the value of their borrow. The collateral serves to ensure lenders will be repaid even if the borrower never repays the loan.
+For example, say you want to borrow $100 worth of ZRX, you would have to lock up more than $100 worth of collateral in another asset. Say you choose to lock up $150 worth of ETH. Now if you default on your loan, the lender who lent you $100 of ZRX can just seize your ETH, which is worth even more.
+However, the price of both ZRX and ETH can change over time. Say the price of ETH falls, and now your collateral is only worth $90. Now the lender could not get their money back by seizing your ETH anymore, because it wouldn’t be worth as much as your debt. This is where the concept of a liquidation comes in.
+A liquidation is when your borrow is automatically repaid by selling off some of your collateral to buy back the asset you owe to the lender. Liquidations occur when your borrow falls below some required level of collateralization (usually between 115%–150%).
+
+DECENTRALIZED LENDING PLATFORMS
+MakerDAO
+MakerDAO is both the most complex and widely used decentralized lending platform available today. MakerDAO is the creator of DAI, which is a cryptocurrency with a target price of $1 (known as a stablecoin).
+On MakerDAO, there are no lenders, and the only asset available to borrow is DAI. Borrowers can borrow a newly created supply of DAI by locking up ETH as collateral, and must maintain a 150% collateralization ratio. The interest rate on DAI is global, and is set through governance by MKR token holders. The interest rate has recently been fairly volatile, increasing from 2.5% to 19.5% in a bit over a month.
+MakerDAO has a webapp where you can borrow DAI through a margin account known as a CDP (collateralized debt position). Of all the discussed lending platforms, MakerDAO is also the most difficult to use from a UX perspective.
+Opening a MakerDAO CDP via cdp.makerdao.com
+Assets: DAI (Borrow Only), ETH (Collateral Only) [MakerDAO plans to add more collateral assets with their upcoming release of muli-collateral DAI]
+Interest Rates: Variable. Set through governance by MKR token holders
+Collateral Requirement: 150% minimum
+Liquidation Penalty: 13%
+Compound
+Compound uses a money market based approach, with global pools of capital for each supported asset. Each asset has a global borrow and lend interest rate which all borrowers pay &amp; lenders earn. These interest rates are variable and set algorithmically based on the percent of each pool that is being borrowed.
+Compound has an app which is fairly simple to use, and allows lenders and borrowers to interact directly with the protocol. Lenders can deposit funds into lending pools, and will continuously earn interest. Lenders can withdraw their assets at any time, as there are no fixed loan durations.
+Borrowers must collateralize their accounts with 150% of the value being borrowed. For example if you want to borrow 1 ETH from Compound, you could deposit 225 DAI into the Compound DAI pool and then borrow 1 ETH from the ETH pool (assuming 1 ETH = 150 DAI — this would be 150% collateralized). Borrows on compound have unlimited duration.
+Borrowing REP &amp; Lending DAI on compound.finance
+Assets: DAI, ETH, ZRX, REP, BAT
+Interest Rates: Variable. Set algorithmically based on supply &amp; demand
+Collateral Requirement: 150% minimum
+Liquidation Penalty: 5%
+Dharma
+Dharma utilizes peer-to-peer lending to match individual lenders directly with borrowers. On Dharma, borrowers and lenders enter into fixed term / interest rate loans.
+Dharma has built a simple to use site where users can go to borrow and lend, and is the only mentioned product that does not require the use of an Ethereum wallet such as MetaMask. Currently Dharma’s product (though smart contract based) is centralized, but they have solid plans to decentralize over time.
+Lenders can use Dharma to offer fixed-term loans of up to 90 days, and start earning interest only after they are matched with a borrower. Lenders’ funds are locked for the duration of the loan.
+Borrowers on Dharma lock up collateral equal to 150% the value of the assets being borrowed. Borrows have a maximum 90 day duration, and fixed interest rates for the duration of the loan.
+Borrowing DAI on dharma.io
+Assets: DAI, ETH
+Interest Rates: Fixed. Rates set centrally by Dharma
+Collateral Requirement: 150% initial, 125% minimum
+Liquidation Penalty: Unclear (?)
+dYdX
+The main difference between dYdX and the previously mentioned lending platforms is dYdX natively supports trading in addition to borrowing / lending, meaning that traders can margin trade without leaving the platform for another exchange. dYdX’s product is targeted at margin traders, and is more complex than either Compound or Dharma, while also supporting more functionality.
+Under the hood dYdX uses a pooled based lending approach and algorithmic variable interest rates similar to Compound. There are no lockup periods or maximum durations while lending on dYdX.
+On dYdX borrowers must lock up 125% collateral, meaning dYdX offers the highest leverage (up to 4x) of any decentralized lending platform. Borrows / positions on dYdX are limited to 28 days.
+Opening a Leveraged Long position on trade.dydx.exchange
+Assets: DAI, ETH, USDC
+Interest Rates: Variable. Set algorithmically based on supply &amp; demand
+Collateral Requirement: 125% initial / 115% minimum
+Liquidation Penalty: 5%
+
+CONCLUSION
+Within the past year we’ve seen the emergence of quality decentralized lending platforms. The ability to borrow and lend on a completely open platform is a fundamental advancement in financial markets, and is already seeing real volume today.
+At dYdX we’re excited to build products that are tailor made for the main use case of crypto lending: margin trading. If you’re excited about building next-generation open financial products and would like to join the team at dYdX, check out our open roles!

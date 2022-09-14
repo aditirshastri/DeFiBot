@@ -1,0 +1,22 @@
+url: https://lambert-guillaume.medium.com/how-to-deploy-delta-neutral-liquidity-in-uniswap-or-why-euler-finance-is-a-game-changer-for-lps-1d91efe1e8ac
+
+Title: HOW TO DEPLOY DELTA-NEUTRAL LIQUIDITY IN UNISWAP —  OR WHY EULER FINANCE IS A GAME CHANGER FOR LIQUIDITY PROVIDERS
+Medium
+
+INTRODUCTION
+
+How to deploy delta-neutral liquidity in Uniswap — or why Euler Finance is a game changer for liquidity providers
+
+TL;DR:
+Providing liquidity in Uniswap is limited to taking directional positions with “positive delta.” This means LPs will not benefit from participating in bearish token pools.Protocols like Euler Finance allows users to incorporate short positions into their strategies.Combining a short position with Uniswap v2 or v3 LP tokens unlocks neutral and bearish strategies for liquidity providers (LPs).It’s a Win-Win-Win scenario: 
+ 1. LPs can deploy directionally strategic positions on Uniswap.
+ 2. Uniswap traders benefit from evenly distributed liquidity in all pools.
+ 3. Depositors earn more yields on Euler due to the Uni LP borrowing use case.Tools/calculators in this post:
+-Uni v2 LP hedging: https://www.desmos.com/calculator/pkscywsiiw
+-Uni v3 LP hedging: https://www.desmos.com/calculator/669zg1rmvb
+Disclaimer: This article has been written with financial support from the Uniswap Grants Program. This article is also being published as part of the Eulerian Trail content creator initiative from Euler Finance.
+
+BEARISH ASSETS AND UNISWAP LPS
+In Uniswap, liquidity providers (LPs) benefit the most from participating in pools for which the token price increases over time. That’s because digital assets will be sold as the price increases, which results in a net positive P&amp;L when denominated in ETH or stablecoin.
+What happens when a token price decreases instead? Since LPs lock tokens at a 50:50 ratio in Uniwap v2, any price decrease results in the liquidity provider purchasing more tokens. This would constitute a net loss by the time they exit their liquidity position (although not as large as holding the token).
+Thus, the optimal behavior for LPs is to withdraw all assets from bearish pools and swap the assets to ETH or stablecoin in order to protect their portfolio’s value.

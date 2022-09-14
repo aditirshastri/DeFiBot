@@ -1,0 +1,50 @@
+url: https://lambert-guillaume.medium.com/uniswap-v3-lp-tokens-as-perpetual-put-and-call-options-5b66219db827
+
+Title: UNISWAP V3 LP TOKENS AS NON-EXPIRING PUT AND CALL OPTIONS
+by Guillaume Lambert
+
+INTRODUCTION
+
+Last month, Uniswap released version 3 of their automated market making (AMM) protocol. A major improvement in Uniswap v3 is the ability for liquidity providers (LPs) to deploy liquidity to a specific range of prices as opposed to all prices from 0 to ∞ in Uniswap v1 and v2.
+While the stated goal of revamping Uniswap v3 LP smart contracts was likely to improve capital efficiency and offer a better control of liquidity positions, an underappreciated consequence of the new liquidity system is the fact that Uniswap v3 liquidity positions effectively behave as two familiar types of options: cash-secured puts and covered calls.
+This is the first post in a series of articles that will explore the similarities between Uniswap v3 liquidity positions and more traditional derivative instruments.
+
+LIQUIDITY IN UNISWAP V3
+Uniswap v3 liquidity offers the ability to deploy liquidity to arbitrary price ranges. From the Uniswap v3 whitepaper,
+Concentrated Liquidity: Liquidity providers (LPs) are given the ability to concentrate their liquidity by “bounding” it within an arbitrary price range. This improves the pool’s capital efficiency and allows LPs to approximate their preferred reserves curve, while still being efficiently aggregated with the rest of the pool
+Concentrated Liquidity. Uniswap V3’s liquidity can be provided to a specific range. Fees will only be collected when the asset price is within the deployed ticks.
+While the implementation of concentrated liquidity required a complete rewrite of the AMM LP protocol (including shifting from ERC20- to NFT-based liquidity positions), Uniswap v3 gives LPs more control over their position. In addition, LPs can deploy concentrated liquidity positions to approximate any liquidity distribution, including existing AMMs such as Balancer or Curve (see this great post by Dan Robinson for more details).
+
+RANGE ORDERS AND SINGLE-TICK LIQUIDITY
+While liquidity positions deployed between 0 and ∞ will recapitulate the payoff of a Uniswap v2 position, liquidity can be deployed between any two values. This results in a mind-blowing 4000-fold theoretical improvement in capital efficiency.
+Additionally, an application of concentrated liquidity is the ability to create range orders:
+With Uniswap v3, one can approximate a limit order by providing a single asset as liquidity within a specific range. Like traditional limit orders, range orders may be set with the expectation they will execute at some point in the future, with the target asset available for withdrawal after the spot price has crossed the full range of the order.
+Deploying a “wide” range order has the potential to increase the amount of fee to be collected if there is price churn, meaning that users may be able to receive a discount when purchasing or selling an asset.
+Left: Deploying liquidity above the current spot price creates a range order which converts ETH to DAI as the price moves between the Lower and Upper ticks. Right: Deploying liquidity to a narrow, single-tick range creates a “covered call-like” payoff where the ETH is sold immediately as the spot price crosses the strike.
+If we look at the other end of the spectrum and consider the value of a Dai-ETH LP position deployed to a single tick, we find that the position will be 100% ETH exactly below the tick, and 100% Dai exactly above the tick.
+This is, in some way, similar to a covered call option: LP tokens replicate exactly how assets in a covered call are sold only if the spot price is above the strike price at expiration. LP tokens, however, have no expiration and the underlying assets are automagically converted by trading activity.
+Note that, due to put-call parity, the payoff diagram for a covered call is exactly the same as for a cash-secured put. So, depending on whether the strike tick is above or below the current spot price when liquidity was deployed, a Uniswap v3 liquidity position behaves as a short cash-secured put or a covered call.
+Covered Call. Profits potential of covered calls is limited, and they are the most beneficial in neutral-to-bullish environments. Image by Julie Bang ©Investopedia
+
+EXPECTED PAYOFF OF A NON-EXPIRING, PERPETUAL OPTION
+An options seller will typically receive a premium when selling an option, and the price of that option can be derived using the Black-Scholes (BS) model. We won’t go into all the details of the BS model in this post, but the gist of it is that the price of an option depends on the current spot price, the time to expiration, and a parameter called the implied volatility which reflects the anticipated future price change of the underlying asset.
+Since there is no implied volatility and no expiration date for Uniswap v3 LP positions, we cannot directly apply a BS-like model to estimate the price or expected return of a single-tick LP position. However, we know that the accrued fees will increase at a rate that is proportional to i) the trade volume and ii) the size of the liquidity position compared to all the provided liquidity. Hence, if a liquidity provider possesses 1% of all liquidity deployed at the current price tick, they will collect 1% of all fees for transactions within that price tick.
+In addition, the fees collected will also be equal to a fixed 0.3% (or 1% or 0.05%, depending on the fee structure of the AMM) every time the spot price crosses the liquidity tick. This is because the entirety of the liquidity position needs to be converted when the tick is crossed, so the 0.3% fee is collected on the total value of the LP position.
+So if liquidity is provided at a strike tick that is very close to the current price, liquidity providers may collect the 0.3% fees multiple times as the spot price leaves and re-enters the strike price tick. If price increases or decreases rapidly in extreme markets, on the other hand, LPs may only collect the 0.3% fee once.
+
+RETURN ON INVESTMENT FOR AN ETH-DAI LP POSITION
+In order to quantify the returns on investment (ROI) of a LP token covered call position, let’s look at the hypothetical scenario shown below.
+Here, the user locked 1 ETH on June 8 in a LP position defined by the (2498.9, 2513.9) ticks when the price of ETH was 2400. The position was held for 11 days and it was removed on June 17 when the price returned to 2400 Dai.
+LP Covered Calls. Single-tick liquidity accumulates a fixed 0.03% fee each time the asset price visits the tick value. Here, the ETH spot price crossed 2500 on several occasions between June 8–17 and the LP received a 150% annual ROI. Collecting fees lowers the break-even point and increases the profit potential of the position.
+During these 11 days, the price of ETH crossed the 2500 tick on 16 occasions. In that scenario, the user would receive a 4.8% return in 11 days in addition to the fees collected when the price was between 2498.90 and 2513.90. Even if we only consider the 0.3% collected per visit, this translates into a 150% annual ROI.
+Of course, the LP would have suffered from impermanent loss had the price decreased by more than 4.8% when liquidity was removed. Realized gains will also be limited if the price increases past 2513.90.
+Yet, the return profile of that position is identical to a covered call and these hypothetical loss scenarios are understood to be an integral part of any covered call strategy. In other words, covered call strategies carry no additional risk compared with simply hodling the underlying asset. Also, limiting profits on the upside is rewarded with collecting fees/premium to lower the break-even point of the position.
+To accurately estimate the expected ROI of a LP position, we still need to know the theoretical number of times an asset will visit a specific price (ie. the “residence time”). The residence time and the number of re-entry events can be calculated using diffusion-based models of asset pricing that use assumptions not unlike those used to derive the Black-Scholes model of options pricing. We will visit these models in a future post.
+
+FUTURE WORK
+This post highlights the similarities between a Uniswap v3 LP position and options derivatives, and we showed how a single-tick liquidity position behaves like a covered call (or short put) option.
+Interestingly, since LP tokens never expire, a single-tick liquidity position will behave like a “perpetual” covered call option. While these are not unlike the Everlasting Options proposed by Dave White and Sam Bankman-Fried from Paradigm, Uniswap v3 liquidity positions do not require daily rebalancing and can be passively managed with minimal input from the user.
+In future articles, we will discuss how Uniswap V3 LP tokens can replicate more complex short premium option strategies such as short calls, straddles, and strangles. We will also derive the expected return on investment for each of those strategies.
+Stay tuned!
+Update 2021/07/07: Here’s part 2 of my ongoing series about Uni v3 LP options: Synthetic Options and Short Call in Uniswap v3
+Update 2021/07/14: Here’s part 3 of my ongoing series about Uni v3 LP options: Understanding the Value of Uniswap v3 Liquidity Positions

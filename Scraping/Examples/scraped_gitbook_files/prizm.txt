@@ -1,0 +1,48 @@
+What is Prizm?
+Prizm is a computer software created for recording short messages in the blockchain and for recording information about changes in the balances of project users
+ When adding a new record to the blockchain distributed ledger, a commission of 0
+5% is charged, but not more than 10 PZM
+ The commission for transactions in the generated blocks is received by the users of the project who support the Prizm peer-to-peer network, by storing the complete blockchain database on their computer
+PRIZM — it is a 100% Proof-of-Stake cryptocurrency based on the NEXT-kernel, built on Java with an open source code
+ The unique PRIZM proof-of-steak algorithm does not depend on any implementation of the "coin age" concept used by other proof-of-steak cryptocurrencies, and is resistant to the so-called "nothing at stake" attacks
+ The total number of coins available was distributed in the Genesis block
+ Curve25519 cryptography is used to provide a balance of security and the required processing power along with the more commonly used SHA256 hashing algorithms
+
+Review
+PRIZM is a 100% proof-of-stake cryptocurrency based on the NEXT-Kernel which is built on Java with an open source code
+ The unique PRIZM proof-of-stake algorithm does not depend on any implementation of the "coin age" concept used by other proof-of-stake cryptocurrencies, and is resistant to the so-called "nothing at stake" attacks
+ The total number of coins available was distributed in the Genesis block
+ Curve25519 cryptography is used to provide a balance of security and the required processing power along with the more commonly used SHA256 hashing algorithms
+Blocks are generated every  60 seconds, on average, by accounts that are not blocked on network nodes
+PZM are redistributed by incorporating transaction fees that are awarded to an account when it successfully creates a block
+ This process is known as forging and is akin to the notion of "mining" used by other cryptocurrencies
+ Transactions are considered secure after 10 block confirmations, and the current architecture and block size of the PZM allow processing up to 367,200 transactions per day
+PZM includes the implementation of Transparent Forging that would allow you to increase the performance of transaction processing by two orders of magnitude by using the generation algorithm is deterministic block, in combination with additional security mechanisms of the network
+
+Technologies
+Proof of StakeIn the traditional "Proof of Work" model used by the majority of cryptocurrencies, network security is ensured by participants performing "work"
+ They use their resources (calculation/processing time) to reconcile transactions with double costs and in order to impose extraordinary costs on those who attempt to collapse transactions
+ For this work, participants are awarded with PZM, and their frequency and amount vary depending on the working parameters of the cryptocurrency
+ This process is known as mining
+ The frequency of block generation, which determines each available reward for mining cryptocurrencies, as a rule, should remain constant
+PRIZM is a 100% proof-of-stake cryptocurrencyAs a result, the labor intensity of the work required to obtain rewards should increase as the network becomes more efficient
+ As the Proof of Work network develops, the individual user has less incentive to support the network, since their potential reward is distributed among more colleagues
+ In search of profitability miners continue to invest resources in the form of specialized, patented equipment that requires significant investment and high current energy costs
+ Over time, the network becomes more centralized as smaller partners (those who can do less work) drop out or pool their resources into pools
+ The Creator of bitcoin Satoshi Nakamoto, intended bitcoin network to be completely decentralized
+ But no one could predict that the incentives provided by Proof of Work systems would lead to the centralization of the mining process
+ This leads to potential vulnerabilities
+Prizm Core TechnologiesGHash
+ The bitcoin IO pool has reached 51% of bitcoin mining power in the past, and the top five bitcoin mining pools make up 70% of the hashing power of the network
+ The concept of decentralization is at risk of total loss
+ In the Proof of Stake model used by Prizm, network security is regulated by partners who have a stake in the network
+The incentives provided by this algorithm are not conducive to centralization as Proof of Work algorithms,and data show that the Prizm network remains highly decentralized since its inception: a large (and growing) number of unique accounts contributing blocks to the network, and five top accounts generate 35% of the total number of blocks
+
+Prizm Solutions
+Analysis of the cost and energy efficiency of the Prizm network shows that the entire PRIZM ecosystem can be maintained for about $ 60,000 per year, which is now almost 2,200 times cheaper than the cost of operating the Bitcoin network
+The cost of POW maintaining relating to the coins' holdersIn addition to the huge costs of electricity, there is a hidden fee for the simple storage of bitcoins
+ For each block found, the one who generates the block receives a reward
+ At the time of writing, it's approximately a 12,5 BTC reward (for now), which is 10% inflation in the total Bitcoin supply
+ For every $ 1,000 bitcoin that it belongs to, a person pays $100 for bitcoin in order to "pay" miners for network security
+
+May the force of Prizm be with you!

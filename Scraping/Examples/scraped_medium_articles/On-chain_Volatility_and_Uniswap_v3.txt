@@ -1,0 +1,47 @@
+url: https://lambert-guillaume.medium.com/on-chain-volatility-and-uniswap-v3-d031b98143d1
+
+Title: ON-CHAIN VOLATILITY AND UNISWAP V3
+Medium
+
+INTRODUCTION
+
+On-chain Volatility and Uniswap v3
+TL;DR: In this post, I show how to use the daily volumes and liquidity information directly from Uniswap v3 pools to extract the implied volatility of any asset.
+Liquidity of the ETH-USDC-0.3% pool. The green bars show the 7-day expected move, computed using on-chain implied volatility measurements.
+In my last post, I demonstrated that it may be more profitable to lend a Uni v3 LP position as an option instead of holding it. That was because the premium received for selling the option may exceed the amount of fees accrued by the LP token. In my analysis, I arrived at the following equation:
+
+which, after some rearrangements, resulted in the following condition to guide whether an assets should be lended as an option or held to collect fees:
+
+However, I’ve made an unnatural assumption in my analysis: I was assuming that the on-chain volatility of an asset matched the “market” volatility of the same asset on centralized options exchanges.
+Specifically, I assumed that volatility hovered around 100% annualized and used that number to extract the 6.8, 76, and 2749 ratios. Recall, these ratios should tell you what the volume to tick liquidity ratio should be so that holding the LP token is more beneficial than selling the position as an option assuming that the implied volatility is 100%.
+Who am I to prescribe that the volatility of all assets on Uniswap is 100% annualized? 100% may be accurate for ETH-stablecoin pairs, but that would be a gross overestimation for stable-stablecoin pairs. Similarly, some highly volatile assets may have a realized volatility of several hundred percent annualized.
+How to resolve this? How can we choose the “right” volatility in the expression above? I am actually a big proponent of the efficient-market hypothesis. The efficient-market hypothesis is after all one of the main justification behind the use of Geometric Brownian Motion to model the price of an asset in the Black-Scholes equation. Simply stated:
+The efficient-market hypothesis (EMH) is a hypothesis in financial economics that states that asset prices reflect all available information. A direct implication is that it is impossible to “beat the market” consistently on a risk-adjusted basis since market prices should only react to new information. (source: wikipedia)
+So, with that framework in mind, can we assume that all actors are already pricing in the cost of carry and expected returns of a LP position, which means that we can only assume that LP returns are exactly matched to their options premium.
+In other words, we can look at the daily volumes and tick liquidity of any Uniswap v3 pool, and invert the condition derived in my previous to compute the implied volatility (IV) of a pool using:
+
+So, as long as the daily volumes and tick liquidity can be extracted from on-chain activity, this equation provides a direct way of computing the IV of an asset.
+
+COMPUTING THE IMPLIED VOLATILITY FROM UNISWAP V3
+How accurate is the assumption that all DeFi users are “rational”. It may be very low depending on who you ask, but let’s consider this more carefully.
+To compute the implied volatility of say the USDC-ETH-0.3% pool, we must take the square root of the daily volume (76,520,000) divided by the amount of liquidity at the current tick (4,350,000), and multiply that by 2*0.3% and √365days to get the annualized volatility:
+
+Here’s the same implied volatility calculation for the top 15 pool in Uniswap v3 by TVL:
+Check it out at http://info.yewbow.org
+Implied volatility ranges from 49% for the WBTC/USDC pair and goes as low as 1% for stablecoin-stablecoin pairs (DAI/USDC) and the ETH/sETH2 pair.
+How good is that approximation?
+In a previous post, I scraped the daily open-close price data from Coingecko to extract the realized volatility of several assets, both denominated in terms of USDC or ETH:
+
+The realized volatility of most assets hover between 75% and 200% annualized in ETH terms. If we compare this to the IV extracted from the Uniswap v3 pools, we get:
+
+Note that the volatilities are somewhat lower, perhaps a factor of ~2.5, for most assets.
+I’m not sure where this discrepancy comes from. Maybe that’s because DeFi users are not all rational, or users are not trading as much on-chain compared to centralized exchanges, or maybe that’s because I took this screenshot on a Sunday and volumes are simply lower.
+In addition, WNXM seems to be an outlier with &gt;1,000% annualized volatility. That may be due to a relatively low tick liquidity:
+
+Or maybe there was a large volume on that day ($103m), I think the Uniswap theGraph instance reports the 24h volume as the trading volume combined with the Adds+Removes in liquidity tokens. A quick overview of the daily swaps volume is closer to ~1m, which corresponds to an implied volatility of 32%/year, a little bit more realistic.
+
+USING IV TO HELP EFFECTIVELY DEPLOY LIQUIDITY
+Why should we care about IV? Actually, implied volatility is very useful for estimating the expected price move of any asset according to:
+
+See this post and this post for more details about choosing optimal Uniswap v3 LP positions. Concretely, knowing the IV should also help shape where liquidity is deployed in Uniswap v3 pools.
+For instance, the ETH-UNI-0.3% has $57m of total value locked, but only ~$2m is locked within the 7-day expected move. In other words, 96% of the deployed liquidity will not be touched within the next 7-days, on average.

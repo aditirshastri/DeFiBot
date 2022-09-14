@@ -1,0 +1,117 @@
+url: https://potion-protocol.medium.com/introducing-the-kelly-machine-53c0a9863af7
+
+Title: INTRODUCING THE KELLY MACHINE. POTION COMMUNITY UPDATE FEBRURAY 2021
+by Potion Labs (now Ntropika Labs)
+
+INTRODUCTION
+
+Introducing the Kelly Machine
+Potion Community Update Februray 2021
+
+Why Potion?
+Risk Management is a fundamental pillar in any financial system. It allows participants to be more resilient to shocks, and it helps create a more sustainable eco-system for everyone for the long-term.
+While exciting and highly innovative, existing risk management systems in DeFi still suffer from a number of limitations:
+Extreme risk in long term liquidity supply: In our findings, even the best current pricing models can lead to LPs suffering very sharp capital losses, and likelihood of bankruptcy in the long run.Narrow product selection: Users can still only choose from a limited menu of products, stemming from non scalable liquidity architectures.Complex experience: Most interfaces still preclude a normal user from safely participating in the full experience, which remains reserved to a financial minority.
+We have been working hard on a new decentralized risk management architecture that seeks to provide a solution to these issues. We present a first release of our research here, in the spirit of contributing value to the community, and continuing to work on it together.
+We believe and operate within the ethos of Decentralization, Trustlessness, and Human centric design.
+
+INITIAL STEPS
+Our team came together in the virtual hackathon #hackmoney. It brought together people from all over the world with the common goal of building totally new financial services through the lens of DeFi.
+Our team built a prototype for a decentralized platform to coordinate fair pricing between suppliers and consumers of insurance and derivatives contracts. We wanted to achieve mathematically robust and fair prices, and decided to follow the Black-Scholes model, a well known standard in the industry. We built a simulation laboratory to validate how the system would perform under a variety of conditions. Sadly, initial results were not great.
+We found that even with zero volatility-estimation error, Black-Scholes pricing still produced bankruptcy in LPs for major crypto assets. Why? It turns out Black-Scholes assumed in its mathematics volatility patterns that are not consistent with those observed in crypto markets. Crypto markets are a lot more volatile, and “fat-tailed”, meaning they experience wilder moves much more frequently than traditional markets. The net result: Black-Scholes seemed to be pricing risk too cheaply in some cases, and as a result exposed LPs to losing all capital when betting systematically.
+Here’s an illustration of this problem:
+Black Scholes isn’t well equipped to price Crypto assets, leading LPs to severe capital loss if taking risk systematically
+As you can see, LPs are exposed to very high losses and even bankruptcy. This is not an acceptable risk profile for the vast majority of people, and doesn’t lead to the sustainable and “open to all” experience we wanted to provide, instead requiring heavy financial sophistication to manage risk actively.
+We felt we had to abandon Black-Scholes, and find a new way to approach the problem that was compatible with crypto assets.
+Pool utilization as a proxy for risk
+We had the intuition that perhaps a simpler system could be built that could automatically price risk as a function of the internal capital utilization. Similar to how Uniswap or Balancer price swaps on the basis of ratios in their internal capital holdings, we had the idea of expanding their mechanics to be applied to a “risk responsive” system. The plan was simple: to offset the higher risk of bankruptcy when more capital was exposed ➡ build a larger safety net by charging higher premiums.
+Intuition of premiums as a function of utilization. More capital at risk = higher risk of bankruptcy -&gt; higher premium -&gt; lower risk of bankruptcy.
+Looking for a mathematical framework to underpin this strategy, our research quickly led us to the Kelly Criterion. The mathematics were complex, but it provided a robust mathematical link between risk and allocation from a pool of capital.
+
+KELLY CRITERION, A PRIMER
+The Kelly Criterion is a systematic allocation strategy used by some of the best risk practitioners in the world. It provides a mathematical framework to make optimal capital allocation decisions under uncertainty, and has been shown to work in practice. It is particularly relevant here, because it is optimized for survival and growth over repeated continued risk exposure, as opposed to opportunistic single event risk taking. This was exactly the scenario we were designing for: LPs in an AMM continually selling risk contracts hoping for consistent long term gains.
+As Nassim Taleb puts it: “Smoking one cigarrete won’t kill you, but repeated smoking over years will. Kelly wouldn’t allow this”: Kelly selects for trades that when performed repeatedly lead to positive results.
+Traditional Kelly
+The Kelly Criterion is typically used to answer the question: how much of my wealth should I put at risk, for some particular odds and payout rules, such that I maximize my expected capital growth rate?
+This is one way to visualize it:
+
+Considering the information available in the input, the Kelly Criterion will work out the optimal percentage of capital you should put at risk. It goes from risk information as input — to allocation as output.
+But in the case of an Automated Market Maker (AMM) we wanted to go the other way. From order_size as input — to insurance premium as output.
+Reverse Kelly
+We wondered if Kelly could be used backwards to get an “optimal premium”, for a given order size. Like so:
+Reverse Kelly Criterion application: Calculate Premium as a function of order size
+The idea was that users could come to the service and request to buy options of any size — and then reverse Kelly would calculate the Premium that makes the risk exposure of the trade Kelly-Optimal for the LP, regardless of the incoming order size.
+We developed a set of financial and data-science tools that allowed us to find these optimal relationships. Critically to the feasibility of the system, we found that the Kelly optimal premiums we were finding computationally also correspond to a simple mathematical formula. A formula simple enough that even a smart contract would be able to execute cheaply on-chain.
+
+THE KELLY MACHINE
+The Kelly Machine is a decentralized system that allows LPs and users to trade collateralized risk contracts, such as insurance, puts, calls, or even more complex derivative products, with a mathematical long-term expectation of capital growth, resulting from built-in risk management being automatically applied to all trades.
+Premiums for these risk contracts are mathematically derived from Kelly Criterion optimas, and can be generalized to describe any utilization-based pricing strategy.
+High level architecture of the Kelly Machine. Participants benefit from automatic risk-responsive system
+Key features
+Optimized for long-term capital preservation and growth across market conditions: trained to survive even fat tailed environments such as crypto markets.Back-testable return projections: rich risk analytics for LPs and users. Participants can back-test returns for any contract under any conditions before deciding whether to commit capital.Configurable risk-reward profiles: LPs are able to select what “alpha” they want to expect, and what risk profile they’re willing to accept.Passive experience: LPs don’t need to constantly monitor their positions. Bonding curves dynamically adjust pricing to offset risk.Broad product selection: Capital can be used to underwrite many different product configurations, with many combinations of strike, duration, asset, etc.Capital efficiency: Capital can be exposed to multiple risks at once, helping LPs achieve higher utilization levels, and helping buyers get access to a larger variety of products in deeper markets.
+
+BACK-TESTING
+We built a dedicated data-science lab to test the Kelly Machine to confirm whether performance metrics were indeed better than those observed with Black-Scholes, and to see what performance sellers and buyers could expect from the system.
+We simulated the return on investment for thousands of LPs systematically selling contracts for as long as 30 years. We simulated different market conditions, including bull, lateral, and bear markets, and even including “tail-events”, characteristic of Crypto markets (aka — black-swans).
+For each simulation, we benchmarked both Black-Scholes priced premiums, and Kelly Machine priced premiums. For each of the two approaches, we recorded a number of KPIs characterizing the risk and reward participants should expect. Below we’ll cover two of the most fundamental ones:
+Alpha: The rate at which capital compounds over timeMax draw_down: The lowest balance observed during the lifetime of the investment
+
+1. COMPOUNDING GROWTH RATE (ALPHA)
+Below you can see an example of the CAGR — compound annual growth rate — experienced by LPs in the system during the simulations:
+In the picture you can see how the growth rate converges to a rate of around 35% CAGR year on year, for this particular example of 10% OTM BTC puts.
+For clarity, when you see convergence to 35% growth rate at say year 7, that means capital has been continuously compounding at an equivalent 35% rate, each year for 7 years straight.
+As you can see, the return rate is uncertain for LPs over the short term but over time reverts back to a “mean CAGR”, or Alpha. As we will show in future posts, this Alpha can be “dialed in” by the LP by modifying the premium bonding curve, effectively producing “programmable alpha”, that can be customized at a per-LP level.
+Here is a quick preview:
+Impact in Alpha outcomes after applying factors from 0.8X to 1.2X to Kelly Optimal pricing
+As you can see, clear risk and return expectations can be produced for LPs, and there is a visible market Schelling point candidate emerging naturally at Kelly Optimal 1X.
+
+2. RISK: MAXIMUM DRAWDOWN
+While LPs have a long term expectation to get positive growth rates, they can also suffer temporary losses in the short term. You can think of it as a Casino that may run into losses in some bets, but that provided bets are repeatedly taking place, will still have a mathematical expectation to come out ahead over time.
+The Kelly Machine allows LPs to have a similar experience as the house in a Casino.
+In this section we’re going to look at how low an LP’s balance may temporarily run, relative to the initial money invested. For clarity, if an LP starts with a $100 balance, and at some point the balance hits $20, that would correspond to an 80% impermanent loss. It is impermanent because the LP may end up recovering all lost capital if it remains invested, but it can also become a “permanent” loss if LP must exit her position ahead of time, or if she loses 100% of funds.
+Max Draw dawn = Max loss observed during investment lifecycle. Example: LP_34 starts with $100 and at some point goes to temporarily $20, before it recovers and finishes at $105. Max Draw_down = 80% in that example.
+As you can see, the Kelly Machine delivers on its promise of automated risk management, even for fat tailed markets such as crypto as well as traditional centralized markets such as the SP500.
+As seen in the right-most chart, LPs can decide to price above (more expensively than) Kelly Optimal, and further put a cap over the maximum impermanent loss expected, delivering “programmable” impermanent loss.
+
+3. RISK VS REWARD
+Let’s now combine these two previous dimensions simultaneously: Risk and Reward.
+Max Draw Down (X) vs Terminal bankroll (Y). All LPs started the simulation with $100. Each dot represents 1000 simulations for an put contract of different asset, strike, util, and market style paramters. Only Black-Scholes priced instruments delivered long-term losses and bankruptcies. Kelly delivers on its promise of capital preservation and growth.
+This figure illustrates the power of the Kelly pricing engine (blue and pink dots). It shows how max_draw_down is kept on check, and how the pricing strategy produces trades that deliver positive alpha in the long run, with almost no dots below the profitability line.
+This is in contrast with Black-Scholes (white dots), where some instruments and market conditions resulted in negative Terminal Balances and even 100% losses in some cases, highlighting the risk taken by LPs.
+This chart aggregates 8.5M records resulting from our simulations, and shows all products combinations for 7 different underlying assets, 3 different contract durations, strikes from -40% to 40% moneyness, and bear, lateral and bull markets. Users have the flexibility of filtering this information, to inspect risk/reward results for any particular configuration and market scenario.
+Our goal is to empower LPs to make robust decisions on the basis of actual tangible figures and self-service + trustless data analytics.
+
+DISTRIBUTED BONDING CURVE
+Because each LP will have its own utilization and curve, each LP may quote a distinct price for a given incoming order. This creates the need for an order router that is able to select lowest available prices for users to trade with.
+Here is an illustration of distributed bonding curve the architecture:
+
+We have created a prototype of a distributed router that is able to take the state of the distributed network of LPs, and produce from it optimal order routing for users. The net effect is that users can interact with the entire network at lowest prices by choosing the lowest available combination of LPs to buy from at any given time.
+This in effect creates a “virtual pool” environment, that has the scalability benefits of a peer to pool system, with the security and control properties of a peer to peer system.
+Emerging distributed bonding curve
+This will be discussed in depth in a future post, but here are some preliminary results displaying the emergence of an aggregate bonding curve for the network, that allows users to trade with the system optimally as if it was a single large LP.
+On the left you can see 9 different LPs, each with a unique bonding curve and utilization. On the right, you can see the “emerging” aggregate market bonding curve, dynamically updating on trading. Users trade with the network as if it was a single giant LP with the bonding curve on the right.
+All “peer pools” are aggregated into a single large “virtual pool”.
+All pricing information from each peer LP will be transparently visible on-chain, and everyone will be able to compute the aggregate market curve. LPs will be able to see how their individual curves compare to the aggregate market, and adjust accordingly: Price above the market, and you’ll get lower utilization. Price below market, and you’ll get very fast high utilization (at higher risk!!).
+
+MOVING FORWARD
+Based on initial testing results, our conclusion is that utilization-based premiums such as Kelly Optimal can lead to lower systematic risk than alternatives, and have the potential of enabling more robust and sustainable risk management services in DeFi.
+We are working hard to produce a proof of concept for this architecture. We call it v0, and we intend it to provide the basis for the community to test and refine the model.
+The initial v0 system will remain admin’d, so it can be halted in case of failure or systemic risk to participants. To the extent the tests are successful, the community may be able to coalesce around an architecture that can be implemented and governed in a fully decentralized manner by a DAO.
+
+KELLY MACHINE IN SHORT
+In this post we shared early results for a new approach to risk pricing based on an on-chain implementation of the Kelly Criterion, and a distributed virtual bonding curve market.
+Here are the main takeaways from the results to date:
+Significantly safer than Black-Scholes. In particular for crypto assets, with differences of up to 100% in favor of Kelly pricing.Lower max draw-down than Black-Scholes. Median improvements of 60%+ in many cases.Positive long-term Alpha expectation, resulting from Kelly Optimal application.Simple and clean experience for LPs and users, making the protocol accessible to all people, not just the few financially sophisticated.Facilitates the emergence of a market equilibrium around Kelly Optimal prices
+
+PROJECT VALUES
+We believe DeFi gives us the opportunity to not just implement existing financial applications in a decentralized way, but to fundamentally create new types of applications that were simply not possible before.
+Services that are fundamentally public in nature, open and accessible to all without discrimination, and that are rooted, driven and controlled by the community.
+We believe a Risk Management layer based on the principles outlined here can be a long-term positive contribution to the ecosystem. We are sharing our initial research hoping to engage the DeFi and financial communities to discuss it and further develop together, with the hope it can be of use and benefit for everyone.
+These results are preliminary and need to continue to be tested and expanded. We invite all research and contributions on the architecture and the testing, and hope the community will find it worthy of more research and development.
+We are actively expanding our team — if you’re interested in working in some of the coolest risk management problems in DeFi please reach out!
+Join the community
+Join the Potion Discord Server!Check out the Potion community on Discord - hang out with 385 other members and enjoy free voice and text chat.discord.potion.finance
+Twitter: https://twitter.com/PotionLabs
+Website: https://potion.fi
+Newsletter: https://potion.substack.com
+Join the team: https://angel.co/company/potion-labs/jobs

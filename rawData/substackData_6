@@ -1,0 +1,257 @@
+Conversations with the Coop - http://www.indexcoop.com
+
+Audio and transcript from the March 10th, 2022 installment of “Conversations with the Coop” with co-founder Yenwen Feng or the Perpetual Protocol.
+
+To listen live on the next Conversations with the Coop - Follow Index Coop on Twitter and join the Index Coop Discord to get the real Owlpha.
+
+Follow us on Spotify: Link here
+
+RSS feed for Apple Podcasts: Link here
+
+Crypto Texan: Hello, everyone. Welcome to Conversations with the Coop. This is where we source questions from the Index Coop community to gain insights from today's leaders in crypto and DeFi. I'm your host, Crypto Texan, and today on the show, we have Yenwen Feng, who is the co-founder of Perpetual Protocol. Yenwen, it's great to have you here. How's everything going?
+
+Yenwen Feng: Yeah, it's nice to be here. So yeah, everything's going well. Thanks for inviting me.
+
+Crypto Texan: Yeah, absolutely. We're happy to have you, especially being a constituent of the GMI index that we have for the Bankless DeFi innovation index. But yeah, let's get started with, Yenwen, let's talk about you, your background and how did you get started in crypto and DeFi?
+
+Yenwen Feng: Sure. I'm one of the Co-founder of Perpetual Protocol. We started working on Perpetual Protocol in 2020. Before that, I actually have my own startup since around 20 years ago, very long time ago. I've been working on different projects, like game, like FinTech projects. my co-founder and I, we fell in the crypto rabbit hole in 2017. At that time, like ICO booming and also CryptoKitties, that's really interesting. But after we dig in more, we actually found that trying to build a financial instrument on top of crypto is striking to us. I think in 2018 we work on decentralized option protocol. At that time, nobody called the whole decentralized finance DeFi yet.
+
+So we work on that for a while but we actually failed because market crash and in the end we joined Binance, they have incubation at that time. So we joined that Binance incubator, still want to stay in crypto for a while and working on different projects. Then, like I said, 2020 we actually see Uniswap that's actually doing pretty well. So the whole AMM idea, I think that's really interesting. when I first I see Uniswap's white paper, I don't really think this is a new thing but in the end they actually got the traction and then I try to understanding like why people want to use AMM. Then we just go ahead and then want to, I mean build AMM on top of perpetual swap and other financial instrument.
+
+We launched Perpetual Protocol in the end of 2020. I think the result so far are really good. I think we get around $36 billion trading volume last year, which is really amazing. considered that this is actually our first project. Yeah. We actually have a new the V2 Curie. We call it Curie, at that new construction of virtual AMM that. Actually we launched it December. So it's a total new design that's built on top of Uniswap V3. So it's really capital efficient and I think it's really cool. So yeah, please if you are interested in perpetual trading, please, give it a try or take a look.
+
+Crypto Texan: Yeah. I think it might be a good idea too just for our listeners, if maybe you could back up a little bit and maybe explain what is perpetual trading and how does that compare to, I guess, just regular spot trading of the self custody assets on AMMs.
+
+Yenwen Feng: Sure, of course. So perpetual swap is financial instrument that trade a lot on centralized chain. It actually get started by BitMEX in 2016. So this perpetual swab is a type of futures. the buyer and seller they can agree on the future price. Then when the time comes they will settle based on that set price. perpetual swap is actually an upgrade to this. So traditional futures, you have a, expiring day. So for example, people have in like weekly or quarterly or monthly futures, there are several market and then the futures will expire. But perpetual swap, it will not expire.
+
+It's just the future that expires every day. So every day there is a funding payment try to offset upset, the difference between the strip price and also your price. At this end, the strip price we're using is just the market price. So that's just briefly how it works. I think it's a bit hard to really like explain this, but once you trade, you probably get the idea. So why you want to, trade using perpetual swap. one for the big reason is you want to get leverage. So because it's a future, you can actually leverage up. We are not really checking the underlying asset, like spot trading, like Uniswap. So we actually create this new concept called virtual AMM that.
+
+So every time you want to trade perpetual swap, we actually create a virtual token that drop, a deposit in Uniswap contract. So you can actually have leverage. You can put in 100 USDC as collateral, and then you want to leverage up to five apps. Then we actually mean 500 USDC, virtual USDC, and then put that into Uniswap and then you can trade it. I think that's how it works then, yeah, the main reason is that you want to get leverage. You want to show an asset. Perpetual swap is public the most efficient way that you can get leverage.
+
+Crypto Texan: Okay. What type of assets currently are available to trade on the Perpetual Protocol through the vAMM?
+
+Yenwen Feng: Yeah, that's a good question. So we have around like 11 asset, all of them are tokens, so we have BTC, we have ETH market, we have other launch, we have Solana market. So just like the asset that people trade the most. So right now we have this scheme process, like compound, so people will, people vote, but we are actually we transcend to subtle structure. So people vote for another set of data. They actually, recommend the market. we actually keep, adding more market per week. Yeah. in general, just trading the popular tokens is our current goal. So you can shake most of the popular tokens.
+
+Crypto Texan: Okay. I'm not as familiar with the concept of a virtual automated market maker. I know you mentioned Uniswap in there too. So is this similar to, I guess an Ethereum virtual machine, but it's almost like a Uniswap virtual machine that you're utilizing inside the Perpetual Protocol. Is that what it is? Or can you get into a little bit more detail about how all of that works?
+
+Yenwen Feng: Sure, sure. So we are not really working on virtual machine. We actually build on top of Uniswap. So if you want to trade on Uniswap, like I want to swap USDC with ETH. So I have to prepare ETH token first. Of course, that's how Uniswap work. But if you look at perpetual swap, there is actually no underlying. People are just bet against the future price of that market. So we've actually figure out a way that we deposit. So every time a trader want to either, I mean loan or short opposition, we need virtual token, we use those virtual token. Those virtual token are USDC 20 token. We can actually deposit those virtual token into Uniswap and then swap it out. For example, if I want to swap USDC with ETH, I will deposit virtual ETH into the AMM and then get the virtual USDC out. So the virtual USDC is the triggers position. So that's actually how it works in Perpetual Protocol.
+
+Crypto Texan: So it's more about just the composability. So you are building on top of Uniswap V2 right now, correct?
+
+Yenwen Feng: Actually V3.
+
+Crypto Texan: V3. Okay. Interesting.
+
+Yenwen Feng: Yeah.
+
+Crypto Texan: Is that with version two? Are y'all on version two right now of the protocol?
+
+Yenwen Feng: Yes.
+
+Crypto Texan: Okay.
+
+Yenwen Feng: We are.
+
+Crypto Texan: That just launched pretty recently too as well, didn't it?
+
+Yenwen Feng: Yes. So it launched end of last year.
+
+Crypto Texan: Okay. Yeah. So let's just walk through just an example. So let's say I want to make a bet that the price of Ethereum at the end of this month is going to be above 3000 USDC. What process would I go through in order to make that long bet against Ethereum?
+
+Yenwen Feng: Sure. That's a good question. So it's actually just a Uniswap, so you have to go to our website. Okay, the first option is go to our website so you can launch the app. Then in the app, for example, you want to use perpetual swaps because you want to have leverage. So for example, you want to have two apps leverage. So you can actually deposit 100 USDC into our political, and then you can trade as you have 200 USDC. On the UI, it's will be like the centralized exchange. I think is between a Uniswap and centralized exchange. It's more like one inch right now. you can just go to a market, you want to trade, for example, ETH market, and then you want to get a long position, you just enter, I'm going to trade with 200 USDC, get a long position.
+
+The 3 ETH is like $2500 right now. You can just go long and then you probably get maybe like 0.1 ETH position once you enter the trade, and then you can keep it for a while. Once ETH go up to 3000 USDC, then you can actually sell your position and then you got profit. So trading wise, is just trading on Uniswap or on other centralized chain. But underlying is more complicated there is virtual AMM, there's lots of different things.
+
+Crypto Texan: Okay. What type of leverage can you take on Perpetual Protocol? Is there a limit? Is that hard coded into the protocol? Or does governance decide how leverage is determined in the protocol? What are those limitations and how does that work?
+
+Yenwen Feng: Yeah, that's a good question. So it's actually cap at 10X right now. So for 100 USDC you put in, you can only trade 1000 USDC. It's not hard coded in the contract, it can be updated through the governance. We actually have a vote, like last year, not really a vote, just a signal that we want to actually increase that to 20X. But the community doesn't want, so we just keeping us 10X.
+
+Crypto Texan: Interesting. Why would you feel like the community doesn't want to increase beyond 10X for a leverage governor right now?
+
+Yenwen Feng: Yeah, because people feel that... I think normally, even professional traders, they don't trade like over 10X. most of the community leader, they feel that if we want to increase that they will be just a more retail corrupt. So it is actually better to keep it like 10X so that we accept that concern, so just keeping it 10X.
+
+Crypto Texan: Okay. That makes sense. So maybe more of the reputation of Perpetual Protocol is the reason why the community doesn't want to increase that leverage governor, you think?
+
+Yenwen Feng: Yes. Yeah. Yeah. I think so.
+
+Crypto Texan: So where is this protocol located? Are y'all Ethereum based right now?
+
+Yenwen Feng: Yes, we are. Ethereum based, but we are on layer two, so we are Optimism right now.
+
+Crypto Texan: You're an Optimism. Okay, so I was reading that it was on... Are you on xDai or you were on xDai at one point in time, correct?
+
+Yenwen Feng: Yeah. So our V1 is on xDai and then for the V2, we actually built it on top of that.
+
+Crypto Texan: Okay, interesting. Yeah. So let's dig into that a little bit, because I feel like that could be an interesting conversation. So for V1, why did you choose to deploy onto xDai versus I don't know, another side chain or even Ethereum Mainnet also?
+
+Yenwen Feng: Yeah, that's a great question. So V1 is actually deployed in 2020, I mean the end of 2020. I think that September... September 2020, we can launch the project. We actually want to launch a project, but because you know, there are lots of yield farming at that time. So the gas fee is actually pretty high. I mean like people are used to 100 gwei gas fee nowadays. But at that time it's just really high. So you place a trade, it cost you 100 USDC, or even more. So we don't think that's actually a good UX. So we actually don't launch it that time, we pull it back and then we start looking for layer two solutions. At that time, actually they are only two solutions that are viable solution to us.
+
+One is a xDai, the other is Matic. So at xDai, they have been running for a long time. So it is PoA chain, so they have a faster block time. So it will be better. For Matic, when we work with them at that time, they actually just upgrade to the PoS architecture that they have right now. So it's pretty new, it's really exciting. they have some really interesting knowledge at that time. But in the end, I think our engineers are more familiar with a xDai and it has been running for much longer time. So we decide that we should deploy on xDai. We work on putting everything from Mainnet to xDai adding a bridge and adding some integration.
+
+So that's the reason behind that we want to actually, use the xDai and instead of Mainnet. Yeah, one thing I want to add is, if we look at where we are right now, building on xDai actually give us a lot of advantage because the fee is much lower than is Mainnet. We actually cover the fees, they are actually much better UX. Also because the fee is much less, the traders or program traders, they can actually send me lots of orders to compete on the price. So that actually increase our trading value a lot. So I think that's just something we observe working on xDai.
+
+Crypto Texan: Yeah. It's so interesting because I just don't hear about a lot of protocols or projects that deployed on xDai. I remember back in, I think it was mid 2019 is when xDai really came on my radar and I thought it was really interesting, but I just didn't see a whole lot of teams deploying on it. I guess it just took, as y'all said, y'all did it in 2020 when gwei on Mainnet would get up to $500 to $750 some days, it was just insane. So I can see how that's interesting, that puts y'all at a competitive advantage probably. But now with V2 you're on Optimism. Correct?
+
+Yenwen Feng: Mm-hmm (affirmative).
+
+Crypto Texan: Yeah, so now I'm interested, why did you choose Optimism instead of deploying on xDai again? I don't know, why did you choose Optimism over maybe Arbitrum or the Polygon PoS chain as well?
+
+Yenwen Feng: Yeah, that's a great question. So the first thing is that our V2, because we built on topic of Uniswap V3, so we can only deploy on the place that has Uniswap V3. At the time we, working on a V2 is actually that's May, that's July the time-frame. Uniswap only deploy on Mainnet, Optimism and also Arbitrum. So that's those three places that we can go. We don't want to keep your Mainnet because of the gas that I mentioned. So the only two places that we can go is Optimism and Arbitrum. Because Optimism in the beginning, they have this whitelist, so with the whitelist projects that can go out Optimism. Yeah. Also the second thing, they have a lower guest for the contract.
+
+I mean per contract, you actually have gas they meet. So how long can small contract be, and then the agreement is actually lower than the Mainnet. So we have to update our small contract to feed that limit. So it's a little bit harder for us. So because of this reason we want to go on Arbitrum first. So we actually work with Arbitrum team. We deploy Arbitrum, we launch a testing training complication on Arbitrum, which is actually doing really well. We got 2000 or 3000 traders coming in, trade and then just get a sense of how our V2 looks.
+
+It actually went well, but in the last day, because there are more and more people coming in. We actually, not we, the gas prices of actually goes up a lot. So it's not what we expected because maybe a certain user is not really that much traffic. So we go back, we talked to a team and then found that they actually have a gas limit per maybe 10 or 15 minutes. That once you have many transactions, that more than a that limit, the gas price actually goes up. just like Mainnet. I think that's a protection system that, of course, I totally on understand. But I mentioned that in a xDai having more transaction, having less fees that people can trade more, is actually the key to our growth. So we really need to have a higher cap. Arbitrum, because this just V1 they launch, they are actually working on nitro, which is a V2. Probably launched, maybe in Q2 this year, but because we just want to deploy, we don't want to wait for another, maybe half year. So we decide that anyway, we go for it on Optimism.
+
+Optimism at that time actually changed a lots of things. They launched their V2. So they don't have projects, it's actually 100% EVA equivalent to gas clients, so you don't need to change anything. So the porting is really fast and then we give you a try. We make sure that we can have as many transaction as we want, and then it passed. So in the end we launched on Optimism. Long story.
+
+Crypto Texan: Oh, no. Yeah. It's really interesting though. You mentioned that you were in the Binance incubator when you were starting up a Perpetual Protocol. Did you ever look to Binance Smart Chain? Or did you ever feel any pressure from the BSC developers or community to deploy there? I know obviously Uniswap V3 isn't deployed there, but even for version one, what is it? Is it Pancake Swap is what they have over there. You could have built on top of that, possibly. Did you ever feel any pressure from them? Or why didn't you choose BSC at all?
+
+Yenwen Feng: It's going to be recorded, right?
+
+Crypto Texan: Yes. This is being recorded, yes.
+
+Yenwen Feng: It's fine. definitely they ask. they apologize. to be on BSC, we were Asians, Chinese, Taiwanese, it's very different from Western. Lots times people feel that we should do things together. I don't know if you get that sense, but of course they ask. At that time, actually, that's an interesting thing. We actually have a lot of debate internally. At first, I don't want to do that. I think that it is still very strong, but BSC actually have a really great run the beginning of last year. So it got so many attentions and then I feel that I make a wrong decision.
+
+But at the time we just launch our project, there are lots of things that we actually try to figure out. There are things that we think it works, but it actually doesn't work that well. So we are just busy fixing thing, so we don't have time to deploy. Actually after we missed that opportunities, but to be honest, if we look at that right now it's actually okay because BSC is doing really well, but I think it's more on the GameFi part. So there are several games that become really huge on BSC. But on DeFi it's actually not so well. So I do feel that different chain... The community of Solana community, they all have different needs, they get together because of different goals.
+
+So I think for DeFi probably it's still better to stay with the ETH ecosystem. Yeah. That's just something I would say. Yeah. So ETH for the layer two, Arbitrum, I think after Nitro, we definitely want to give you a try. I think that would be a good place to deploy. Or Optimism, that's the trend we are on. So yeah, that's just what I think.
+
+Crypto Texan: Yeah. You and I talked about this a little bit before we started recording, but yeah. when I interviewed Leo Chang over at Kareem, we talked about that as well. What are the differences that you see between the Western and the Eastern, I guess, crypto or Asian crypto culture. You touched on them a little bit, but what other things stick at in your mind? Right? Because me, I live in Texas and 99% of the people I follow on Twitter are Western crypto people. It might be a little bit a different for you since, obviously since you live in Taipei. But just from a cultural standpoint, what other differences do you see between those two crypto cultures, I guess?
+
+Yenwen Feng: Yeah, that's a good question. I would say, Asian culture is more top down and then the Western culture is more bottom. So what I mean by that is that if you look at a centralized chain, most of the centralized chain are from China. They did a really great job on that. Like CZ, they launch a project in 2018. Actually it's 2017, sorry. Then he actually just push it. they work so hard, they acquire lots of users. That's actually, I think what Asian good at. So it just a top down, when people run apologizes, and then you just have everyone work on these things.
+
+I think that's why most of the centralized chain are actually built by Chinese. But if we look at DeFi, they are not many DeFi projects are actually coming up from Asia. Of course, we have Luna, we have Terra, that's doing really, really well. That's actually a part of Asia. But after that you just get random, you have Ben Protocol, before you have perpetual, you have claim. But if you look at China, there's not many DeFi project. They should, because at the time they control over 50% of Bitcoin, they are so crypto native, right? But it's not the case. I do feel that it's just a culture difference. If we building a DeFi projects like you guys, you guys run an awesome community, you have to talk to people, build a community. learning what the community wants and then build the projects. I'm not saying that we are good at this, but at least we tried. But I think in Asia in general, we are not really good at this, so it's more culture difference, I think.
+
+Crypto Texan: That's really interesting. Do you feel like, in a sense you're building against the grain of the culture in which you live by building this decentralized Perpetual Protocol?
+
+Yenwen Feng: Actually, Taiwan is a little bit different. I'm from Taiwan so compared to China, we are more democratized or like Singapore. So I think that we are more open to ideas. So it is personally, I think that we just have more room to take... Even bigger Asia, their scale regional defense, I think a place, if we are more open. So I think that that's one of the reason that we I don't really feel I want to. It never occurred to me, I want to be a centralized chain, that's it?
+
+I just want to build with the community. I want to run the community. I want to be decentralized. I do feel that maybe because the place I grow up, I don't know. Maybe because I actually I learned a lot from US entrepreneurship or scopes. I go to us a lot maybe because that, but that's just something I would say. So you chat with Leo, he was actually born in Taiwan, but he moved for the US for a long time. So I do feel that's actually benefit for his journey that trying to build a decentralized project.
+
+Crypto Texan: Yeah. Okay. Yeah. That's really interesting. Yeah. We got a little bit off topic there, but this is just really fascinating conversation. Because I always wonder, it like, in the US, we listen to the Bankless podcast a lot, right? We've got David and Ryan in the US. But I always wonder, who's the David and Ryan of Asia, right? Is there a Bankless type podcast out there? I always wonder those things. I just feel like there could be this entire other crypto world that the Western crypto Twitter sphere just doesn't get exposed to. So it's always interesting to dig in on that a little bit. But yeah, let's get back into Perpetual Protocol. Another question that we have, and a question that we ask all of our guests about their protocol is, how does the protocol make money? What are the revenue drivers of Perpetual Protocol that drive, I guess, funds into the treasury?
+
+Yenwen Feng: Yeah, that's a good question. So we are the decks, so we charge fees when you change. Actually right now, all the fees go to insurance fund, but we have a token called PERP. That's actually using GMI, but so you can stake that token and we are still working on the detail because we want to update the tokenomics a little bit. But in general that we want the stakers control the revenue. So either they want to distribute that or they want to put that into the insurance fund and then become more the protocol controlled value. That's also fine. But in general we got the fees, so the fees goes to a vote that controlled by the stakers.
+
+Crypto Texan: What other benefits do you get for staking in the protocol? Yeah. How does staking work?
+
+Yenwen Feng: So staking, we have in fashion. So if you stake, of course you can earn more PERP token. That's one thing. The second thing is that, I said, we actually want to distribute the revenue, the fees to the stakers. of course we need to get the consensus of all the stakers, launch a vote or anything. Or like I said, maybe they want to have something with Singapore become the protocol control value, and then deploy other way. But in general, we want to distribute that value to the skater.
+
+Crypto Texan: Okay. In our fees, being the distributed right now to PERP stakers?
+
+Yenwen Feng: No, not yet. So it's still in the insurance fund. Like I said, we actually want to update the tokenomics a little bit. Maybe after we update that we can launch a vote and then scout distribute or putting into a vote or anything that.
+
+Crypto Texan: Okay. What are you looking to change about the tokenomics? Is it just the emissions rates? Or can you not get into all of that? Are we looking at a VE PERP token in the future?
+
+Yenwen Feng: There are actually lots of suggestions from the community and yes, the token model is definitely something we are looking at right now. We are not going to change the emission rate, maybe. at least for now we are not going to do that. We have a reserve that we can use. Like I mentioned earlier, our staking model right now, we have this, a small problem of this is that the token holder is not really aligned with the traders or the recruit providers on our platform. Because you don't really need to have PERP token to trade or have PERP in order to earn rewards by crypto provision you actually create this difference. Some of the PERP token are owned by investor. So we actually want to change that.
+
+We want to just create more alignment between the token holder and then the active participants on Perpetual Protocol. I think that's the thing that we want to do. So remodel definitely is one way to do this because once you got longer, you actually earn small fees. So the degree provide or traders, they might want to go the token longer. So yeah. So that's the direction we are heading to, but still discussing internally and also with the community about what's option we have.
+
+Crypto Texan: Okay. Yeah. What type of parameters can be updated by governance voting in Perpetual Protocol?
+
+Yenwen Feng: That's actually a good question. So right now we don't have an agreement on that. So a guide on that, because previously we don't really... Of course they are like I said before there is one time we want to update the leverage. Then also, every time we go into a new market before, we actually launch a vote. But I think that for tokenomics, it's more like a bigger topic. So it's not only updating the parameters, it will be a really huge update on most of the staking system. So it will be not only updating the parameters. Am I answer your questions?
+
+Crypto Texan: No, yeah. No, yeah. You're answering it. Yes, you are.
+
+Yenwen Feng: Okay, cool, cool, cool.
+
+Crypto Texan: Another question I meant to ask a little bit earlier, so I'll just go ahead and ask it now. There's two other, I guess, parts of this protocol that make everything run smoothly and that's the insurance fund that the protocol has and then the clearing house as well. So I'm wondering if you can just go into a little bit of detail on what the insurance fund and the clearing house balances are, and why they are important to help the Perpetual Protocol operates.
+
+Yenwen Feng: Sure. That's a great question. Okay, so for insurance fund, like I said, we actually put all the fees into insurance fund right now. Insurance fund is a vote that, for this perpetual trading system, most of the perpetual system, if you look at a centralized chain or decentralized ones, we all have insurance fund. It's because when the market become really volatile, so people can leverage, but once the price move very fast the person might not have enough collateral to cover that, and then we have to liquidate. But the liquidate are not always in profit, sometimes there are losses when we liquidate that position. So we need to have an insurance fund to cover that. So that's why we set that insurance fund. Right now, I think for V1, we have around $9 million insurance fund, that's really huge.
+
+For V2, we have maybe $600,000, still growing. So goal is going as much as possible to cover the expected loss. That's for insurance fund. For the current house, it's the central component that we store all the collateral. So you deposit 100 USDC, actually, you go to the cleaning house. So if you look at the balance on our cleaning house, you can see that how much collateral will we have from the trader. Because it's a leverage system, so the collateral is, I think on V1, it's around $10 million, on V2 to $10 million as well. It's not large, but the trading volume, because you can leverage so the trading volume is much higher than other place.
+
+Crypto Texan: Interesting. Do you still have a lot of users utilizing the V1 version of the protocol?
+
+Yenwen Feng: Yes. Yeah. So we actually slowly are migrate them to V2. But they used to V1. Then we actually launch different market between V1 and V2. So it just a little bit different.
+
+Crypto Texan: Okay. Okay. This is a very unique protocol and it's fascinating and I love what y'all are doing. Just wondering, who are some of your competitors? Or what are some similar protocols to Perpetual Protocol in the space right now? How does Perpetual Protocol differentiate itself from those competitors?
+
+Yenwen Feng: Yeah. Great question. So we I think three different, I mean solutions that they want to take leverage. So the first of course, centralized chain. So we compete with finance, like FTX. They both have perpetual product, so lots of people using their solution, I think. For example, Binance that case, they are probably trading a 50X more than us, so definitely one of our competitors. Compared to them, of course, we are building the decentralized product. So it is trust laws, is permission laws, I think at that end, it's a better solution. So the second group is the Decks. So there is actually dYdX. So dYdX is an older book style. perpetual swap protocol, they operate on stock ware actually they have their own chance.
+
+So it's all good book. So it will be hard to be composable, especially they have their own chain. So it's really hard to build on top of it. I think that's one of the disadvantage, but older book style chain, it's just the same centralized chain. Trader are more familiar with older book style. it changed, so I think that's just advantage and disadvantage going that route. The third group is more like a margin changing style projects. So for example, GMX, so they build on Arbitrum, they own unique designs and that's really cool. So they try to maintain a portfolio that's actually the same as triggers portfolio.
+
+It's more a little bit margin checking. So you have a borrowing rate. But anyway, I think that it's just three different group of competitors. For us, we want to be, the first thing that we want to be more as composable as we can. So we build on top of Arbitrum or Optimism that we want to actually be composable with other the projects. So I think that's one of the good thing. Then it's a model, so everything is more predictable. So you want to get along with your position. You know that there will be a provider, like booking, they'll be quickly within that range. So you don't really need to take the good of the older book in order to figure out what's the best price for. You just take market holder maybe, but I think that's the advantage of AMM. So yeah, I think that's it.
+
+Crypto Texan: So let's talk a little bit about just the multi chain in general. What are your thoughts about the different layer one chains? This doesn't have to be specific to Perpetual Protocol, just really your thoughts in general. All the different layer ones, how do you feel they compare to Ethereum? Do you feel there is going to be a multi chain future with this technology and where do you feel L2 tie in? So really, I guess what I'm asking is just your thoughts on the multi chain future and scalability in general as well.
+
+Yenwen Feng: Yeah. Great question. Let's maybe talk about layer one first. I believe it will be a multi chain world in the future actually right now. So we have ETH, we have Sauna, we have Terra, we have lots of chain. All of them are doing really well. Personally, I do think one of these chains will take over 60% of the market share. The scale winner, not take, all winner, take most market. I believe ETH will be that one. So that's just what I think. But still, we mentioned this earlier that I think each of the chain have their own community, their own target. Just for example, BSC, they attract more can find projects there because I think just because of the community that's more retail. They want to maybe play to earn or something like that. Then Solana is more hardcore community, they want to trade so different community will go for a niche market like maybe game, maybe FT, maybe DeFi in the future. So yeah, I would say if still dominating the market the most, but of course, either the one will dominate each niche. Maybe DeFi.
+
+So that's why I think for layer one, and for layer two, is I think the goal of the foundation is just have the way to do the transactions and in layer ones used for settlement. I believe there will be one for their tools, I do feel that they will be one chain winning all. So one chain maybe take a 70%, 80% of the market and then the rest doesn't really have that much of value. I do know which one maybe Arbitrum, maybe Optimism because it's still early or maybe zkSync. zkSync sounds very advanced. But actually, most of the Optimism, they roll up, like Arbitrum or Optimism they can also upgrade to ZK and improve greater. So actually it makes no difference. Yeah. So that's just what I think they ETH scale dominating and scale is mass models. I think.
+
+Crypto Texan: So you feel a single layer one's going to take over 60% of the market share. Then from an L2 stand-
+
+Yenwen Feng: Around there. Maybe 50%, 60% around there.
+
+Crypto Texan: 50%, 60%.
+
+Yenwen Feng: Yeah, but it's not 80% or 90% ETH right now. I think ETH still have 80% of the TVL.
+
+Crypto Texan: Yeah. I think that's right. I think it does have about 80%, 90% of the smart contract layer or the smart contract TVL. I think you're right there. Did you say 70% to 80%?
+
+Yenwen Feng: It'll go down.
+
+Crypto Texan: 70% to 80% on the layer two side, you said?
+
+Yenwen Feng: Oh yeah. So I would say, yeah, on there layer two there will be one chain dominate.
+
+Crypto Texan: Interesting. Yeah, I don't think that's a theory that we've heard a whole lot either.
+
+Yenwen Feng: How do I think?
+
+Crypto Texan: Hmm?
+
+Yenwen Feng: how do you think? Did you think that there will be one chain dominating like I said? Or you think there will be equally shares for all the layer one chain?
+
+Crypto Texan: No, I think similar to what you said is I subscribe to the theory that Ethereum will be the global sediment layer for the strong majority of DeFi applications, right? Because when you're dealing with large amounts of money and net worth and value, you want to be on the most decentralized and secure chain possible. Regardless if it doesn't... Right? The layer one's not going to scale as much, but that's okay. Because you're sacrificing that scalability for security. I think that's why Ethereum will win out on the DeFi side. I think you're right. I think when it comes to NFTs, Blockchain, Gaming a little bit more maybe low risk, low value items, I think. Yeah. The BSCs, the Matics and maybe layer twos will win out on that. So yeah, that's pretty much what you said there. Just by maybe little differences there. Yeah. That's what I think. So what else are you looking at in the space? What other types of DeFi or metaverse protocols are you looking at that are catching your eye right now, that are just up and coming?
+
+Yenwen Feng: Interesting question. I'm still spend most of my time in DeFi. there are actually a lot of new projects working on. We work with actually building on top of us, building all these structure products or new trading strategy on chain. I think that's actually pretty cool. Also, I don't know if you heard of Gearbox. I mentioned that we want to be a place that the people can take leverage. So perpetual swap contract is actually really good, if you want leverage, it's actually the most efficient way. But at the same time Gearbox, they actually created a way that you can actually share the leverage between the host, between Uniswap and Compound, or other things. So I think that's also really cool as well. So yeah. I know people talking about if DeFi 2.0 or something like that. But I think that it's actually going into another stage that they are actually many more projects trying to build on top of each others than before. So I think that's really exciting.
+
+Crypto Texan: that's the best thing about DeFi in general, is the composability and people being able to build projects that are calling other protocol functions. That's where the true innovation lies. I think that's the DeFi 2.0 definition. Do you consider yourselves to be DeFi 2.0?
+
+Yenwen Feng: I actually don't know. I don't know. I'm not sure. I think people actually project their expectation on 2.0. So somebody feel that the actually permissionless, somebody feel that it's protocol owns liquidity. I think we have a small bit solving. We are permissionless. We have some protocol control value. We have some other things, so I'm not sure if we are. But I do feel that the community is definitely more composable than before. If you actually good at the “ve” model, I think that's really fascinating. Curve have this poker model and then you can build come backs on top of it, and then you can actually build other projects on top of others tokenomics. I think that's really cool.
+
+Crypto Texan: Yeah. When I interviewed Scoopy Trooples from Alchemix, he said that that was their strategy, was they wanted to be at the very top, right? They want to be at the very top of the stack, which I thought was an interesting thing to say. What were your thoughts on Andre leaving the DeFi in crypto space?
+
+Yenwen Feng: That's actually created lots of impact, I think, because they were doing so well on Fantom. Andre is just a master brand. he keep pumping out lots of new things. I really liked the new ve, (3, 3) or Solidly tokenomics design, I think that's just not available, but I'm not really close to them. I talked to him several times, but not really close and yeah, it's really sad to see him actually leaving the space. Although I don't really think he actually left. he probably just tried to be enormous, I think.
+
+Crypto Texan: Yeah, that was my theory too. I'm just like, "Can you really leave this space after you get started?" I don't know if you can. He probably just has a couple burner accounts that he is going to use on Twitter and he just wants to build and be a developer in the shadows. That's my theory. Conspiracy theory on that.
+
+Yenwen Feng: Yeah. Actually, I totally agree. Yeah. I think we will see a really, really great, enormous coder in the near future.
+
+Crypto Texan: And it's going to be him. Yeah.
+
+Yenwen Feng: Nobody knows.
+
+Crypto Texan: So, yeah. Is there anything else that you wanted to touch on that we didn't get a chance to talk about, Yenwen?
+
+Yenwen Feng: Let me think. Sure. I do want to mention that we are actually working on a really cool feature, it's called Market Collateral. Right now most of the decks or centralized chains, if you want to trade a perpetual contract, most of the case you deposit the USDC or USDT. Then of course, the profit laws are denominated by USDC. With market collateral that we are building right now, it will be launch really soon. They actually enable you to deposit other token. For example, ETH or maybe Avalanche token, and then you can actually use that as collateral and trade against that. So one of the way you can do this is, you can do basic trade, you deposit ETH token, and then you show ETH. So you don't have market risk.
+
+But you might earn funding payment if the funding is actually positive, so you can earn funding payment. So that's just one of the way that you can utilize ETH, but I think it's really cool. With this, we actually can have interest bearing tokens like USDC or cUSDC as collateral, which actually you can put a token that's actually earning interests on top of it, and also at the same time, you can use that as a collateral and a trade. So I think that's really cool feature.
+
+Crypto Texan: Yeah. That sounds a great feature. That way your collateral can earn you money while it's earning you more money, I guess. Yeah. Earning money twice.
+
+Yenwen Feng: Yeah. Yeah. Yeah.
+
+Crypto Texan: Well variety is the spice of life. So I love that you're adding those new features, that sounds awesome.
+
+Yenwen Feng: Cool.
+
+Crypto Texan: Yenwen, this has been great, we're running up on time here a little bit, but yeah, why don't you just let everyone know where can people go to find out more about you and Perpetual Protocol?
+
+Yenwen Feng: Sure. So you can find me on Twitter. My Twitter handle is @tempofeng, T-E-M-P-O F-E-N-G. If you want to get in touch with me, please just DM me. Our project is perp.com, P-E-R-P .com. You can go to our website, if you want to join community, they are linked to our core, linked to our telegram. If you have anything, feel free to just join the community and ask us there, happy to chat with you or provide any answers to your questions.
+
+Crypto Texan: All right. Yenwen, thanks for sharing. What time is it over there, by the way?
+
+Yenwen Feng: It's actually 10:00 in the morning.
+
+Crypto Texan: 10:00 in the morning. All right. Well, Yenwen, it's 8:00 PM where I am, so I hope you have a great rest of your day. For everyone else listening live, this is being recorded and we will get this out in about a week. Have a great rest of your day, Yenwen and have a great weekend, everyone. Thanks again for coming on.
+
+Yenwen Feng: Yeah. Thanks for having me. Yep. Take care.
+
+Host: @Crypto_Texan
+
+Audio Engineer/Mixing: @LloveraFrank
+
+Marketing Images: @crypto_diller_
+
+Transcript: @0xMitzy / @Crypto_Texan

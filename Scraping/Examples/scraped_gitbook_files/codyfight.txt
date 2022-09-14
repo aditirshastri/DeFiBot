@@ -1,0 +1,49 @@
+Overview
+Blockchain-powered community-driven AI vs
+ human decentralized competition metaverseCodyfight is a GameFi metaverse enterprise that strives to create a new business model in the gaming space where different types of players can earn, create and engage in a game that pursues the conquest of AI as a core trait of its ecosystem
+ The game offers a brand new world of expression and creativity for different types of players like gamers, developers, artists, collectors, investors, community leaders, and others
+The project is fueled by the power of blockchain technology and aims to be a revolutionary venture in the Create2Earn business model, through the unlimited possibilities of ownership of assets as well as the creation of in-game features and competitive leagues
+ Players can up their game as the project offers an Artificial Intelligence (AI) option which is integrated smoothly throughout the gameplay, opening a space for developers/gamers to yield rewards through AI bot farms
+ Through the deployment of intelligent and autonomous Codyfighters, developers can benefit from the opportunity to create their gaming guilds, rent AI code, or manage other players' robots for a fee
+The following document aims to develop a clear framework of the project, as well as cover other endeavors that derive from participation in Codyfight
+ Therefore, it will explore the following topics:Introduction of Codyfight: A brief explanation of the fundamental basis of the project
+Gameplay: A comprehensive deep-dive of the guidelines and dynamics of the game
+ Ecosystem: An analysis of the various parts that connect and correlate within the game and the opportunities that arise for players
+ Metagame: An exploration of the different aspects that intertwine during the gameplay and the endless game options during the competition
+ Tokeonomics: Economics of the game and functionality of its tokens
+Technical summary: Summary of the mechanics and development behind Codyfight
+ Roadmap: A perspective and expectations of the project over timeDisclaimer: Few words on behalf of Codyfight’s team
+Summary: A closure of the project and highlights of the relevant topics covered
+
+Problem
+Creative tech-savvy players identify multiple pain points that are not properly addressedLimited places for talented people to have fun, create, express themselves, and reap fair rewardsVideo gaming, eSports, and crypto industries are booming billion-dollar markets predicted to continue growing over the next decade
+ With it, the gaming industry will get more opportunities to merge with the NFT market
+ The lines between gaming and working have become blurred as an increasing number of people now list tech-savvy as one of their various interests and talents
+However, there are not that many games where creative tech-savvy people can truly express themselves and get fair rewards for it
+ The majority of current games, especially those made by the older generation of developers, limit the players in various ways
+ They do not provide ownership of player assets, offer limited opportunities to earn money, involve too much everyday engagement, and only harness one discipline or skill set
+We believe here lies a massive opportunity to add to the growth of the Game Fi and P2E industries - a game changer in the form of a blockchain-based game focused on multi-talented people in the current gaming market
+Creative tech-savvy players lack simple and accessible opportunities to contribute to games and earn from their contributionGaming enthusiasts are prone to creating various assets and values related to their favorite games, including artistic drawings, music, videos, community events, and so on
+ However, most of the time they have very limited opportunities to benefit from their creative efforts or they have to utilize third-party platforms like Youtube or Twitch
+Only the best players can make a living from gamingThe current gaming industry properly awards only the best of the best players while mediocre fans receive no monetary benefits from playing the games
+ This situation has created additional problems - the truly passionate gamers cannot afford to play games as much as they would like
+ On a side note, in 2021 there were only about 2,000 pro-gamers worldwide who could afford to live from gaming (https://readyesports
+com/how-much-money-can-i-make-as-a-professional-gamer/)
+No asset ownershipThe majority of games are old-fashioned, and players don’t own their in-game assets
+ This means they cannot trade outside the game, limiting their opportunities to benefit from their beloved games
+Limited places for AI to interplay with humansIn 2021, most games typically implement some sort of AI behavior
+ However, AI in games is limited by generally being incorporated into NPCs that do not play a significant role in the competition, or such games are played offline in the single-player mode
+ AI behavior in such games is preprogrammed by game developers and is rarely affected by the community's suggestions
+ AI (ro)bots have little to no places to interplay and compete with humans, as well as each other
+Poor competitive environment for programmersThere is no de-facto way for programmers to compete and show off their coding skills
+Coding games do not focus on gamer needsCurrently, the majority of coding games primarily target teachers, students, and companies - not individual gamers
+ On top of that, automated playing by coding bots is globally considered cheating.
+
+Governance
+Codyfight is a blockchain-powered community-driven AI vs
+ human decentralized competition metaverse
+ Therefore, further gameplay features will be confirmed or rejected by the community
+ Token holders will be given the possibility to participate in voting for upcoming game features
+ The Codyfight Token allocation size may impact the voting power of the holder
+ By following this direction, Codyfight will become more popular and more balanced for players, especially considering that not many game development companies today listen to their users’ complaints about problems or balance flaws in the actual game
+

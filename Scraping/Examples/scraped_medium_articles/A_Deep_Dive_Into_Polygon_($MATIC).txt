@@ -1,0 +1,113 @@
+url: https://medium.com/@pedronv/a-deep-dive-into-the-polygon-ecosystem-matic-88ae99b99c48
+
+Title: A DEEP DIVE INTO POLYGON ($MATIC)
+by Pedro
+
+INTRODUCTION
+
+A Deep Dive Into Polygon ($MATIC)
+
+I think it’s safe to say the L2 wars have begun.
+I genuinely think 2022 will be the year of Layer 2 ecosystems. Between zkSync, Starkware, Optimism, and Arbitrum, etc, there’s just so many talented, hardworking teams trying to scale Ethereum right now. While all of them bring something unique to the table, there’s one project that stands out the most for me right now, Polygon.
+Polygon is an L2 blockchain built on top of Ethereum. Bringing high speed, high throughput, and low gas fees to the Ethereum ecosystem. The reason Polygon sticks out the most for me, is the insane rate of adoption by both users and developers. Although Polygon is technically an L2 chain, they definitely have the numbers to compete with the L1 chains you might be more familiar with.
+Initially this article was super long. However the more and more research I did on Polygon, the more I fell in love with it, and the more bullish I became for the long term outlook of the project. Especially considering they’re still only valued at around $11 billion.
+Because Polygon became one of my biggest positions after the giant sell off we had in the market recently, I decided to focus more heavily on Polygon and its ecosystem for the following weeks. I’ll be writing about all the different solutions (Hermez, Nightfall, Zero, Miden) Polygon brings to the table on a weekly basis, I’ll go over some of the bigger NFT projects on Polygon, as well as over some of the different growth metrics that I find interesting along the way.
+That said, in this article I’ll stick to the basics of what Polygon is, some partnerships they’ve gained, and some growth metrics.
+
+WHY SCALE ETHEREUM?
+At this point, if you’ve been around the crypto space at all you’ll know how hard it is for a regular user like you and me to transact on the Ethereum blockchain.
+It’s no secret that Ethereum is becoming more and more unsusable for the average retail investor like you and me. This is mainly because of the fact that Ethereum has seen massive adoption this past year (thank you NFT’s). You see everytime you want to have your transaction included inside a block, you have to place a bid for the validators to include your transaction inside the block (this is the gas fee). The problem is that there is only so much block space, which means there’s only so many transactions you can fit inside a single block. When there are too many people wanting to have their transactions filled at the same time, the Ethereum network gets congested, and thus gas fees go through the roof. If your gas bid is too low, then the validator most likely won’t include your transaction inside a block, which means you have to wait another 14–20 seconds, until the next Ethereum block is mined.
+The reason why gas fees have exploded this past year, is because of the amount of adoption Ethereum has gained, from both retail and institutions. Now you’re competing with millions upon millions of people around the world, trying to have your transaction be the next one included into a block. This is why I’m a firm believer Ethereum is meant for blockchains, while the Ethereum layer 2’s (Polygon, along with all the other L2 rollup solutions) are meant for us humans.
+At the end of the day, every L1 chain will eventually need their own scaling solution, assuming they’re able to continue to grow its user adoption over the years. I mean if you look at another L1 network like Avalanche for example, even their gas fees are increasing as more and more users join the platform, and they’re no where near the amount of users Ethereum has yet. This isn’t a knock on AVAX, I actually like this network also, it just is what it is. Not to mention the giant Solana issues during the big sell off recently.
+
+SO HOW DO WE SCALE?
+There are two main ways to scale a blockchain, either through the base layer, Layer 1, or by offloading some of the work off chain to a different layer, layer 2 .
+There are several L2 scaling solutions in existence today:
+Channels are one type of scaling solutions. There are 2 main types of channels, state channels and payment channels. The drawbacks of channels include no open participation, and the fact that it is application specific, which means channels can’t be used to scale general purpose smart contracts. Bitcoin’s Lightning Network is an example of a channel.Sidechains are independent chains that run along side the main ethereum chain. Sidechains usually provide their own consensus model and security. Interoperability with Ethereum is made possible by using the same Ethereum Virtual Machine (EVM), which means contracts deployed on the base layer (Ethereum), can be directly deployed on the side chain.Plasma is another type of scaling solution. Without going into detail, plasma leverages smart contracts and Merkle Trees to enable the creation of an unlimited number of child chains, or copies of the parent chain, Ethereum. This child chain periodically submitts snapshots of its state to its base chain (Ethereum in Polygon’s case), where it reaches consensus and finality. The drawback with plasma is the long withdraw times for users who wish to withdraw their funds from L2, as well as the fact that Plasma also cannot be used to scale general purpose smart contracts. However the beauty with Plasma, is that if for some reason the plasma chain were to go offline, users will still be able to withdraw their funds safely and securely by referencing the most recent snapshot of the Matic chain that was submitted to the base chain (again, Ethereum in Polygon’s case).Rollups (Optimistic, and zk), which include bundling up, or “rolling up”, and executing a bunch of transactions together at the same time in 1 single transaction. So for example a rollup could take let’s say 1000 transactions all at once and execute them off chain together in one single transaction, instead of executing every single transaction one at a time like it’s done in Ethereum or any other base chain. After executing these transactions off chain, a proof is generated stating that all 1000 transactions that were done off chain have been done correctly. There’s 2 types of rollups, optimistic rollups (Arbitrum, and Optimism for example), and zk rollups. Optimistic rollups assume every transactions is valid unless challenged within a 7 day period. With optimistic rollups, if you think a transaction is invalid you use a fraud proof. Then there’s zk rollups, and these are the holly grail of Ethereum scaling. These use a different kind of proof, zero knowledge proofs. With zk rollups there’s no 7 day challenge period at all. If a transaction is included inside a zk rollup, then it’s already valid by default. I’m keeping this very short so that I don’t confuse you even more, but if you want to dig deeper into this subject, I’ll leave this article here for you.
+Ethereum will be scaling its base layer (L1) through Eth2.0, which will introduce both proof of stake and sharding to the network. Although this network upgrade will increase transaction throughput, it won’t be enough to handle the 1 billion plus users we envision the network of having one day. For this goal we still need L2 scaling. In fact, Vitalik Buterin himself wrote this piece: “A rollup-centric Ethereum roadmap,” where he mentioned that by the time sharding comes along, most of us will already be living on L2 rollups. So instead of having us transfer our funds back to the base chain, it’ll just be easier to combine both rollups and sharding. This is done by essentially giving each rollup its own dedicated shard to host its data on.
+If none of this made any sense but you’re interested in learning more about Ethereum scaling and sharding, I’d highly recommend this article, or this podcast episode. Both done by the Bankless team in a very clear, detailed manner.
+
+HISTORY OF MATIC NETWORK
+Matic Network was founded in 2017 by 3 Indian founders, Jaynti Kanani, Sandeep Nailwal, and Anurag Arjun, in hopes of solving Ethereum scalability issues.
+They were originally inspired from a paper written by Vitalik Buterin, and Joseph Poon, titled: “Plasma: Scalable Autonomous Smart Contracts”. About a year later, Matic founder Jaynti worked with developers at Decentraland to create “More Viable Plasma,” a more efficient version of Plasma. This version of Plasma became the basis for the Matic network.
+The Matic team originally offered 2 scaling solutions: Plasma chains, and a Proof of Stake chain. This PoS chain is constantly referred to as a side chain, however I do want to note that it’s technically not a side chain, but a commit chain instead. It’s a commit chain for the simple fact that it literally lives on the Ethereum chain, which means it benefits from Ethereum’s security. The most secure blockchain in the world behind Bitcoin.
+Matic Becomes Polygon
+
+In early 2021 the Matic team rebranded themselves to Polygon, aspiring to become the swiss army knife of scaling solutions, and turning Ethereum into an “Internet of Blockchains”. Something similar to the Polkadot or Cosmos framework.
+Polygon also introduced a 4th founder to the team after this name change, Mihailo Bjelic. By the way, if you’re one that likes to invest in dedicated, hardworking teams (like myself), check out any one of his interviews to see how passionate this man is, not only about Polygon, but about the whole crypto space in general.
+
+WHAT IS POLYGON
+Polygon is a L2 network that lives on Ethereum and provides several different scaling solutions for developers to choose from. It’s much more than just a plasma chain now.
+Developers can either use the SDK and take advantage of the pluggable modules to create their own custom blockchain, they could deploy their smart contracts directly on the PoS chain for quick deployment, or use one of the many different zk solutions Polygon provides, once these zk solutions are live.
+To understand Polygon, it may be helpful to understand the following image:
+
+Polygon’s thesis is that Ethereum will become the global settlement layer for a suite of different scaling solutions. Which means us users will only be interacting with L2 solutions in the future, while still maintaining the same security assurances as the Ethereum main chain. Like I said earlier, I’m a firm believer that ETH is for blockchains and L2’s are for users.
+In the image you can see a bunch of L2’s all hovering around Ethereum. You see Aztec, a pioneer in the zk space. We also see Starkware in there, which is another zk rollup solution (might be good to note that zkSync is missing in the image, but they’re a big player in the zk space as well). There’s Optimism and Arbitrum, which are optimistic rollup solutions that you’ve probably heard of already. Then there’s a bunch of Polygon solutions all around.
+So let’s now take a look at Polygon’s different solutions:
+
+Above is an image that was showcased at Polygon’s zkDay last month. It shows a spectrum of the different scaling solutions Polygon will provide. There’s Polygon SDK, enabling plasma based solutions, a PoS chain, and 4 different zk solutions all horizontally connected to eachother. Remember zk rollups are the holly grail of scaling. This is one huge reason why I’m super bullish on Polygon long term. Also the beauty with Polygon’s framework is that regardless of where a project deploys inside the Polygon ecosystem, they’ll all have interoperability with one another.
+It’s important to note that of all their solutions, only Polygon SDK and Polygon PoS are currently live. Polygon Hermez is expected to go live on mainnet in Q3 of this year, and both Polygon Zero &amp; Polygon Miden are expected to launch their testnet versions of their platforms in Q4 of this year.
+There are 2 types of chains the Polygon network supports: stand alone chains, and secured chains.
+On the far left of the spectrum you see the “stand alone chains,” and on the far right you see “secured chains.” So let’s explain what these terms mean first:
+Stand alone chains are essentially side chains. They’re fully sovereign and give projects the ultimate amount of independence and flexibility. The drawback with stand alone chains is that they have to derive their own security, which is hard to do because of the amount of validators you need to make sure the chain is secure enough. These types of chains are best for enterprises, and established projects with large communities that they can leverage for validator security.
+Secured chains use the “security as a service” option, which is either provided by Ethereum directly through proofs, or by a pool of professional validators. Secured chains offer the highest amount of security, but provide less independence.
+All of the Polygon solutions fall somewhere in between this spectrum of stand alone and secured chains.
+SDK — Now Polygon Edge
+On the far left we have Polygon SDK, which stands for Software Development Kit, and is essentially a tool that lets you build and deploy your own customizable, sovereign blockchain at ease using existing tools and modules provided by the Polygon SDK. One thing to note is that just recently, Polygon renamed its sdk to “Polygon Edge”:
+
+PoS
+Next to SDK we have the Polygon Proof of Stake chain. This is the chain we are most familiar with right now, and is the chain I’ll be using later on to show some cool metrics about Polygon growth. This chain is also where most projects on Polygon are deployed right now. What makes this PoS chain different than others is that it sits directly on top of Ethereum, which means you get Ethereum’s security. Polygon’s PoS chain is one of the most popular chains right now, with some of the highest Daily Active Users (DAU’s). A project could very easily just take their existing smart contracts that are deployed on main chain, and deploy them directly on the PoS chain very quickly.
+Polygon Avail
+Polygon Avail is their data availability solution. It’s essentially like what Eth2.0 shards will be when they roll out.
+Polygon Hermez
+Hermez is an EVM compatible, decentralized zk rollup solution “optimised for secure, low cost, and usable token transfers.” Oh and literally like 2 days ago the Hermez team announced the release of Hermez2.0, so I’m excited to dig into this deeper in the coming weeks.
+
+Polygon Nightfall
+Polygon Nightfall is a hybrid optimistic/zk rollup solution focused on privacy for enterprises. This solution is all about private transfers and payments at scale.
+Polygon Miden
+Polygon Miden is a generic zk STARK based rollup solution. There are 2 types of proofs you could generate for a zk solution: SNARK’s and STARK’s. Most zk solutions use SNARK based proofs right now, so the fact that Miden is STARK based is a big deal. Some STARK advantages include: more transparent, scalable, and it requires no trusted setup. If none of this made sense, don’t worry I’m going to be going over Miden in the near future in much more depth.
+Polygon Zero
+Finally we have Polygon Zero. One of the beauty’s with Polygon Zero is that usually, zk rollups require a huge amount of computational resources to generate the zk proofs. The team behind Polygon Zero built the worlds fastest zk proving technology, and is extrememly efficient to run. This means you could basically run zk proofs on a macbook. This is a game changer, especially for decentralization.
+All these zk acquisitions came after Polygon announced their $1 billion pledge towards zk solutions:
+
+Like I said, zk solutions are the holly grail of Ethereum scaling, and the fact that Polygon has 4 different zk solutions is amazing to me.
+As a developer you could choose any one of Polygon’s scaling solutions. Whether you want to build your own custom independent chain using the SDK, whether you want to just directly deploy your smart contracts on the PoS chain, or whether you want to take advantage and build on top of any of the 4 different zk solutions, it’s all up to you.
+There’s so much more I could say about all of these. So throughout the following weeks I’ll be going over the different zk solutions 1 by 1 incase you’re interested in that.
+
+ARCHITECTURE
+Now let’s take a look under the hood.
+Polygon’s architecture consists of 4 layers:
+Ethereum layerSecurity layerPolygon networks layerExecution layer
+
+The 1st layer is the Ethereum layer, and this is where the important Polygon smart contracts are deployed and maintained. This is an optional layer and is not required for a blockchain to be able to deploy on Polygon. As you can see from the image above, these contracts handle things like: finality, staking, disputes, and messaging.
+The 2nd layer is the security layer, and this layer is also optional. This layer consists of a set of validators that provide the “security as a service” model for a fee.
+The 3rd layer is the first required layer. This is the ecosystem of blockchain networks built on Polygon. Each of these networks handles transaction collation, local consensus, and block production for its respective community.
+The 4th layer is the execution layer, and this one is also required. This one is pretty straight forward, It’s the execution environment where transactions get executed.
+I didn’t want to go into too much detail here so that I don’t confuse anyone. Besides, it’s not critically important to understand this for our investment purposes.
+
+MATIC TOKENOMICS
+Polygon has a max total supply of 10 billion tokens, of which only about 7.5 billion are in circulation right now. The remaining 2.5 billion tokens will be unlocked periodically over the next 4 years.
+Polygon held its initial exchange offering (IEO) on Binance using the Binance launch pad in April 2019. They were able to sell 19% of their tokens at a rate of $.00263/MATIC through this launchpad.
+Shortly after this IEO, Polygon held 2 additional funding rounds. The first was a seed round where they sold 2.09% of the total MATIC tokens at a rate of .00079/MATIC. The second was a a token sale dedicated to early supporters, where 1.71% of MATIC tokens were sold at a rate of $.00233/MATIC.
+The total breakdown of the MATIC token supply is as follows:
+private sale (seed round + early supporters): 3.8%Binance Launchpad: 19%Team: 16%Advisors: 4%Staking Rewards: 12%Foundation: 21.86%Ecosystem: 23.33%
+As I mentioned, the remaining 2.5 billion MATIC tokens that aren’t in circulation yet, will be distributed over the next 4 years according to the following vesting schedule:
+
+What Is The MATIC Token Used For
+The MATIC token holds 2 main functions: gas fees, and staking.
+Anyone transacting on any one of the many d’apps in the Polygon ecosystem has to pay a gas fee using MATIC tokens.
+Anyone wanting to become a validator or delegator has to stake MATIC tokens.
+It’s also important to note that according to the team, the MATIC token will be the sole token for the whole Polygon ecosystem. This means MATIC will be the native token for all of the different solutions Polygon provides. The full details of how this will play out haven’t been released yet.
+These are some pretty great tokenomics if you ask me though.
+EIP-1559
+Polygon also recently launched its own version of EIP-1559. For those unfamiliar, this basically means that a portion of the transaction fees we pay to use the network will be burned out of circulation. So the higher the adoption of the network, the more transaction fees get paid, which means the more MATIC tokens get burned. What all this means is that at some point down the line, MATIC will become deflationary. Assuming adoption and usage continues to grow over time.
+If you’re familiar with EIP-1559 already, then you probably know how wildly successful it’s been for Ethereum.
+It’s only been about 2 weeks since Polygon deployed this upgrade, and so far these are the results:
+
+Over 500K MATIC tokens burned already!
+
+ECOSYSTEM
+Polygon’s ecosystem is alive and thriving. I mean it’s literally one of the biggest chains right now, and yet everyone is still so focused on the bigger L1 names. Which means you’re still very early to Polygon.
+The number of teams building on Polygon’s PoS chain has been doubling every 2 months. They currently have over 7,000 d’apps running on the network, from literally the biggest names in the industry. This number by the way is growing at such a rapid pace, it’s insane. It literally grew from 3,000 to 7,000 d’apps in a span of 3 months. Over half of these projects are building exclusively on Polygon too!
+DeFi
+In terms of defi they have the biggest names you can think of. From Aave, Sushi, Curve, and 1inch. To more recently Uniswap, after 99% of UNI token holders voted to deploy on Polygon.

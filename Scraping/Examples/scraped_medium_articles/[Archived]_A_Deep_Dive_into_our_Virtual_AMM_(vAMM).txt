@@ -1,0 +1,60 @@
+url: https://blog.perp.fi/a-deep-dive-into-our-virtual-amm-vamm-40345c522eeb
+
+Title: [ARCHIVED] A DEEP DIVE INTO OUR VIRTUAL AMM (VAMM)
+by Perpetual Protocol
+
+INTRODUCTION
+
+[Archived] A Deep Dive into our Virtual AMM (vAMM)
+⚠️ Note: This content is archived and may be out of date. For up to date information about Perpetual Protocol, please see docs.perp.fi or visit our Discord. You can also check the announcement for our next major update here.
+
+
+📑 A BRIEF HISTORY OF AMMS
+Automated market makers, or AMMs, are used in the DeFi space to describe a protocol or an application that utilizes a math function to determine the price of an asset and subsequently facilitate the exchange of two or more assets. The most famous example of an AMM is Uniswap, a decentralized exchange (DEX) that utilizes a constant function of x*y=k to conduct token swaps.
+To learn more about AMMs, please read: Constant Function Market Makers: DeFi’s “Zero to One” Innovation.
+Since Bancor introduced on-chain AMMs in 2017, there have been several notable improvements on different aspects of AMMs:
+Uniswap (2018): The first AMM that achieved meaningful volumes and kickstarted the AMM wave in DeFi. Uniswap achieved this largely because of its simplicity.Curve (2019): The first AMM optimized for stable asset baskets.Balancer (2020): The first AMM to enable liquidity pool creators to customize weights between two or more assets in the single pool.Bancor V2 (2020): The first AMM to introduce dynamic weights for liquidity pools by realizing the losses by Bancor LPs to mitigate impermanent loss. Bancor also lets you provide only one side of the liquidity to the pool.Blackholeswap (2020): The first AMM that can process transactions exceeding its existing liquidity by tapping into the excess supply on Compound or other lending protocols.
+Building on this chain of innovation, we’re proud to share a new type of AMM pioneered by Perpetual Protocol: the Virtual Automated Market Maker (henceforth referred to as a “vAMM” or “vAMMs”).
+
+🤔 THE CURRENT LIMITATIONS OF AMMS: LEVERAGE, SHORTS, AND IMPERMANENT LOSS (IL)
+Despite the sheer amount of innovation happening in this space, all of the improvements mentioned above are focused on serving token swaps, meaning that every new approach only applies to swaps and can’t be applied to derivatives, such as perpetual contracts.
+Perpetual contracts are the most popular product for crypto traders. Because derivative products usually involve leverage of some kind, it’s hard to make them compatible with the current designs for AMMs; however, there are a few ways. For instance, one way to enable leverage and short selling with an AMM are to encourage liquidity providers to provide tokens in the AMM pool (= 1x leverage) and allow traders to borrow assets at the leverage they want. You can learn more about this approach here. However, the shortcomings of this approach are that 1) liquidity providers suffer from high impermanent loss, and 2) open interest is bound by the pool size.
+
+🤯 PERPETUAL PROTOCOL’S SOLUTION: VIRTUALIZING THE AMM
+Working to solve the current limitations of AMMs, Perpetual Protocol introduces an entirely new approach known as a “virtual AMM,” which radically expands the application space of AMMs and enables perpetual contracts for the first time.
+For those who aren’t familiar with perpetual contracts: A perpetual contract is a derivative similar to a futures contract but without an expiry date. For conventional futures contracts such as WTI, the contract’s price will gradually converge with the underlying asset’s spot market price as the expiry date approaches. For a perpetual contract, to converge its price with the spot market, the most effective method used in the industry is “funding rate”. You can learn more about how funding works by reading our documentation or this piece from FTX’s help center.
+Perpetual Protocol’s vAMM uses the same x*y=k constant product formula as Uniswap. As the “virtual” part of vAMM implies, there is no real asset pool (k) stored inside the vAMM itself. Instead, the real asset is stored in a smart contract vault that manages all of the collateral backing the vAMM. In contrast to traditional AMMs, Perpetual Protocol uses a vAMM as a price discovery mechanism, but not for spot trading.
+Here is an example showing how a vAMM works under the hood:
+1. Before a vAMM is created on the blockchain, the creator sets the number of virtual assets stored inside the vAMM. Suppose the price of ETH is traded at 400 DAI, the creator can set an initial amount of ETH and DAI on vAMM with a ratio of 1-to-400. For simplicity, we assume the creator sets the initial state on that vAMM as 100 vETH and 40000 vDAI.
+
+2. Trader Alice wants to go 10x long ETH with 100 DAI as collateral:
+Alice deposits 100 DAI into Perpetual Protocol’s vault, which, as mentioned above, is a smart contract on Perpetual Protocol.
+
+Perpetual Protocol credits 1,000 vDAI (10x leverage on 100 DAI) from Alice to the vAMM, which, in return, calculates the amount of the vETH that Alice receives according to a constant function (x*y = k).Perpetual Protocol records that Alice now has 2.4390244 vETH and the state inside this vAMM becomes 97.5609756 vETH and 41000 vDAI.
+
+3. Trader Bob then goes 10x short ETH with 100 DAI as collateral, meaning that:
+Bob deposits 100 DAI into the same vault.
+
+Perpetual Protocol credits -1,000 vDAI from Bob to the vAMM, which, in return, calculates the amount of the negative vETH that Bob receives according to a constant function (x*y = k).Perpetual Protocol records that Bob has now shorted 2.4390244 vETH and the state inside this vAMM now becomes 100 vETH and 40000 vDAI.
+
+
+🔮 THE UNIQUE PROPERTIES OF VAMMS
+No liquidity providers needed
+Because of path independence, vaults will always have enough collateral to pay back all the traders trading against vAMMs (assuming all the under-collateralized assets are successfully liquidated before going bankrupt). In contrast to conventional AMMs whose liquidity comes from liquidity providers contributing assets to facilitate trades, the liquidity for vAMMs comes directly from the vault sitting outside of the vAMM. In other words, there is no need for the existence of liquidity providers to bring liquidity for a vAMM to work: the traders provide liquidity to each order.
+Since no liquidity provider is required in a vAMM, there is no impermanent loss, to begin with.
+Periodic price alignment
+The vAMM itself acts as an independent cash-settlement market. If we want to make the vAMM market price close to an underlying index, we need to add a funding rate, similar to funding payments for perpetual contracts on central limit order book (CLOB) exchanges. For example, below is the funding payment formula from FTX:
+
+The funding payments incentivize arbitrageurs to bring the market price back as close as possible to the underlying index and make the vAMM market track the underlying index.
+Perpetual Protocol leverages a similar funding rate formula to that of FTX and therefore allows new derivative markets to trade with leverage while closely tracking an underlying index.
+Managing slippage
+For vAMMs, similar to conventional AMMs, traders suffer less slippage when the value of K is higher — but the similarity ends there. 
+For conventional AMMs, the only ways to increase the value of K are 1) encouraging more liquidity providers to provide more liquidity, or 2) increasing the transaction fee, and recycling trading profits to provide more liquidity.
+In contrast, in vAMMs, since the value of K is set manually by the vAMM operator at launch, it can be increased or decreased at will at any time, even after the vAMM is created, which helps the market respond to the latest conditions. That being said, despite the vAMM operator having this kind of power, he/she cannot move the funds saved inside the Vault. The vAMM operator will be the Perpetual Protocol team in the first version and transit to a DAO structure after.
+While the first version of Perpetual Protocol will set K manually, over time we expect K to be set algorithmically. For example, K could be set as a function of volumes, open interest, funding payments, volatility, and other variables.
+Setting the value of K is a delicate balance. If K is too low, then organic users of the protocol will incur too much slippage and will not want to trade in the system. However, if K is too high, then arbitrageurs won’t have enough capital to keep the vAMM price in line with the underlying index price.
+As we learn more about how users use the system in production, we will move Perpetual Protocol away from manually selecting K to algorithmic selection.
+
+🖊 CONCLUSION
+Above we have presented how vAMMs work and also several unique properties of vAMMs. Perpetual Protocol is the first implementation of vAMM and it’s on Kovan testnet right now: https://kovan.perp.exchange. Please give it a try!
+Feel free to ask us any questions on our Discord server or pm us on Twitter.

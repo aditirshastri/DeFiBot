@@ -1,0 +1,109 @@
+url: https://medium.com/gamma-point-capital/the-quest-for-yield-market-neutral-strategies-in-crypto-2762da22f315
+
+Title: THE QUEST FOR YIELD: MARKET-NEUTRAL STRATEGIES IN CRYPTO
+by Sanat Rao
+
+INTRODUCTION
+
+The Quest for Yield: Market-Neutral Strategies in Crypto
+
+Disclaimer:
+The above reflects the views of the investor and should NOT be construed as investment advice, financial advice or legal advice.This information is purely educational and is NOT meant to be taken as a recommendation to buy or sell any product or service. Please do your own research before making any decisions.Where relevant, direct quotes &amp; passages have been taken from whitepapers, articles and blog posts, with their sources cited.
+2020 was a tumultuous year — as the Covid19 pandemic threatened to shut down the economy, the US federal reserve brought interest rates close to zero to help speed up the recovery. Savings accounts interest rates all over the world today are at an all-time low.
+According to Bankrate, the best annual interest rate offered by banks in April 2021 is a measly 0.5% !
+Source: Bankrate
+Crypto markets in contrast have rapidly become institutionalized with a robust derivatives market and borrowing/lending platforms. Decentralized finance (DeFI) has rapidly become the ‘killer app’ for crypto, and will transform the structure of financial services in the future — DeFi uses smart contracts on blockchains to completely bypass the traditional centralized financial intermediaries and rebuild these primitives( banks, exchanges, asset managers etc) in a more efficient and transparent manner
+These developments have resulting in amazing fixed income opportunities in the crypto world.
+
+MARKET-NEUTRAL STRATEGIES
+A market-neutral strategy is a position whose return is un-correlated to the underlying market direction, and is ideal for investors looking to generate high risk-adjusted returns, as measured by high Sharpe ratios. An ideal market neutral strategy will generate returns without taking on directional risk, and can therefore be considered as a fixed-income yield strategy.
+This article covers the use of market-neutral strategies to generate fixed-income (yield) in Crypto and DeFi markets.
+Notes:
+This article is not intended to be a comprehensive list of all market-neutral strategies. For example, we do not cover the use of options strategies to generate yield, etc.For the sake of simplicity, we have organized the recommended strategies from low complexity to high, starting with basic crypto savings accounts and ending with hedged yield farming models.
+
+1. CEFI AND DEFI LENDING
+Annual Yield Range: 6–12%
+Complexity: Low
+Centralized Lending Platforms (CeFi)
+One of the earliest lending platforms to develop in the crypto ecosystem were the large professional crypto lending platforms such as Blockfi, Celcius and Vauld. Investors can open accounts at these firms (similar to a bank savings account), deposit their crypto assets and earn interest payments.
+At the time of writing this article, here are the yields at some of the top crypto lenders for USDC, BTC and ETH:
+
+Investors should note that these platforms are NOT FDIC insured and bear all the traditional counterparty risks (these lending platforms lend your deposited assets to other parties who could default) as well as broader ‘systemic’ crypto risks. These are good entry points for investors looking for decent returns while taking on relatively low risk.
+DeFi Lending Protocols
+The traditional lending industry relies on underwriting and legally binding contracts to determine default risk and enforce creditworthiness. i.e when you apply for a loan to a bank, you provide your salary statements, credit history etc. and the bank determines if you are worthy of a loan. Once approved, you sign a legal contract that can be enforced in court.
+In decentralized finance, where there are no intermediaries and loans are accessed pseudonymously, lending is instead managed by over-collateralization &amp; liquidation via smart contracts. Borrowers always have to supply more value in collateral than they can borrow, and suppliers can always seize that collateral through a free and open market for liquidation. These mechanics are enforced by software and work exactly the same way regardless of the borrowers’ creditworthiness.
+Compound, Aave and MakerDAO were the early decentralized lending platforms and are still the market leaders today. The table below shows an example of how Compound finance works:
+Source: Compound Finance
+In return for the (perceived) higher risk of crypto and the big demand for borrowing stablecoins in DeFi, a lender can earn much higher interest rates than traditional CeFi platforms, by “lending to a smart contract”. The graph below shows the lending rate for USDC at the 3 top platforms. These rates are all consistently higher than the interest rates earned on their centralized lending counterparts.
+Source: Loanscan.io
+In summary, a lender converts their USD to USDC (stablecoins), deposits these assets in Compound and earns the 14.31% interest ! Needless to say, the interest rates move regularly and the lender bears all the traditional DeFi risks (smart contract errors, rug pulls risks, etc.)
+
+2. THE BASIS TRADE
+Annual Yield Range: 20%-50%
+Complexity: Medium
+The BASIS trade (also known as the Cash-and-carry trade) is a well understood arbitrage strategy in traditional commodities and FX markets. Crypto futures contracts are traded on most large crypto exchanges (Binance, FTX, OKEX etc) as well as traditional exchanges such as the CME.
+Typically, futures contracts trade at a premium to the spot market (this phenomenon is known in financial terminology as contango). The term basis refers to the difference between the Futures price f(t) and the Spot price S(t), at time t.
+
+During a bull market phase, there is a huge demand from retail investors to use leverage to buy BTC and ETH futures contracts. At such a time t = α, F(α) &gt;&gt; S( α) and the basis spread is high. A basis trader buys the spot (i.e. goes long Bitcoin) and sells the futures contract (i.e. short the futures), thereby completely hedging their position.
+
+At time of expiry (t = ε), the futures price and spot price converge. i.e F(ε) = S(ε) and the trader can unwind the position (buy back the futures contract and sell the spot). By holding the basis position to expiry, the trader has made a net profit of Basis(α). Since this profit has no directional risk, we can treat it as yield (fixed income return) !
+In essence, the basis trader is providing the retail investor with leverage at time t = α, and is earning the yield Basis(α) in return !
+A simple example:
+On April 10 2021 (t=α), BTC is trading at $60,264 and the BTC June25 futures contract is trading at $66,264.
+ i.e. F(α)= $60,264 and S(α)= $66,264A trader will buy 1 Bitcoin and use it as collateral to sell 663 BTC0625 contracts on Binance (each contract = $100). The trader is fully hedged since 1 BTC long is hedged by the short futures contracts.On the expiry date of June 25, the prices of the 2 instruments are guaranteed to converge (barring any systemic risks).By holding this basis position until June 25, the trader is guaranteed to make a Profit = Basis(α)
+
+This is a 9.94% return in &lt; 3 months (around 77 days), translating to a 47.19 % annualized return !This is a risk-free return, as long as the exchange (Binance in this case) doesn’t go bust during the period. That’s because once the spot and futures prices are locked in, they will converge so that the spread between them is the payoff, minus trading fees.
+The chart above shows the BTC rolling basis for the last few months. The basis has been well above 30% during the bull market phase.
+Source: Skew.com
+As always, the complexity in the trade is in estimating the right time to take position (when the overall sentiment is bullish towards the underlying asset) and optimizing for slippage during the trade execution process.
+
+3. PERPETUAL CONTRACT FUNDING RATES
+Annual Yield Range: 10%-160%
+Complexity: High
+The perpetual contract aka perp is a derivative instrument unique to crypto markets. Perps are similar to futures contract with 2 differences:
+Perps have no expiry date andThe perp price closely tracks the underlying spot price
+Perps enable traders to speculate on an asset’s price without the need to hold the actual asset. For example. users can open a leveraged long position by buying BTC-PERP contracts if they expect the underlying asset’s (BTC) price to go up, or a short position if they expect BTC price to go down.
+The Funding Rate is a mechanism used by exchanges to drive the price of a perpetual contract (called the “mark price”) towards the spot price of the underlying asset (the “index price”). Funding payments are a series of continuous payments exchanged between longs and shorts of a perpetual contract, and can be a method of generating yield.
+Funding Rate Premium:
+In a given interval (usually once per eight hours), a derivative exchange calculates the time-weighted average price (or “TWAP”) of the Perpetual Contract Price (mark price) and the TWAP of the Spot Price (index price). The Funding Rate Premium is calculated as:
+
+If Premium &gt; 0, the markets are bullish. This causes the longs to make a payment to the shorts, thereby incentivizing the shorts to take the less popular side, thereby pushing the mark price closer to the index side
+If Premium &lt; 0, the markets are bearish. This causes the shorts to make a payment to the longs, thereby incentivizing the longs to take the less popular side, thereby pushing the mark price closer to the index price.
+Funding Rate Interest (I)
+The Interest Rate term in funding rate calculation is a function of the differential of borrow rates of quote currency and base currency of the perpetual contract. The Interest Rate thus is a proxy for cost of holding a position in a perpetual contract. Most exchanges use a fixed amount for interest rates (for example, I = 0.01% for every 8 hrs in the case of Binance)
+The Funding Rate and Funding Payments
+The funding rate formula is relatively complicated. Binance uses the following formula
+
+A trader can use the perp contract to earn the funding rate as follows:
+Identify a contract where funding rates have been consistently &gt; 0 for a period of time (e.g .3 days, 1 week etc).Buy x amount of the spot (e.g.BTC) and use it as collateral to sell x perp contracts (e.g BTC-PERP) short. the trader is now hedged against the underlying price movements in BTCAs long as funding rate &gt; 0, the trader will earn a funding payment every 8 hours according to the formula above !
+Needless to say, this is a complex position and requires constant monitoring but if executed well, returns can be compelling. For example, the funding rate for the SUSHI -ERP on Delta Exchange has averaged 0.15% for 8 hrs for the past 3 months. This is 13.5% per month == 162% APY
+Source: Delta exchange
+
+4. DEFI “HEDGED” YIELD FARMING
+Annual Yield Range: 10%-300%
+Complexity: High
+We now come to the Grand Daddy of all yield strategies in Crypto: the DeFi Hedged Yield Farming position.
+What is Yield Farming
+Yield Farming is the broad practice of generating returns on your crypto assets, by using them to provide liquidity or lending them to a DeFi smart-contract liquidity pool. Broadly, there are 3 forms of yield in the DeFi world:
+Transaction Fees (TF): ‘Farmers’ (aka liquidity providers) provide liquidity into a DeFi pool and earn a % of the transaction fees. For example, Uniswap charges 0.3% on each token trade as fees, and passes on this fee proportionately to liquidity providers.Governance Token Incentives (Gov): Farmers also earn the protocol governance tokens as an incentive for providing liquidity. For example, the leveraged YF protocol Alpha Homora is currently distributing 237,500 ALPHA tokens to farmers who opened a leveraged position within the 2-week period from Mar 31 — Apr 14.Staking Fees (S): Some protocols offer additional incentives for governance token holders who are willing to lock up (aka ‘stake’) heir tokens. For example, SUSHI token holders today earn 0.05% fees for staking their tokens.
+Yield Farming is a high risk activity with significant risk for all participants, including smart contract bugs and ‘rug-pulls’. There are 3 financial risks that farmers need to consider:
+Price risk aka Directional Risk Farmers depositing tokens A and B into a pool to earn fees are obviously exposed to movements in price of these tokens (since they are long A and B by definition)Impermanent Loss (IL): This is the loss experienced by liquidity providers because prices between pairs in a pool diverge from those at the time of entering the pool. Here is a simple explanation of ILGas Prices(Gas): Gas in a blockchain network (e.g. Ethereum) is the fee paid to miners to execute instructions in a smart contract. During times of high demand, gas prices can skyrocket and eat away from the earnings of a DeFi yield farmer
+So a Yield Farmer’s net profit can be calculated as:
+
+As we can see, the net yield is deeply exposed to the price movements in A and B. A “hedged” yield farming example uses futures contracts to hedge out this risk.
+Hedged Yield Farming Example
+We outline the process of earning predictable yield from Yield Farming below:
+Source: CoinGecko
+In the table above, farmer Chad notices that the Onsen SUSHI/WETH pool on Sushiswap is currently “yielding”an amazing 154.2% APY.Chad has a capital of $250,000. He buys $100,000 of SUSHI (token A) and $100,000 of WETH (token B) on a DEX or a DEX-aggregator (like 1inch)Chad then proceeds to a centralized exchange (e.g. FTX) and sells $25,000 of SUSHI-perps (at 4X leverage) and $25,000 of WETH-perps (at 4X leverage). This ensures that the position is hedged from the price movements of A and B. [the 4X leverage does expose Chad to liquidation risks if the prices of A or B shoot up drastically]Chad deposits A and B into the Sushiswap Onsen pool.At fixed intervals, Chad withdraws X SUSHI tokens he received as incentives and stakes them to earn staking fees SF.4 months later, Chad unwinds the position by withdrawing liquidity from the pool (thereby receiving the transaction fees and tokens), closing out the futures positions and selling A and B tokens to get back to USD. He also unstaking his X SUSHI tokens and selling them at market at prevailing price P.
+Chad’s net yield is:
+
+Needless to say, hedged yield farming positions add an additional layer of complexity to a reasonably complex process. In return, the farmer is hedged from price movements in the underlying tokens and can focus on earning a market-neutral yield.
+
+SUMMARY
+The crypto ecosystem today and the advent of decentralized finance has opened up incredibly rich yield generating opportunities.
+It is important to note the reasons these yield opportunities exist in the first place:
+Demand for Leverage: Retail investors in crypto markets create huge demand for leverage during bull runs, driving up yields. Traders providing them with this leverage have a chance to earn yieldDeFi Incentives: New DeFi pools will ‘bootstrap liquidity’ by offering their Governance tokens to early liquidity providers.Ease of Access: Borrowers, lenders, liquidity providers and traders in DeFi can freely transact with each other without any regulatory or national boundaries. As more participants flock to these venues, more transaction fees are collected and passed onto liquidity providers as yield.
+With the entry of larger institutional players and large amts of $$, some of these yield opportunities may compress over time. We believe that we are still in the early phase of the crypto market-neutral phase and these opportunities will continue for the next several years.
+Investors seeking superior “risk-adjusted” returns will be well served by adding crypto market-neutral strategies to their investment portfolio.
+— — -
+Sanat Rao is the managing partner at Gamma Point Capital. He was previously a Partner at IDG Ventures focused on investments in fintech, blockchain and enterprise software. Sanat held earlier roles at Intel Capital and iSPIRT on the investment and M&amp;A teams.

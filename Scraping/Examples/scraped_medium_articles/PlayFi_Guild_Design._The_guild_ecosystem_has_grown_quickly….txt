@@ -1,0 +1,62 @@
+url: https://medium.com/@lechuzacap/playfi-guild-design-a87a9b018ba9
+
+Title: PLAYFI GUILD DESIGN. THE GUILD ECOSYSTEM HAS GROWN QUICKLY…
+by Lechuza
+
+INTRODUCTION
+
+PlayFi Guild Design
+A 17th century guild, probably
+The guild ecosystem has grown quickly over the past year, from a simple idea to a diverse collection of groups seeking to engage in the ownership economy. In this post we aim to catalog and analyze strengths and weaknesses of standard guild design, as well as present some ideas for improving the model. While the process of people organizing into groups with shared common purpose or expertise has been around for thousands of years, the notion of a guild takes on a slightly different form in PlayFi, and that is what we explore here.
+In general, guilds aim to catalyze a flywheel of asset acquisition and community organization. The more influential guilds can be seen as kingmakers, as they are able to fund new games, purchase in-game assets, then drive players to the game, ensuring some degree of success and building value into the assets. Guilds leverage treasury assets to empower individuals or groups to play, compete, and earn in new cryptoeconomic gaming worlds, where value is distributed to users.
+Today we see an expanding ecosystem of guilds competing for members, assets, and dealflow. With the rise of PlayFi and the X-to-earn economy, guilds will likely see an increased role in organizing people around new incentive structures in games, products, and services.
+
+THE BLUEPRINT
+Typical PlayFi guilds strive to build a feedback loop of scholar onboarding and asset accumulation. The three main components are scholars (sponsored players), scholarship managers, and the guild treasury.
+To initiate the flywheel, guilds purchase assets to participate in PlayFi games, covering the often substantial upfront cost to players. Guilds then elect scholarship managers, who are tasked with recruiting, training, and overseeing scholars in a guild sub-committee.
+Once the structure is in place, scholars borrow in-game assets from the guild to play various games. In exchange for these services, managers and the treasury receive a portion of value generated, generally in the form of game-native tokens. As the base of scholars expands, the flywheel accelerates.
+(1) A larger base of scholars generates more revenue for the guild.
+(2) As the treasury grows, the guild is able to purchase more in-game assets and fund the development of new games.
+(3) By investing in more game assets and private deals, the guild can continue to grow the scholar base.
+Effectively, a guild acts as a venture fund, holding company, educational facility, and staffing service all in one.
+Guild Economic Flywheel
+As guilds reach scale, they have the added benefit of leveraging their large scholar base to influence the success of their investments in new PlayFi games. By providing their scholars with financial incentives — in the form of revenue share — and the assets required to play new games, guilds can directly influence user adoption of their portfolio companies, often leading to price appreciation of game tokens and assets. All ships rise.
+
+GUILD OF GUILDS
+Through 2019 and 2020, Gabby Dizon was lending Axies to local Filipinos, training them on Axie Infinity, and exploring this novel tokenized gaming model, when he realized there was potential for something larger. He went on to found Yield Guild Games, laying the foundation for the thriving guild ecosystem we see today.
+Yield Guild Games is the first to apply the guild model to the PlayFi space, monetizing play-to-earn games at scale. What sets YGG apart is the aim to exist as a meta guild. Rather than attempt to compete across continents as a single entity, YGG invests in focused regional DAOs, globally franchising the brand. They also platform game-specific sub-DAOs which allow groups of members to coalesce around a specific set of treasury assets. Game, platform, and location agnostic. Neutrality maximizes the potential surface area for success.
+Yield Guild Games Ecosystem
+This empowers YGG to more efficiently scale the business across various languages, jurisdictions, and cultures. Through a positive sum approach, Yield Guild is able to move further, faster. To date, YGG remains the largest guild by scholar base, investment portfolio, and market cap.
+
+COMMON SHORTCOMINGS
+While on the whole sound in architecture, there are a few common problems we see when evaluating guild design:
+(1) Centralized Governance
+While there are certainly benefits to this model — e.g. it doesn’t make sense to put every decision to community vote — engaging your community in governance decisions is extremely beneficial for member loyalty and retention. Delegation to subteams, soft-polls, and bottom-up recruiting are all part of this. If scholars and other community members have a say in the future of the guild, they are much more likely to stick around.
+(2) Token Functionality
+Guild tokens often have little function outside of staking rewards. In an ideal world, guild tokens should be coveted by scholars who are committed to the long term success of the guild.
+(3) Community Retention
+Due to the lack of meaningful governance and token functionality described above, and impending saturation of the space, guilds may encounter retention issues. To mitigate churn, guilds should focus on rewarding long-term behavior and committed community members over less committed, short-term actors.
+(4) Automation &amp; Tracking
+Much of the bottleneck in guild ecosystems revolves around an abundance of trust and manual administration. Scholars are trusted to pay managers who are trusted to pay the treasury. Protocolization of this process will greatly accelerate the growth of guilds.
+(5) Extractive Players
+As their main source of revenue is earned from gameplay, scholars tend to be extractive actors in PlayFi ecosystems. This is prevalent in games with weaker token mechanics; Reliance on emissions to scholars as a mainline user acquisition channel generally results in sustained downward price pressure.
+
+OPPORTUNITIES FOR IMPROVEMENT
+In an attempt to address the points outlined above, we have detailed possible adjustments to various aspects of the guild model. We recognize this is by no means a comprehensive list and will not fit the specific needs or architecture of every guid.
+(1) Governance
+With the goal of increasing community and scholar engagement in mind, while understanding the inefficiencies of fully decentralized DAO structures, we propose that guilds follow an elected committee DAO model. In the committee DAO model, governance token holders would vote on and “elect” individuals and community members to topic based committees. Once elected, committees would operate with far-reaching autonomy, only requiring community approval for large scale decisions, such as changing tokenomics. Example committees could be: Treasury Management &amp; Game Investments, Guild Infrastructure, Guild Partnerships &amp; Sub-DAOs.Examples of this style of governance existing in the wild include Yearn’s constrained delegation and MakerDAO’s core units.
+(2) Tokenomics
+Both games and guilds should seek to establish more symbiotic economics. While scholars can be extractive, the onus lies on games to design experiences and incentives that optimize for fun. For games, this may look like shifting rewards to high agency actions and creating more natural token sinks, such as cosmetic shops. For guilds, this may look like evolving tokenomic models, rewarding scholars for more long-term behavior.
+In the world of guilds, scholars are the most important asset to control. The guild with the most scholars will generate the most revenue, and unlike treasury held game assets, they can easily move to a competitor guild with more favorable incentives. By incorporating strong token utility and mechanics that add additional incentives to long term token holders, guild retention and scholar acquisition can be improved.
+One method is to give scholars and community members a way to share in the financial success of the guild, with the largest incentives directed to those who are most committed. This can be accomplished by introducing token locking mechanics, where locked token holders earn a share of revenue generated by the guild and have a say in protocol governance. This mechanism is also more likely to lead to token price appreciation by reducing the possibility for mercenary capital. Additionally, to encourage further participation and retention, guilds could offer to exchange a percentage of the scholar’s earnings for locked guild tokens.
+(3) General Improvements
+In addition to the tokenomics and governance adjustment outlined above, we believe that both guilds and play-to-earn games would greatly benefit from guilds expanding their target audience beyond scholars, to incorporate non-scholar gamers as well. Since gameplay is often a scholar’s primary source of income, game tokens are regularly sold as fast as they’re earned. While a revolutionary form of sustenance for many, not a wholly sustainable approach without design adjustments.
+The result of this dynamic is immense sell pressure on the in-game currency— as seen with Axie’s SLP. By expanding beyond the scholar focused guild model into a hybrid structure that combines aspects from traditional gaming communities, guilds can counteract the extractive nature of scholars with the often additive nature of traditional gaming communities.
+
+THE FUTURE OF FUN
+Following the tremendous success of Yield Guild Games, new guilds have flooded the market, often with little differentiation other than a regional focus. As the guild space becomes more homogenous, we envision a future where guilds re-bundle into new entities or become subDAOs for international guilds with the infrastructure to support scale.
+We also expect to see guilds begin to apply the model outside of the PlayFi space, taking advantage of the wider ownership economy. Guilds will leverage their scale for bulk buys, discounted rates, early access, and generally preferable treatment to members. As a result, guilds begin to look more like bargaining collectives or unions, flipping the script on historically predatory platforms and apps. We firmly believe the future of guilds is bright, and represent the beginning of an entirely new coordination primitive in the crypto space.
+—
+If you’d like to get in touch, the authors @substreight &amp; @gdalfz on twitter.
+—
+Disclosure: One of the authors, @substreight, is an advisor to Yield Guild Games.

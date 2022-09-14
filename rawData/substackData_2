@@ -1,0 +1,95 @@
+Ribbon Finance, a decentralized options product, is now live in V3 and has a TVL of over $170 million, second only to Opyn in the options category. In the context of the market downturn, DeFi’s TVL has fallen by more than half, but Ribbon is still at November levels and this could continue throughout the bear market.
+
+In the traditional DeFi model, users’ staking returns depend on the price of the platform token, and once the token price drops, users’ staking returns become unsustainable, and the massive selling pressure accelerates the entire decline, so the returns for liquidity providers (or stakers) will be minimal in a bear market. Unlike this traditional model, Ribbon offers the same rewards as staking tokens, for example, depositing ETH into the ETH Theta vault (T-ETH-C) for ETH, which is certainly a good option for long-term holders to survive bear markets.
+
+Option Strategy
+
+Before introducing Ribbon’s vaulting mechanism, let’s briefly introduce the most basic of the options portfolio strategies: Covered Call, in which the investor buys spot (blue) and sells an equal amount of calls (yellow), with a combined position as shown in the chart below.
+
+Source：http://www.option-trading-guide.com/coveredcalls.html
+
+The green line represents a portfolio position with a constant premium when the underlying price is greater than the option strike price, and a negative return when the price is less than the strike price minus the premium. In traditional financial markets, Covered Call is suitable for investors who are reluctant to sell their stocks but are not optimistic about the future market (e.g., corporate stakeholders or investors seeking to avoid taxes), as this strategy gives investors an immediate amount of extra cash, but also locks in the gains from a significant increase in assets.
+
+Being negative about the future does not mean being bearish. You can hedge your bets by shorting futures or buying put options, which create a Protective put. By the way, there is enough data to prove that institutions have built short positions in derivatives such as futures options above 43,000, and that investing based on the status of large positions as shown in the chain is doomed to failure.
+
+Ribbon Mechanism
+
+Take the T-ETH-C vault as an example. The user deposits ETH into the vault and receives a certificate rETH-THETA. The vault receives ETH from depositors and invests 100% of its ETH balance in its weekly options strategy. The vault algorithmically selects the optimal strike price for the ETH call options. Every Friday at 11am UTC, the vault mints European ETH call options by depositing its ETH balance as collateral in an Opyn vault. The vault sets the strike price to the value determined by its selection algorithm and the expiry date to the following Friday. In return, the vault receives oTokens from the Opyn vault, each of which represent an ETH call option. The vault sells the newly minted options via a Gnosis batch auction. The vault first sets a minimum price for the options and then opens up bidding to anyone in the world. Participants whose bid is greater than or equal to the final clearing price receive the auctioned oTokens. The ETH earned from the Gnosis Auction is collected by the vault and represents the yield on this strategy.
+
+The portfolio thus constructed is equivalent to a Covered Call, i.e. holding ETH and selling the same amount of options.
+
+At expiry, if the strike price is higher than the market price of ETH, the options expire out-of-the-money. In this situation the oTokens held by the option buyers expire worthless. When the call options expire out-of-the-money, the ETH used to collateralize the options in the Opyn vault is returned back to the Ribbon vault. At expiry, if the strike price is lower than the market price of ETH, the options expire in-the-money. In this situation the option buyers can exercise their options. When the call options expire in-the-money, option holders exercise their options by withdrawing ETH from the Opyn vault. The amount withdrawn is equal to the difference between the price of ETH and the strike price at expiry from the Opyn vault. Any ETH left over is returned back to the Ribbon vault.
+
+Thus, when minting an option, Ribbon chooses a strike price that is much higher than the current market price, i.e., a deep out-of-the-money option. Of course, the larger the strike price, the smaller the option premium and the lower the vault return. Based on historical data, Ribbon generally chooses options with a Delta near 0.1 in order to balance risk and return.
+
+In short, as long as the price is not higher than the strike price after a week, the user earns ETH, and loses some ETH in the opposite direction, but that means the ETH price spikes, and then the net asset value in USD is positive. In other words, a price drop earns ETH, a price spike earns USD, and a price shock or sideways earns both ETH and USD.
+
+If you think the market has more room to fall, then this strategy is not the right time to participate, it will result in a significant drop in NAV (not as much as ETH, but still a significant loss). However, if you think now is the time to bottom, then this strategy is a good choice. Because bear markets are extremely long, we don’t have to worry about prices rising sharply and exceeding the strike price in succession.
+
+Yield
+
+According to the official backtesting results, from March 2020 to March 2021, the strategy generated USD gains of 1840% and ETH gains of 18.7%, with an average weekly return (ETH) of 0.6%. The ETH price has increased about 15 times in the same period. From last September to the present, T-ETH-C’s return in ETH terms was 12.39%, or about 16.5% annualized, while the return in USD terms was -36%, and the ETH price fell 49% over the same period, resulting in an excess return of about 13%.
+
+However, T-WBTC-C, which was launched during the same period, has underperformed. Since September last year, T-WBTC-C has returned 2.75% in BTC terms, or about 3.7% annually, and -34% in USD terms, with a 36% drop in BTC prices over the same period, resulting in an excess return of 2%.
+
+This is where the biggest risk to the strategy lies, namely excessive retracements. Selling a call option means a fixed gain when the asset price falls and an unlimited loss when it rises, so every loss is huge. However, this loss is in ETH terms, while in USD terms it would be a profit. If the user does not want to lose ETH/WBTC, then he/she needs to make the same amount of ETH/WBTC long on another trading platform.
+
+In the current strategy, for example, the vault sells a call option with a strike price of $2,000 for 0.41% of the staked amount, or $8.2 worth of ETH for each ETH staked. if the user is concerned that the price of ETH will exceed $2,000 in the coming week, they can hedge their risk by going long ETH in the futures market.
+
+This sounds like a bit of a hassle, but Ribbon V3 has improved this feature. In the new version, the vault will allow users to temporarily suspend selling options and decide whether to resume them the following week, which definitely increases the user’s autonomy to make decisions. However, it is worth wondering how the vault can be stopped in the middle of the process when it has already staked the underlying asset to Opyn and sold the option. This would obviously require a reserve, and it would be a question of whether the reserve could cover a run on users in the event of a sharp rise in the market.
+
+Other products
+
+Put selling
+
+Ribbon also has a vault for the purpose of earning stablecoins: Put selling (Put selling is not actually an option portfolio strategy, it is simply selling options), which stakes USD and sells puts. The reason for the difference in collateral is that selling a call option on the Opyn platform requires the underlying to be collateralized while selling a put option is collateralized by USDC (the underlying is worth more on the upside and the USD is worth more on the downside).
+
+At expiration, if the market price is above the strike price, the option is out of the price, the buyer does not execute the trade, and the user earns the option premium. Otherwise, if the option is in the price, the buyer can withdraw part of the USDC equal to the difference between the market price and the strike price, and the rest is returned to the Treasury.
+
+Vaults also opt for deep out-of-the-money options because they are less likely to be exercised. But unlike a Covered Call, a selling Put only makes money if the price is above the strike price and does not earn money on the underlying asset.
+
+Strangle
+
+Strangle is the simultaneous purchase of a call option with a higher strike price and a put option with a lower strike price (with the same expiration date), with a profit when the price of the underlying asset spikes or plunges, and a loss when it shakes or moves sideways. Thus, the option strategy can essentially be understood as going long the volatility of the asset.
+
+The biggest difference from the previous two strategies is that the previous two are sell options, while this one is a buy option. Therefore, the former strategy has a high win rate but a low P/L ratio, which is financial in nature, while this strategy has a low P/L ratio and is speculative in nature. Perhaps because there is no shortage of speculative products in the crypto world, the complex option strategy is not very attractive to users, so the strategy was taken offline not long after its launch.
+
+Business
+
+The Vault fee structure consists of an annualized 2% management fee and a 10% performance fee. If the strategy is profitable this week, the vault charges 0.038% of the total funds (2% annualized) and 10% of the profit; otherwise, no fee is charged. The mechanism has a loophole of double fees, for example when the vault makes 1% profit last week, 5% loss this week and 1% profit next week, then the vault will charge last week and next week’s fees, however there is no real profit for the user.
+
+The last half year agreement revenue was $3.8 million, ranking 14th in the DeFi space and 1st in the options space.
+
+The largest growth in TVL was from selling Put vaults, mainly because users tend to hold stablecoins rather than risky assets as the market enters a bear market. Of the remaining vaults, T-stETH-C increased the most, thanks to the approaching ETH 2.0.
+
+Tokenomics
+
+RBN currently has a market cap of about $47 million and $3.8 million in agreed revenue, which is in the middle of the pack in the DeFi space.
+
+Ribbon imitates Curve in its economic model and uses the veRBN model. Users receive a veRBN by locking in the RBN for a maximum of 2 years, and veRBN holders receive a share of the agreement revenue as well as governance voting rights.
+
+What is certain is that Ribbon has business revenue and its fee model is modeled after the 2–20 model of traditional private equity funds (2% annualized management fee plus 20% performance-based commission). The revenue received by users is not from RBN rewards but from option arbitrage, so it is not a Ponzi game.
+
+Options, however, are niche, not to mention options portfolio strategies, as the Ribbon’s product updates show. The first to launch was the most complicated Strangle strategy, which was also the riskiest. They were replaced by Covered Call, an entry-level option strategy, and Put Selling, not even a portfolio strategy, as the style shifted from aggressive to conservative. And over time, Put selling for the purpose of earning stablecoin has gradually overtaken Covered calls on TVL. If the protocol turns out to be a stablecoin platform, it won’t be able to compete with DEX, where stablecoin mining is risk-free (except for stablecoin de-peg or money being stolen).
+
+Just as users didn’t know they liked AMM until Uniswap came along, Ribbon, as a leader in its niche, should not only consider what products users like, but should develop innovative option strategies like Squeeth, just like Opyn did.
+
+Impact on CeFi options market
+
+The implied volatility (IV) of options is a powerful tool to measure the volatility of investors’ expectations of the future market. Generally, IV decreases when most investors’ judgment of the future market direction is the same as the current trend, while IV increases when expectations are contrary to the current market.
+
+Looking at the IV trends of BTC options and ETH options, we can see that since Q4 2020, crypto market options IVs have been moving lower overall, except for market crashes similar to last May and this May. The underlying reason is that IV is directly proportional to option prices, and when the options market is oversupplied, option prices fall, which in turn causes IV to fall.
+
+In the CeFi market, the buyers and sellers of options are usually in balance, so IV is a true reflection of investors’ expectations for the future. As the DeFi Option Vault (DOV) market continues to expand, however, this all seems to have changed.
+
+The additional revenue available to DOV sellers, such as platform bonuses or pledge proceeds, has led to a large retail participation in the sell-side market. And since options are, after all, a niche product, buyers are usually institutional market makers who buy options not for future profits but to arbitrage by buying cheap IVs within DOVs and selling the underlying options in the Deribit chain. As a result, the DOV market is effectively oversupplied, leading to a gradual reduction in IV.
+
+The decrease in IV not only affected the traditional options market, but also had a negative impact on DOV itself. Initially, DOV chooses to sell options with 0.1 delta, with a strike price farther away from the current price and less risk. However, as the option price decreases, the seller has less and less room for profit, and in order to maintain the yield, DOV has to increase the delta, which leads to a strike price that is closer to the current price, thus increasing the risk.
+
+If Ribbon is unable to introduce more sophisticated option strategies or products that are more attractive to buyers, then the risk-return ratio of the vault will continue to decrease.
+
+Follow us
+
+Twitter: https://twitter.com/WuBlockchain
+
+Telegram: https://t.me/wublockchainenglish

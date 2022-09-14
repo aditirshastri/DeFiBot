@@ -1,0 +1,54 @@
+url: https://medium.com/fitzner-blockchain-consulting/emerging-revenue-models-in-defi-7034a0de58a9
+
+Title: EMERGING REVENUE MODELS IN DEFI. A LOOK INTO HOW DEFI PROJECTS ARE…
+by Cooper Turley
+
+INTRODUCTION
+
+Emerging Revenue Models in DeFi
+Oddly enough, revenue models for web3 products are one of the most contentious topics in the industry.
+Seeing as many projects are subject to the strict decentralized ethos that the larger blockchain community ascribes to, it’s not surprising that companies looking to extract revenues from their application are often ridiculed.
+However, it’s important to recognize that in order for any web3-native products to be sustainable the higher they get in the stack, the stronger the need for a degree of value capture which routes back to the issuing entity.
+Most commonly, tokenized protocols and applications conducted huge ICOs, largely aggregating millions of dollars into a war chest that act as a runway for the development team’s first few years (decades? *cough cough Tezos*). As many of us have seen, this commonly translated to poor token model which would bottom near zero — leaving token holders upset and the issuing entity with no recourse to future liquidity.
+In today’s article, we want to take a look at web3-native companies which take a different business approach, namely through the subtle integration of service fees.
+
+It’s worth highlighting that behind both of these examples are untokenized projects which live within the larger DeFi landscape.
+Let’s explore their models and put some of the myths to rest.
+
+DHARMA
+As a consumer-facing savings application, Dharma leverages Compound to offer users an annualized return on supported assets like Dai and USDC. What’s unique about Dharma is that it’s largely targeting the non-technical audience that many DeFi protocols fail to address.
+
+In particular, the way the project is branded, marketed and packaged is vastly more consumer-friendly than a lot of the other savings applications on the market. Under the hood, Dharma leverages native tokens called dTokens which represent the interest-bearing assets stored in a users wallet (dUSD or dDAI for example).
+Similar to cTokens on Compound, dTokens on Dharma earn passive income as part of a larger lending liquidity pool. However, the primary difference is that with dTokens, 10% of the accumulated interest is routed back to Dharma itself.
+This subtle shift caused many to express “If Dharma is taking 10%, why would I ever use them”? To that, the answer is convenience.
+
+Just these past few weeks, Dharma announced both peer to peer trading in a Venmo-like fashion and the integration of a Layer 2 scaling solution called Optimistic Roll-Ups which allow transactions to be processed instantly.
+
+Paired with its mobile-first approach, it’s highly possible that many new users may get their first intro to DeFi through Dharma, all of which paints the perfect picture for a sustainable revenue model.
+New wallets on Dharma
+
+DYDX
+Next up we have dYdX — a hybrid margin-trading exchange and lending protocol which has been making major waves in recent weeks.
+Due largely to its capacity for traders to go long or short with up to 5x leverage on Ether without having to undergo KYC in tandem with passive income opportunities on all capital deposited to the exchange, dYdX is currently capturing roughly 40% of the DEX market.
+dYdX DEX market share
+This substantial growth coincides nicely with the introduction of trading fees, all of which help offset the gas expense dYdX covers on behalf of its users.
+“Takers with orders over 0.5 ETH will pay 0.15% and 0.50% if it’s less than 0.5 ETH. In addition, the DAI/USDC pair will have a separate fee model where takers in excess of 0.5 ETH will incur a 0.05% trading fee compared to 0.50% for takers of less than 0.5 ETH.”
+
+Tying this back to our earlier point, dYdX does not have a native token, and has been doing quite well without them. Since implementing their revenue model, trading volume has only continued to explode, recently reaching it’s 24h ATH volume of $45M on Black Thursday a few weeks back.
+
+
+PROFIT FIRST / TOKEN SECOND
+While there are numerous other niche companies following similar models, we’d like to highlight the fact that creating a token at inception is no longer a “requirement” for launching a web3-native business.
+Instead, we largely encourage token projects to consider how they are capturing value and later tokenize the rights to that value once a clear path to revenue has been achieved.
+A great example of this is Audius — a distributed streaming platform — who recently shared their plans to monetize in a fantastic tweetstorm.
+
+
+TOKENS OR REVENUE?
+Tying this all together, we’ve yet to see a token project leveraging a purely token-first approach (Kyber and Synthetix being future contenders) demonstrate that their model is sustainable.
+It’s important to recognize that we are huge fans of innovative token models and long hope that they can either replace or complement revenue streams entirely in the not-so-distant future.
+In the short term, we believe that directing protocol fees towards a DAO may be the most viable and supported way of doing so.
+For now, we hope that Dharma and dYdX can best show that as of today, not everyone will fork a protocol that has fees and that even DeFi users seem to be comfortable paying for a value-added service.
+If you or your project are eager to explore how revenue streams are evolving in web3 in more detail, give us a shout!
+We’re constantly on the lookout for new ways to leverage the web3 ecosystem in an attempt to drive the needle forward.
+Liked this article? Sign up for Token Tuesdays to have new ones delivered right to your inbox every Tuesday!
+Special thanks to Lucas Campbell

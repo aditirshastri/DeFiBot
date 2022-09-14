@@ -1,0 +1,50 @@
+url: https://axelapi-xyz.medium.com/axel-the-universal-defi-api-3bcced44fa8a
+
+Title: AXEL: THE UNIVERSAL DEFI API. HELLO WORLD.
+by Axel
+
+INTRODUCTION
+
+Axel: The Universal DeFi API
+Hello World.
+
+Welcome to Axel — the composable, powerful, and universal decentralized finance API. We’ve built the premier infrastructure to enable any team to seamlessly and fully integrate decentralized finance into any application, all in just a few lines of code.
+
+Lend, stake, yield, and exchange all from the comfort of your console. By giving every developer the ability to easily build unified, intuitive financial experiences on top of blockchains, DeFi has the ability to truly reach critical mass.
+
+WHY DEFI MATTERS
+As we speak, $80 billion flows through DeFi. The lever driving this value is that DeFi is a fully composable financial ecosystem. Because all of the programs and code live on blockchains (public, immutable, Byzantine Fault Tolerant databases), this means anyone can build on top of other protocols.
+This enables a truly open, fully composable API economy: anyone can build on top of other software to create new financial experiences, without the platform risk of web2.
+But DeFi hasn’t reached critical mass. In fact, we’re far from it. Why?
+
+THE REVOLUTIONS OF FINANCE
+
+Centralized Finance 1.0
+Born were the earliest payment rails to move money — rails such as FedWire, BACS, and CHIPS. These financial primitives were revolutionary yet inaccessible to industry players looking to move money.
+This is where institutions like JP Morgan (custodians), NYSE (clearinghouses) and Western Union (remittances) built the financial infrastructure to enable banks, broker dealers, credit unions, and more to move money efficiently using the underlying rails.
+Centralized Finance 2.0
+The same dynamics played out for CeFi 2.0. New payment rails blossomed — ACH, VISA, and SWIFT — with much lower clearing times.
+But again, the rails were far too inaccessible. Instead, it took issuing, banking, payment, and brokerage platforms to build the new financial infrastructure as a set of APIs for developers to birth entirely new industries like eCommerce, neobanks, cards, and more.
+Decentralized Finance
+A similar dynamic is happening in decentralized finance right before our eyes.
+And what’s special about DeFi is that it’s permissionless, unlike Centralized Finance, which is permissioned. In CeFi, to access banking, loans, brokerage, yield opportunities, and more, one must overcome monumental barriers — stringent financial audits, KYC/AML, credit scoring, accredited investor status, and more.
+In DeFi, one can access any financial instrument (shares, tokens, options), existing financial paradigms (lending, banking, brokerage), and new financial paradigms (staking, yield opportunities, liquidity providing) with only a cryptographically generated public address (wallet) that identifies one pseudonymously. Now, anyone in the world, regardless of background or situation, can access finance entirely permissionlessly. This means that billions across the world who couldn’t access financial services before, now can for the very first time.
+Direct, permissionless, and composable rails (lending, staking, exchanging, yield) have given birth to the 3.0 financial economy.
+
+BUT THERE’S A ROADBLOCK.
+Building applications on top of the “rails” of DeFi requires:
+Spending hours hunting down the proper protocol to interact with as well as it’s proper interface (ABI)Actually stitching together disparate DeFi protocols to building raw adapters and integrations with them from scratchPainfully trying to sync with these smart contract ABIsFinding and paying for an RPC node provider or setting up your own blockchain nodesParsing raw blockchain data directly to format a transaction to said protocol in a computer-readable formatCalculating the correct gas fee to ensure transactions go through seamlessly and without being droppedManually upgrading your contract integrations as protocols iterate into new versions and leave old smart contracts behind
+… and much more!
+Axel reduces this entire process to just a few lines of code. As the foundational DeFi infrastructure layer, Axel enables any team to read from, write to, and frictionlessly integrate with any DeFi protocol in just a few lines of code.
+
+A BATTLE-TESTED, FULLY PLUG-AND-PLAY SUITE OF DEFI INTEGRATION PRODUCTS
+
+Axel unifies DeFi protocols into a complete solution, offering four features that developers can embed within their applications in minutes:
+LendingStakingYieldExchanging
+All through a fully non-custodial and frictionless API. We’re actively adding more features and integrations as we speak!
+
+JOIN THE WORLD’S BEST IN DEFI
+Get access to the platform, tell us about what you’re bringing to the world!
+
+WE’RE HERE TO HELP YOU WIN
+Our dedicated team of developers, just like you, is shipping code day and night. We go through the exact same pains you do, so we’re here to help — say hello in the Discord to meet our core team!

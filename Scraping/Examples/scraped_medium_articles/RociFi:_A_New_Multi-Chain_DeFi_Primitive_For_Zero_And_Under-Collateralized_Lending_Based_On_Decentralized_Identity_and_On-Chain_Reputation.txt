@@ -1,0 +1,39 @@
+url: https://blog.roci.fi/rocifi-a-new-multi-chain-defi-primitive-for-zero-and-under-collateralized-lending-based-on-709daf186d54
+
+Title: ROCIFI: A NEW MULTI-CHAIN DEFI PRIMITIVE FOR ZERO AND UNDER-COLLATERALIZED LENDING BASED ON DECENTRALIZED IDENTITY AND ON-CHAIN REPUTATION
+by RociFi - Under-Collateralized Credit Protocol
+
+INTRODUCTION
+
+RociFi: A New Multi-Chain DeFi Primitive For Zero And Under-Collateralized Lending Based On Decentralized Identity and On-Chain Reputation
+Under-Collateralized lending is a fundamental building block that has yet to be solved within DeFi. Current blockchain lending is highly capital inefficient due to the overcollateralization of loans given the pseudo-anonymity of borrowers.
+If DeFi is to reach its full potential, borrowers must have access to credit without locking excessive amounts of capital.
+This problem is well articulated in an article by Bankless, where the $36B locked in DeFi lending protocols is a symptom of the current pawn shop market rather than financial innovation supplanting TradFi.
+
+ROCIFI
+RociFi is solving the aforementioned limitation by combining DeFi and Web3.0 into a Web3.0 lending ecosystem.
+We believe that Web3.0 lending will be enabled by three key components, interconnected in the multi-chain future.
+
+DECENTRALISED IDENTITY
+Cryptographic technologies allow users to own their username, profile data, and accounts across multiple services akin to how Open Banking directives like PSD2 enabled an avalanche of fintech innovations on top of the existing banking infrastructure.
+Also, technologies like Zk-proofs allow users to share encrypted personal data with lenders for reputation scoring without sharing too much information, both on-chain and off-chain.
+Through decentralized identity (DID) providers, RociFi’s reputation scoring system connects (with consent of the user) identity datapoints such as Twitter and Github accounts, DAO participation, NFT ownership, and more.
+Through the aforementioned process, borrowers can prove ownership of DIDs that have a higher value than the requested under-collateralized loan.
+
+NON-CUSTODIAL WALLETS ARE THE BANK ACCOUNTS OF THE FUTURE
+There are over 700M transactions recorded on Ethereum mainnet during 2020 and 2021. There are more than 3M transactions happening on Polygon daily and nearly 1M on Avalanche. There are more than 20M monthly active users of Metamask alone, which is comparable to the user base of the leading banks in Europe and the US, respectively.
+Given the above, there is an immense set of DeFi transaction data that can be utilized to understand one’s creditworthiness; even on a pseudo-anonymous basis.
+RociFi’s credit scoring system (CRS) analyses borrower’s historical behavior across multiple chains, generating a non-fungible credit score (NFCS). The NFCS rating scale is 1 to 10, with 1 being the lowest credit risk and 10 being the highest.
+RociFi’s user wallet scored 5
+NFCSs are non-transferable ERC-721 tokens that users own and connect when requesting a loan. Users are able to burn the token and addresses associated with it at any time.
+As NFCS usage becomes ubiquitous, the cost-benefit of defaulting on RociFi loans will quickly turn negative as defaulter wallets are tagged and restricted from RociFi permanently, making the NFCS akin to the Web 3.0 FICO score or “proof of credit.”
+
+BLOCKCHAIN-NATIVE ENFORCEMENT
+In traditional finance, lenders collect and verify users’ personal data in order to enforce the loan contract with punishment in the case of defaults. In Web3.0, where people operate with online identities, the aforementioned is not possible.
+However, DIDs offer “social recourse” by damaging a user’s public reputation and associated communities and tokens, e.g. NFT collections or DAO tokens, in the event of a default. In the event of non-repayment, a borrower’s DID and associated addresses will be doxxed publicly.
+A great example of the effectiveness of social recourse is a tweet by the co-founder of Manifold where he explains that he turned down a $9.5 million offer for his Crypto Punk NFT because he views his Punk as “his identity and brand and what I’m building in the NFT space will be way more valuable in the long run.”
+https://twitter.com/richerd/status/1449187165875826693
+The above sentiment is widely shared by participants in these communities and will help reinforce good behavior given the monetary ripple effects of bad actors. For example, if any fraction of Crypto Punk holders default on RociFi loans, the monetary value of the entire collection will be negatively affected.
+This is why RociFi was created: to enable a massive shift to lending on Web3.0 utilising non-custodial banking, decentralized identity, on-chain reputation and blockchain-native risk management.
+Follow RociFi on Twitter: https://twitter.com/rocifi
+Join our Discord: https://discord.gg/dq7cDETKxd

@@ -1,0 +1,58 @@
+url: https://lambert-guillaume.medium.com/how-to-create-a-perpetual-options-in-uniswap-v3-3c40007ccf1
+
+Title: HOW TO CREATE PERPETUAL OPTIONS IN UNISWAP V3
+Medium
+
+INTRODUCTION
+
+How to Create Perpetual Options in Uniswap v3
+TL;DR Perpetual Uniswap v3 Options can be deployed right now between any two assets (think beyond stablecoin-token pairs), for any expiration time (not just 1DTE), at any delta (not just ATM), and without the need to deploy an intermediary protocol.
+
+In my previous post, I described how Uniswap v3 LP positions behave like a cash-secured put or a covered call. I offhandedly mentioned that Uni v3 LP tokens behave like perpetual options, but I didn’t develop these ideas at the time. I also failed to mention that some of these ideas have been discussed independently by other researchers, including a series of amazing papers by Joe Clark (@alpinechicken).
+Several people reached out to me asking me about how my proposal for perpetual Uniswap v3 options compare with the everlasting option whitepaper published by Dave White and Sam Bankman-Fried. Please read this excellent tweet thread for a short summary of Everlasting options:
+
+I do think that perpetual Uni v3 options are similar to everlasting options. Although they differ in some key ways. Specifically, I’m going to describe in this article how Uniswap v3 can serve as a novel financial primitive with returns that are analogous to everlasting options, but they can be implemented in a much simpler fashion. And the good news is that everybody can deploy their own perpetual Uniswap v3 right now.
+1. Value of a short call option
+A user that sells a call option at strike K must sell the underlying asset if the asset price S is higher than the strike price K at expiration. When the user does possess the asset, the position is called a covered call.
+If we assume that the risk-free interest rate is 0 and we ignore the premium received when the option was sold, the total value of the option position and the underlying asset can be derived from the Black-Scholes model:
+
+where
+t = current timeT = expiration timeS = underlying priceK = strike priceσ = volatilityμ = drift = 0
+2. Value of a Uniswap v3 Short Put Option
+As discussed in my previous post, we can derive an expression for the Net Liquidity value of a Uniswap v3 LP position using the specs provided in the Uniswap whitepaper.
+The expression depends on the upper tick tH, the lower tick tL, and the current price P. The exact expression when the price is between the upper and lower ticks is:
+
+We can also rewrite this expression in terms of the scaling factor r = √(tH/tL) and the strike price K = √(tH*tL) to get:
+
+3. Comparing a covered call to a Uni v3 LP position
+In my previous post, I postulated that the value of a covered call is very similar to the value of a Uniswap v3 position. How similar are they?
+Actually, they are pretty similar. Here’s the comparison between the value of a covered call on the left and a Uniswap v3 LP position on the right.
+
+So what you see here is that the shape of a Uniswap v3 LP position at a given scaling factor r = √(tH/tL) is very similar to that of a covered call option at a time Tr away from expiration. After some algebra, and noting that the At-The-Money call value C(K, t) is equal to Kσ√(t/2π), we find that the effective days to expiration Tr is:
+
+Inverting this, we can also find what scaling factor rT corresponds to a covered call option a time T from expiration:
+
+So, to mimic a covered call option that is 1 day to expiration (DTE), one would need to deploy a Uniswap v3 LP position with a scaling factor r equal to 1.0871, assuming a annualized volatility of 100%. If the current ETH-Dai price is 3300, that corresponds to lower and upper ticks equal to 3035 and 3587.
+On the other hand, if a liquidity provider deploys a position with a scaling factor of 1.75, the returns would correspond to a 45 DTE covered call option.
+Here’s a table listing the effective days to expiration for a Uniswap v3 position with a scaling factor r (left) and of effective scaling factor for covered call options with a given DTE (right):
+
+
+UNISWAP V3 OPTIONS WITH SPECIFIC DTE AND DELTA
+In our post about understanding the value of Uniswap v3 liquidity positions, we derived the following expression for the delta of a position:
+
+We can once again rewrite this in terms of the scaling factor r = √(tH/tL) and the strike price K = √(tH*tL) to get:
+
+Remember that an At-The-Money option theoretically has a delta of 0.5. If we substitute the strike K as the current price P in the expression for the delta of a LP position, we only get 0.5 when r → 1+ϵ for small ϵ:
+
+Having established the relationship between a Uni v3 LP position ratio rT and a number of days to expiration DTE above, we can next find how to deploy a Uni v3 LP position so that the delta of the position is any arbitrary value between 0 and 1.
+In particular, if we aim to have a delta equal to δ_p, we must use the scaling factor rT to find the strike price K_δ such that:
+
+It is easy to verify that we recover the upper and lower tick for K_δ when δ_p is equal to 0 and 1, respectively.
+
+EXAMPLE: CREATING A 7DTE, 30Δ UNISWAP V3 OPTIONS
+Let’s work out a few simple examples:
+If the current ETH-Dai price is 3300 and you want to create a perpetual position that mimics a 7DTE 30δ covered call option, then you’d need to create a LP position with a lower tick equal to 2447 and an upper tick equal to 3808.
+https://www.desmos.com/calculator/fsupjiyq2n
+You want to create a perpetual position that mimics a 21DTE 50δ covered call between ETH and the UNI token? If the current price is 115 UNI/ETH, then you’d need to create a LP position with a lower tick equal to 81 and an upper tick equal to 175.If you’re feeling complacent and you want to create a perpetual position that mimics a WBTC-USDC 365DTE 16δ covered call option and the current price is 59500, then you’d need to create a LP position with a lower tick equal to 4900 and an upper tick equal to 144200.If you want to live on the edge and you want to create a ETH-Dai perpetual position that mimics a DTE equal to 1 minute, a delta equal to 50δ and the current price is 3500, then you’d need to create a LP position with a lower tick equal to 3492 and an upper tick equal to 3508.
+Overall, you can create a Uni v3 perpetual option position for any scenario you can think of. I’ve created this handy calculator to help perform the computation for those that would like to establish a perpetual Uniswap v3 option position: https://www.desmos.com/calculator/fsupjiyq2n
+Perpetual Uniswap OptionsPerpetual Uniswap OptionsPerpetual Uniswap Optionswww.desmos.com

@@ -1,0 +1,83 @@
+Welcome fellow Degen! This is the first part of a two-part series covered by me and The Average Joe’s Crypto. Today we are covering a protocol that has been making waves lately due to incoming updates. This makes it imperative to cover it properly so you know what’s in store for the holders these coming months. We will do our utmost to not grind your brains too much.
+
+Introduction
+
+rDPX is a token that belongs to the exciting protocol that is Dopex. Dopex is a Decentralized Options Exchange that resides on the Ethereum layer two solution Arbitrum. It has arguably been one of the main drivers of Arbitrum being adopted by retail. It’s a fascinating project dealing with complicated matters that are options and makes it accessible and digestible for everyone.
+
+However, in this article, we are not going to cover Dopex heavily. If you want to get a fundamental understanding of the protocol or a refresher, feel free to check out this article by Richmore Capital.
+
+With that explained, let’s dive into the fascinating matter that is rDPX V2.
+
+rDPX V2
+
+RDPX is one of the two tokens in the Dopex protocol. While DPX is the main token and has governance utility, rDPX functions differently. It is a rebate token that gets distributed depending on the losses incurred by the users participating in option pools. It has no supply cap and this has been a worry for the long-term sustainability of the protocol. Since it could potentially deter people from rDPX the protocol came up with an interesting solution. This had led to upcoming upgrades to the token that will make it a potential killer product.
+
+The brains behind the Dopex protocol want to combine the best of the characteristics that are attributed to LUNA (deflationary stablecoin burn mechanism), SNX (mint synthetic assets), and OHM (bonding). This would be confusing for anybody that isn’t a degen by nature so let’s break it down further.
+
+The protocol has a plan of making it possible to borrow against your rDPX tokens. However, considering it has no supply cap and is a very volatile asset (when rDPX moves, it really moves) this can be a very problematic situation and put borrowers at the risk of liquidation.
+
+This brings us to dpxUSD, a Dopex native stablecoin tied to rDPX. Through the use of rDPX, you have the possibility of minting dpxUSD. How does this work? It gets tricky from here but stay with me. By bonding rDPX in a liquidity pair with USDC, you can mint dpxUSD. The liquidity pair would consist of 50% (rDPX | USDC) and 50% of (USDC), in total the ratio would be 0.75 worth of USDC and 0.25 rDPX to mint $1 of dpxUSD.
+
+A normal person, in this case, would ask, “why you would do this when you can simply convert it to USDC instead?” The answer is incentives through bonding. If you participate in this market long enough, incentives drive a large part of the DeFi ecosystem and this is no different. If you decide to mint dpxUSD, it gets bonded to you with a discount of 5% and is vested over 5 days.
+
+Note: the % of discount depends on the amount of rDPX in the treasury and is subject to change. The 5% is an assumption for an intuitive explanation. The higher the treasury balance, the higher the discount and vice versa.
+
+After 5 days you will have $105 worth of dpxUSD and the same equivalent of rDPX is subsequently burned.
+
+This can be confusing, to say the least, I can’t even count the number of times I have gone over this to get it in my head so don’t worry if it doesn’t stick the first time. With that said, there are more ways to utilize dpxUSD after you have acquired it. Double bonding is an option worth looking into.
+
+It implies that you first deposit the dpxUSD in CRV LP to earn protocol fees, treasury incentives, and potential gauge rewards. When this is done you can bond it again to boost your yield on dpxUSD as bonded dpxUSD has a 2x weight in comparison to dpxUSD CRV LPs in regards to the fees accrued. Thus, double bonding should be a better option for that sweet passive income.
+
+A simple version of the flow would look like this:
+
+rDPX LP (0.75 USDC | 0.25 rDPX) —> discounted dpxUSD —> dpxUSD CRV LP —> bonded dpxUSD + premium.
+
+For the more technical people, here is a proper flow chart explaining it in detail:
+
+Although incentives are suggesting double bonding is an attractive option. Double bonding leads to the protocol owning most of the LPs. Fees would be diluted and there would be a diminishing return if this happens repeatedly. At a specific point depending on how much POL (protocol owned liquidity) has been acquired, bonding wouldn’t be profitable.
+
+What does this mean for rDPX?
+
+The tokenomics of rDPX V2 is built in a way that will make it deflationary as rDPX will consistently be burned as more dpxUSD is minted. This has the capability of creating immense buy pressure on rDPX as you need to buy rDPX to get access to dpxUSD and the benefits that come with getting it at a discount.
+
+As the rDPX is being burnt, it causes a supply shock in the reserves since $1 worth of rDPX is replaced by $0.25 worth of rDPX. Add to the fact that the rDPX LP consistently reprices upwards since the discount decreases as the treasury is being aggressively depleted through this bonding mechanism.
+
+This has some potential benefits for rDPX holders. First of all, it prevents people from being used as exit liquidity as price rises considering converting rDPX to dpxUSD should be a more attractive option than selling directly for USDC. Since nobody likes being dumped on, this is an interesting mitigant to prevent people from fearing large rDPX holders unloading their tokens on the market.
+
+Secondly, the law of large numbers is normally a factor as tokens accrue value in crypto. However, with tokens being burned and taken out of the market, the market cap can remain the same despite the token increasing in price.
+
+Also, Dopex has core products such as SSOV (single staking options vaults) and IRO (interest rate options). The protocol has plans to make sure dpxUSD is integrated into their products which should bring a further incentive for users to acquire the token. Add to the fact that Dopex has put options that requires stablecoin deposits, integrating dpxUSD is a no-brainer.
+
+Risks
+
+Despite incoming upgrades being very promising. I like to iterate that there is no free lunch and there are always risks involved. The biggest questions that arise when a new stablecoin is launched are normally around how it will maintain its peg. One of the solutions is through the use of Curve pools as already mentioned, which prevents price swings when large liquidity interacts with the stablecoin.
+
+However, as with every stablecoin and the crypto market, there will be a time when a stress test will have to be performed during volatile market conditions that either will build or break the credibility of the stablecoin. This makes it fundamental to find out how dpxUSD would deal with these depeg events, which are laid out below.
+
+A depeg event is mitigated in different scenarios through backstops, these are:
+
+The protocol removes dpxUSD from the liquidity pair in its Protocol owned liquidity acquired through double bonding on Curve. Since liquidity pairs consistently balance, removing dpxUSD should force the pool to rebalance until it reaches its desired peg again.
+
+
+
+The second backstop is through the use of Dopex whales that will intervene by acquiring dpxUSD aggressively through (rDPX | USDC). This one is more concerning since it is based on trust.
+
+In the case of extreme depeg events, there is a mitigant of last resort as well:
+
+dpxUSD would be able to be redeemed for the underlying collateral that consists of 0.75 USDC and 0.25 rDPX. While you would normally assume that this would be a normal 1:1 conversion. The underlying collateral has been earning yield and should be worth more than the USD value of dpxUSD. This would allow people to buy dpxUSD under its peg and redeem it for $1. An incredible arbitrage opportunity that is reserved for veDPX (vote-escrowed DPX) holders only.
+
+Stress tests and depeg events are inevitable. While they can be stressful for token holders that might scream for immediate backstop action, letting the token ride out the storm can also be healthy as well as it presents attractive arbitrage opportunities. Considering intervention from whales is “promised” this can become worrying as people overreact as soon as the peg gets lost without intervention. This common misunderstanding is fundamental for the long-term sustainability of a stablecoin.
+
+Programmed upside? Time will tell. Nonetheless, the implications of the token model can’t be understated and there is an impending Orca that has plans to aggressively bootstrap liquidity for rDPX V2 in a Curve LP. However, that is for the next part of the series that will be covered by The Average Joe’s Crypto.
+
+Tetranode art made by talented meme artist @Dgenfren
+
+I hope you guys enjoyed this post, if so you will enjoy the 2nd part even more with The Average Joe’s Crypto with whom it has been a pleasure to collaborate with. If you don’t follow him already make sure you do.
+
+Well done if you managed to congest all that information, you are a champion and I am duly grateful. Don’t forget that you are more than welcome to leave feedback as well.
+
+Share
+
+Sharing this post helps it reach out to more readers which would be great. If you are interested in future posts from me, do not hesitate to subscribe. Thank you very much for taking the time!
+
+Disclaimer: All Content on this site is information of a general nature and does not address the circumstances of any particular individual or entity. Nothing in the site constitutes professional and/or financial advice, nor does any information on the site constitute a comprehensive or complete statement of the matters discussed or the law relating thereto. I am just a random degenerate sensei sharing an opinion.

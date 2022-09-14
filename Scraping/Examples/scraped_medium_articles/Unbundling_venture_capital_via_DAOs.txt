@@ -1,0 +1,21 @@
+url: https://medium.com/1kxnetwork/unbundling-the-unit-economics-of-venture-capital-via-daos-9fbda3e8113b
+
+Title: UNBUNDLING VENTURE CAPITAL VIA DAOS
+by Peter ‘pet3rpan’
+
+INTRODUCTION
+
+
+Unbundling venture capital via DAOs
+Service DAOs, Incubation DAOs, Investment DAOs
+In the past, there have been many attempts at disrupting venture capital:
+The proliferation of angel investors (AngelList, 2010)Enactment and regulation of equity crowdfunding (Jobs Act, 2012)Cryptonative crowdfunding via token sales (2013)
+While many of these efforts were successful at generating a greater supply of passive capital for founders, they have largely under-addressed the founders’ operational needs that enable projects to go to market faster and succeed throughout their entire lifecycle: talent, design, product, marketing, research, economics, engineering, community building, business development, regulatory guidance, and domain expertise.
+
+CAPITAL ITSELF IS ABUNDANT, VALUABLE SERVICES ARE NOT.
+Despite the abundance of capital flowing into the tech and crypto ecosystem, high-value services have remained scarce.
+We believe this due to the following factors:
+Founders have no publicly verifiable data on the quality of services investors can provide, nor do many founders conduct due diligence on their investors. As a result, many founders are unable to optimize their investors based on the services they offer.The lack of quality data on investors has led to a sales-first-oriented venture environment where investors are overpromising and under-delivering. Unlike service providers that are held to contractual obligations or even founders who are held to vesting schedules, investors are not held to the same standard despite only getting access to highly competitive funding rounds with their proposed value proposition.
+As a result, the funding landscape in both crypto and the broader venture capital landscape is composed of predominantly passive capital.
+While 1kx and a small number of other funds are working every day to be an exception to the norm, we have been unable to push for a fundamental change in the broader investor landscape. Fortunately, we believe a shift is on the horizon — and we believe they start with Service DAOs.
+But before we speak on Service DAOs, let’s first take a look at the lineage of the DAOs that have participated in the venture funding landscape.

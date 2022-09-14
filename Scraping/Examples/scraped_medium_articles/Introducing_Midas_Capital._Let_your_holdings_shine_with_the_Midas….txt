@@ -1,0 +1,18 @@
+url: https://medium.com/midas-capital/introducing-midas-capital-bb6ce3a256a3
+
+Title: INTRODUCING MIDAS CAPITAL. LET YOUR HOLDINGS SHINE WITH THE MIDAS…
+by Midas Author
+
+INTRODUCTION
+
+
+GENESIS
+Midas Capital was first conceptualized at LisCon 2021 when the founders were brainstorming the most underrated DeFi primitives that had yet to go cross chain. The team settled on Rari Capital’s Fuse platform, a permissionless money market that allows users to create customized and isolated lending and borrowing pools. While Uniswap clones had already been widely propagated, a reliable money market protocol had yet to make it across the different EVM chains.
+
+RARI GOVERNANCE APPROVAL
+Shortly after LisCon, the team submitted a Rari governance proposal to bring Rari Fuse to other EVM chains starting with Binance Smart Chain. Unlike other projects spun-up from the same codebases in the space, the Midas Capital team wanted to partner with the originating team in a way that would be mutually beneficial and not just value-extracting. The team’s intent is to leverage the expertise of the existing Rari team and broader Tribe DAO, while contributing back as much as possible.
+Besides providing engineering support and code contributions, Midas team decided to directly offer a 25% token allocation to the Tribe DAO. The proposal passed with 94% support and the teams have been working closely together ever since to design the Midas tokenomics, improve the overall Fuse codebase, and ensure mutual success of all teams within the Tribe DAO. As a new DAO under the broader Tribe DAO ecosystem, Midas Capital is focused on deploying Fuse to deep liquidity and bridgehead chains (EVM chains built on non-EVM blockchains).
+
+ISOLATED LENDING AND BORROWING
+Historical lending and borrowing platforms like Compound and Aave have certain limitations. For example, the entire protocol’s assets are in a single pool and, therefore, expose all the assets within the protocol to the risks of one another. Additionally, adding additional assets requires governance approvals, which increases time to add new assets and even limits the assets that can be used as collateral.
+To follow the true decentralized and permissionless ethos of blockchain, Fuse has removed these centralized limitations of the historical lending and borrowing platforms and has created a platform that allows any user to create isolated lending and borrowing pools for any group of assets. Pool creators have the freedom to customize various parameters (ie. interest rate models, collateral factors, etc.), add additional assets at any time, and even launch liquidity mining campaigns through Fuse. This general purpose lending and borrowing platform has the potential to serve as critical infrastructure for a wide range of chains, DAOs, treasuries, and protocols.

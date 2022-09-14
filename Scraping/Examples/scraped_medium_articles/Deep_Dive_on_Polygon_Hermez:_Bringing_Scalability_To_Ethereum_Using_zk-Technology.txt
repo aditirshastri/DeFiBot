@@ -1,0 +1,134 @@
+url: https://medium.com/@pedronv/deep-dive-on-polygon-hermez-bringing-scalability-to-ethereum-using-zk-technology-4acfbcff78f4
+
+Title: DEEP DIVE ON POLYGON HERMEZ: BRINGING SCALABILITY TO ETHEREUM USING ZK-TECHNOLOGY
+by Pedro
+
+INTRODUCTION
+
+Deep Dive on Polygon Hermez: Bringing Scalability To Ethereum Using zk-Technology
+
+If you’re already familiar with Polygon, then you probably already know how big a player they are for the future of Ethereum scalability.
+For those unfamiliar, Polygon is a L2 scaling solution built on top of Ethereum. However the difference with Polygon and other L2 scaling projects, is that Polygon offers a whole suite of scaling solutions. They’re literaly like a swiss army knife:
+
+Above is an image displaying a spectrum of the different scaling solutions Polygon offers. On the left we see Polygon SDK, which is a modular framework that allows developers to create customized blockchains. Next to that we see Polygon PoS, which is the Polygon chain we’re most familiar with today. Towards the middle we see Polygon Avail, which is part of their data availability solution. Then on the far right we have 4 different zk solutions: Hermez, Miden, Nightfall, &amp; Zero.
+Last week I wrote this article going over the whole Polygon project in general, with more of a focus on the Polygon PoS chain. In that article I mentioned that for the following weeks I’d go over the different zk solutions Polygon offers, 1 by 1.
+With all these zk solutions bringing something different to the table, it would just be impossible to go over them all in one go.
+To start this zk journey, I’ll be going over Polygon Hermez.
+It’s important to note that although the Hermez team have released some of their 2.0 docs (yes there’s two versions of Hermez), they’re still a work in progress with a lot more to be added in over the following weeks. That said, as soon as the whole set of 2.0 docs are out, I’ll make sure to go over them and write about any new and important updates I find in there.
+
+TLDR:
+3 MBA colleagues started a company called Iden3. Their first project was about self sovereign identities, however they realized further scaling improvements were needed in order for the masses to take advantage of this new type of digital id. In order to do stuff like voting with them.The 3 founders pivot and start a new project called Hermez. Hermez 1.0 is payments platform that is currently up and running. This platform allows users to transfer any registered ERC-20 tokens from one Hermez account to another, through one simple to use web/mobile interface.Last July the team announced the start of their development of a zkEVM, Hermez 2.0, which essentially means smart contracts on top of a zk-rollup. This is expected to roll out sometime this year.
+
+POLYGON ACQUIRES HERMEZ
+
+About 6 months ago, Polygon announced the merger/acquisition of the Hermez for a total of $250 million, which at the time was the first full-blown merger of two blockchain networks.
+At this time Hermez only had one product running, an L2 payments platform based on zk technology. However just before this merger, during the EthCC 4 conference, Hermez had announced its plans to develop a zkEVM. In short, this means that developers could run smart contracts directly on top of a zk rollup. This is a huge deal in the scalability space, and is what really interested Polygon.
+Polygon was able to acquire the whole Hermez team of 26 people at the time, its technology, and solutions. Literally everything.
+Why The Merge?
+According to this blog post from the Hermez team, this merger was made possible because of the “harmony between both teams, which share the common goal of scaling and bringing the world to Ethereum.”
+This merger was ultimately huge for both parties. Hermez would bring their existing zk technology and tools to the growing user base Polygon provides. Plus it means Polygon will be able to support in the development of the zkEVM (again, part of Hermez 2.0). For Polygon it means fully compatible smart contracts on a zk rollup.
+HEZ Token
+As part of this merger, the HEZ token which was a utility token that belonged to the Hermez Network, will cease to exist and instead Hermez will be implementing the MATIC token into its solution.
+HEZ token holders were able to exchange their HEZ tokens for MATIC at a rate of: 1 HEZ = 3.5 MATIC.
+So again, this HEZ token is no longer used in the Hermez ecosystem.
+Okay now i can talk about what the Hermez project actually is.
+
+HISTORY OF HERMEZ
+The journey of the Hermez team began about 5 years ago when three MBA colleagues got together and decided to start their own company:
+Jordi Baylina — Technical Lead: Jordi is one of the best Solidity developers around, having founded projects like The White Hat Group, &amp; Giveth, and audited some of the biggest web3 companies, like MakerDAO’s stable coin system &amp; Aragon. Plus he wrote numerous other smart contracts for Ethereum.
+David Schwartz — Project Lead: David has 20 years of experience in the IT sector, holding different engineering and executive positions in numerous companies throughout those years.
+Antoni Martin — Polygon Enterprise Lead: Antoni comes from the banking industry where he spent 17 years holding different roles.
+The company they decided to start was called Iden3, and the first project they worked on was a self sovereign identity solution.
+Self Sovereign Identity (SSI)
+The first project these three decided to work on was a self sovereign identity solution. For those unfamiliar with SSI, I’ll go over it very briefly here.
+So basically there are three types of digital id’s:
+Siloed: This type of digital ID means that each organization issues new identity credentials to each new user, which means you would need a new ID for every organization you join. For example if I’m currently a member at Gold’s Gym, I’d need to get a whole new, different digital ID if I wanted to go and join the Planet Fitness gym instead. Another example is when you visit a new doctor and they have you fill out the same forms of information you already filled out so many times. I mean our data is going everywhere.
+Federated: For this type of digital ID just think of “login with Google.” Although this is a very simple and convenient method for us users, it comes at a cost, our personal data. With this method, our digital ID’s are managed and outsourced to companies with a financial interest in our personal data, meaning there’s a central server somewhere that holds all our data from all the apps we opened using this “login with x” method. I mean look no further than “login with Facebook” to see the privacy and security concerns with this method of digital ID’s.
+Self Sovereign ID (SSI): This type of digital ID became possible thanks to developments in three different technologies: blockchain tech, decentralized identifiers, and verifiable credentials. SSI means your digital ID is your own, you control your own data and only allow companies to see what you let them see. It would be like proving to someone that I’m over the age of 21, without actually revealing my date of birth. Or like proving to someone I live in California without showing them my address. So just imagine your crypto wallet holding all your certificates in one place, ready to use at ease without actually showing any of the information disclosed inside those certificates or other documents you hold in there. From gym memberships, to your drivers license and school diploma. Just think of that convenience and privacy.
+Okay let’s continue now.
+After a couple years of working on this SSI project, the three colleagues realized that further scalability was needed in order for SSI to become mainstream. However I still wanted to bring all this up because it looks like they haven’t given up on this project yet. It’s still something I hear co-founder Antoni Martin bring up in recent interviews.
+So I’m very hopeful that eventually at some point in the future, Polygon Hermez will accomplish this goal, and that voting polls in the future will be powered by Polygon. This is not to say that it’s definitely going to happen, we are still way too early in the crypto space to accomplish something of this magnitude. There’s still so much that has to go right for something like this to happen. What I am saying is that I’m excited that there’s a team on Polygon working very hard to accomplish this SSI goal.
+Anyways, after realizing further scalability was needed in order for SSI to become mainstream, the team of three decided to pivot and work on a new project, Hermez.
+
+WHAT IS POLYGON HERMEZ
+Hermez is a decentralized L2 rollup solution based on zk technology.
+There are two versions of Hermez: 1.0, which is a payments platform that is currently up and running, and 2.0 which will bring a fully compatible zkEVM to Ethereum once development is finished.
+
+HERMEZ 1.0
+Hermez initially started off as a zk-rollup focused on scaling payments and token transfers on Ethereum. In short, zk-rollups work by taking a bundle of transactions and executing them off chain.
+As we know, Ethereum gets very congested very quickly. I mean there’s literally millions of us all around the world competing to have our transaction included inside an Ethereum block. With Ethereum only being able to handle about 20 transactions per second (TPS), you can imagine why the network get’s congested very easily. This is where L2’s come in.
+An L2 is basically a layer built on top of Ethereum. There are different L2 mechanism out there, but for now all you need to know is that L2’s involve taking transactions from the mainchain (Ethereum) and executing them off chain, and that the best type of L2 scaling solutions in existence today are zk rollups.
+First, I should make it clear that there are two types of rollups used for scaling: Optimistic rollups (Arbitrum, and Optimism are the popular ones), and zk-rollups. The difference in the two lies in the types of proofs that are used to verify that all the off chain transactions were done so correctly. Optimistic rollups use fraud proofs, while zk-rollups use zk-proofs. zk proofs are universally known as superior.
+When using zk-proofs, there are two ways in which knowledge can be proved, either by using SNARK proofs, or STARK proofs. You don’t need to know what exactly this means, but here are some of the tradeoffs between the two if you’re interested:
+Image taken from the Consensys website
+A rollup uses Ethereum for data storage instead of computation. In other words, instead of taking every single transaction and executing them one by one on Ethereum, a rollup takes a bundle of transactions (thousands) and executes them all at once off chain.
+When these thousands of transactions get executed off chain, in the case of Hermez a zk-SNARK is generated. This zk-SNARK is just the name of the proof that is used to prove that the thousands of transactions that were done off chain, were done so correctly. The SNARK proves validity of every transaction in the batch, which means you don’t need Ethereum to verify every single transaction we make. Ethereum only verifies the proof (the SNARK in this case), not the transactions.
+The cool thing with zk rollups is that we get instant validity. With a zk-proof it’s impossible to add an invalid transaction into a batch, which is why we get instant withdrawals as opposed to using optimistic rollups and having to wait 7 days.
+“This ability to be able to verify proofs both efficiently and in constant time is at the heart of all zk rollups.”
+This zk technology is what allows Hermez to be able to process 2,000 TPS. Oh and while listening to one of the interviews with the Hermez team, I heard them mention that this number could increase by a lot more in the future, so that’s very exciting.
+How it Works For Users
+If none of what I said about zk technology made sense, well that’s okay because that’s only what’s going on under the hood. Us users only have to deal with an interface, and luckily Hermez has made theirs extremely easy to use, both for web and mobile. The web interface looks something like this:
+To send tokens to another Hermez account, you just enter in the token, the amount, and the recipient address.
+Through the Hermez interface, users can register and obtain their Hermez address by simply connecting their Metamask wallet.
+Then with the click of a button users can deposit, withdrawal, or transfer any registered ERC-20 tokens they posses.
+If you want to learn how to deposit funds into Hermez and play around in there, you can check out this post, or this video. Both are short and very easy to understand and follow along with incase you’re interested.
+In total, there’s three different transactions you can make on Hermez:
+Deposits: Sends any registered ERC-20 tokens from L1 Ethereum to L2 Hermez. Deposits require paying Ethereum gas fees of course.Transfers: Sends any registered ERC-20 tokens from one Hermez account to another Hermez account. Sending tokens from one account to another is very cheap and instant. To send and receive funds, your address could either be copied and pasted, or a QR code could be generated for easy scanning.Withdrawals: Send your ERC-20 tokens back from L2 Hermez to L1 Ethereum. Withdrawals require paying Ethereum gas fees.
+One thing to note about withdrawals is that Hermez offers a protection mechanism, “force withdrawal” that allows me to transfer my funds at any time from L2 Hermez back to L1 Ethereum, even if the coordinator (I’ll explain what this is down below) tries to act maliciously.
+Coordinators &amp; Proof of Donation
+Coordinators are the Hermez version of block producers. These are the guys that generate the zk-proof to prove the validity of the transactions we make off chain.
+The coordinator essentially takes our transaction requests and places them in a bundle. Remember that rollups work by executing thousands of transactions at once. Coordinators are the ones that build these bundles. Once they create that bundle, they generate a zk-proof. This zk proof is then verified by a smart contract on Ethereum.
+So now that we know what a coordinator does, how do we become one?
+The reason Hermez is considered decentralized is because anyone can become a coordinator and earn fees (rewards) in return for their service.
+There can be any number of coordinators on the network at once, however only one is able to actually process the transactions and earn rewards for any given time slot, which is 10 minutes long.
+The Hermez network chooses its next coordinator through an auction process. Basically anyone can place a bid using MATIC tokens, and the person that bids the highest amount wins the right to process as many transactions as they can for 10 minutes, until the next coordinator is chosen. This is a very efficient process because it requires coordinators to fit as many transactions as they can within those 10 minutes so that the rewards they make outweigh their bids.
+What happens to the MATIC tokens used for bids?
+If you lose the bid you can either use those funds again in a future auction, or transfer them back to your wallet. If you win, this is how those funds you used to bid are used:
+30% burned permanently40% goes towards a donations account managed by the Ethereum Foundation30% for network incentives, to help drive further adoption of the Hermez network.
+Features
+The following image was shown during the “Polygon Hermez Fireside Chat” posted not too long ago. I wanted to show it because it lays out all the features Hermez 1.0 provides very clearly:
+
+Current Use Cases
+This following image was also from the same “fireside chat” video I linked to up above. It’s a great image showcasing the use cases hermez provides:
+
+Atomic transfers are very useful in preventing scams. These types of swaps only work if both parties involved in the transaction both send the required funds. So for example let’s say Alice wants to send Bob 1000 DAI in return for 1 ETH. For this transaction to go through using atomic swaps, both Alice and Bob have to send their tokens to each-other. One cannot process without the other.
+Believe it or not this is an actual problem in some developing countries, so you can see how this feature could be very powerful.
+How Can A Company Actually Use This?
+Considering Hermez is a decentralized open network, any merchant or company is free to create their own Hermez account and start accepting instant payments at very low costs.
+If for example the “Mom &amp; Pop” shop down the street wanted to start using the Hermez network to start accepting crypto payments, the shop just has to use their Metamask (or any other accepted wallet) to register their account, and that’s it. They now have a Hermez address to start accepting payments to.
+
+HERMEZ 2.0
+In July of last year, during the EthCC 4 conference, the Hermez team announced that they were ready to start the development of their zkEVM, Hermez 2.0. Shortly after this is when Polygon reached out about the merger/acquisition. So yeah, pretty big deal.
+It’s a big deal because for Ethereum to scale we need smart contracts to run off chain, and this is what the zkEVM is trying to do. Run smart contracts on a zk-rollup.
+There are a lot of projects working on developing their own zkEVM right now, even within the Polygon ecosystem we have both Polygon Zero &amp; Polygon Hermez working on their own versions. However every project is attacking this in a different way, and each have their own tradeoffs.
+Here is a powerpoint slide I pulled from the Hermez team that displays the different approaches as to how to create a zkEVM:
+
+The main benefit with the Hermez approach is that you get full compatability with Ethereum, in terms of tooling, ecosystem, and security. This also means that ideally, a smart contract running on L1 Ethereum should be able to run on L2 Hermez. The developer shouldn’t care if he/she is writing a smart contract for an L1 chain, or an L2 chain.
+Basically smart contracts will be able to run on zk-rollups without having to change much, if any code. This is part of the compatability I mentioned, and this is the big deal.
+Just think of how easy it was for projects to deploy their smart contracts on Optimism or Arbitrum, which both use a different kind of rollup: optimistic rollups. I mean literally as soon as these two platforms launched, tons of projects and users immediately migrated over. Now imagine this except on a zk-rollup, the superior type of rollup.
+Think about that for a second. If Hermez is successful in their method (and I’m sure they will be), we could see that same type of network effect here.
+Souped Up Car
+Look as users we honestly don’t have to know what this means, so feel free to skip this portion of the article.
+According to Hermez founder Antoni Martin, this is their zkEVM concept:
+“if you take the best part of each solution, you can build up the best car…taking the best part of each manufacturer.”
+If we recall, you may remember that Hermez 1.0 uses SNARK proofs. Well in 2.0 they use both SNARK’s and STARK’s for max efficiency and proof generation times.
+SNARKS &amp; STARKS are the types of zk-proofs used in zk-rollups. Each of these have their own advantages, which is why the Hermez team wanted to get the best of both worlds.
+The way it’s gong to work with Hermez is that when transactions are processed and new blocks are produced off chain, a STARK proof will be generated proving that these transactions were all valid. The issue with STARK proofs is that they are expensive to validate on chain (on Ethereum). This is where the other type of zk proofs come in, SNARK’s.
+A SNARK proof is used to validate the STARK. From here all Ethereum has to do is validate the SNARK proof.
+There’s a lot more to the architecture of the Hermez zkEVM, but again, as users we don’t have to worry about what any of this means. If you’re a giga brain and want to dive further into the architecture of this zkEVM though, you can check out this set of 2.0 docs.
+Hermez zkEVM Features
+Below is another image I pulled from the Hermez team that displays the different features their zkEVM offers:
+
+Recall that the 2.0 set of docs is still under completion.
+One thing I’m waiting to find out is how the new consensus model will look. What roles will coordinators play in this new 2.0 version of Hermez?
+Something else to note is that they’re working on a permissionless bridge that will move assets from L2's to other L2’s. Personally, I can’t wait for this.
+Wen Launch?
+Here is the roadmap for the launch of 2.0 on mainnet:
+
+As you can see, mainnet launch is coming up ;)
+
+CLOSING THOUGHTS
+Okay that was a lot to take in I’m sorry.
+Yes, Hermez 1.0 is not too popular right now, however Polygon co-founder Mihailo did mention that one of Polygon’s best features was that they know how to drive adoption. They have the connections in place to get things rolling. I also did notice that Hermez co-founder Antoni Martin has been holding interviews recently while in Africa. So it looks like they’re working very hard in bringing more adoption from the developing countries that really need this technology.
+Personally, I’m excited to see if the Hermez team will be able to pull off their fully compatible version of a zkEVM. I mean this could be huge, as it would allow developers to take existing smart contracts and run them on top of a zk-rollup without having to change much code.
+Again, new information relating to Hermez 2.0 may arise from the team in the near future, so I’ll be sure to keep an eye out for that.

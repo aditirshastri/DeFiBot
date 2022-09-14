@@ -1,0 +1,88 @@
+Overview
+The squeeth contract is design for users to long or short a special index like eth², as an implementation of a Power Perp
+note: We call the eth² index we're trading squeeth (squared-eth), and the squeeth contract is the collection of contracts that let you trade this index
+Mechanism-wise, the squeeth contract works like a perpetual swap, where people can go long or short on an index, and funding is charged either from the long or short, based on the market price relative to the index
+An important difference to other perpetual protocols is that there is no leverage on long positions
+ This means that it is impossible to be liquidated on a long squeeth position, and allows the long position to be a standard fungible ERC-20 token that can be traded separately (in Uniswap pools, for example, or as collateral for loans)
+ This composability is a major advantage to the design, making it it easy to integrate squeeth into other projects
+Trading oSQTHWe use Uniswap V3 as the trading layer.
+Once squeeth is created, you can buy or sell an ERC-20 token: oSQTH, which roughly tracks the value of eth², on Uniswap
+We use the traded price on Uniswap to determine the funding rate, so we need people to LP in a wSqueeth/ETH pool to have a fully functional system
+To long squeeth, you simply buy this ERC20 token from the pool, and when you want to close the position, you sell this ERC-20 back to the pool
+To short squeeth, you will need to put down collateral, mint oSQTH tokens, and sell them in a Uniswap pool
+ The position in the vault is represented by an ERC-721: sSQU
+ To close the position, you will need to buy back oSQTH and burn them to unlock your collateral
+ This is very similar to how you create an option token
+From the end users' perspective, long and short positions both require collateral: either the price to buy on Uniswap or the collateral required to mintGenerating long and short positions in squeethOur core squeeth contracts handle the handle minting / burning of oSQTH, and adjust funding to ensure that the oSQTH token is always aligned with the value of eth²
+FundingWe need a way to pay funding between longs and shorts based on how the price is trading relative to eth²
+ For this we use funding in-kind, which means we modify the amount that shorts need to repay
+ This gives the same effect as longs paying funding to shorts directly (cash funding) but without the machinery needed to manage these payments
+Normalization FactorThe funding is effected through changes in a global normalization factor whenever the contract is touched
+ The normalization factor starts at 1 and moves to represent funding between long and short
+ If the normalization factor moves from 1 to 0
+99, 1% funding has been transferred from longs to shorts
+The normalization factor is changed with the following rule:% change in normalization factor = % average difference between mark and index price * (time passed)/(17
+5 days)The index price is eth² and the  mark price is Mark = (oSQTH price / (normalization factor)) * 10000The idea is to undo the accumulated effect of funding to get the contract value to compare to eth²   We use 10,000 to make the units more readable
+Minting & Burning oSQTHThe core contracts are in charge of minting and burning oSQTH tokens, and properly apply funding by updating the normalization factor
+ We will introduce the architecture of "core contracts" more deeply in the core controller chapter; right now we can just go through the most important the use cases
+To mint oSQTH, you need to put down eth collateral, mint wSqueeth, and then monitor your vault to avoid being liquidated
+ Shorting eth² is risky because you can never fully collateralize your debt
+ If eth price doubles, your debt goes 4x, while your collateral value is only 2x
+ When you want to close your short position, you need to buy back the oSQTH and burn them
+ This is similar to how you borrow Dai with eth collateral on Maker
+StrategiesWe created Strategies as an easy way to participate in a pool that conducts some common trading flows for short squeeth: minting squeeth to generate yield, and changing the collateral position to manage risk
+An example is the crab strategy contract which does the following:Accepts eth deposits into a poolMints oSQTHAdjusts mix between eth collateral and oSQTH to offset as closely as possible the impact of changes in eth price
+ This is a delta hedge
+Adjusts hedge by conducting an auction to trade eth for oSQTH (or oSQTH for eth) if time or price triggers are reached
+This generates a payoff similar to a (delta hedged) option seller
+ Admin PowersThe owner of the core controller will be set to the Opyn multi-sig when we launch, and migrate to a better governance module in the future
+The admin can turn on a fee that charges all deposits and withdrawals a max of 1% of amount traded
+ The fee will be collected to capitalize an insurance fund to to repay any insolvent short positions
+ The fee is currently 0%
+The admin is also able to trigger a global settlement
+ If that happens, the system goes into a shutdown state which is not recoverable
+ Everyone with oSQTH token can burn oSQTH and get the fair index value (eth²) out in eth
+ All the short users can withdraw their collateral less the value of their debt at settlement
+The admin is also able to trigger a maximum of 4 pauses during which time deposits, withdrawals, minting, and liquidation are frozen for one day
+ Pauses are only available for the first 182 days that the contract is deployed
+Introduction
+The core contracts let people mint wSqueeth, which can then be traded in a Uniswap v3 pool
+ Our core interface is a Controller contract which manages long and short positions, with the help of a Uniswap V3-empowered Oracle
+TokenizationWe use 2 separate token contracts to tokenize long and short positions: WPowerPerp is a ERC-20 token for wSqueeth, and ShortPowerPerp is an ERC-721 NFT for short positions (aka vaults)
+Oracle prices for fundingTo properly apply funding payment, the Controller needs to know the index price (eth²), and the mark price squeeth is trading at
+ We do this by connecting the Controller with a oracle contract to get:1
+Average price for ETH/USD => used to calculate the index price2
+Average price for oSQTH/ETH => used to determine the mark
+We use TWAP (time weighted average price), rather than the price at a point in time, because it is more reliable and more expensive to manipulate
+ Uniswap v3 provides a useful api to generate TWAPs over any historical period
+Next upTo sum up, we have a Controller contract which serves as an interface for all users
+ This controller manages 2 token contracts, WPowerPerp and ShortPowerPerp, representing long and short positions, and adjusts funding by consulting a Uniswap v3 oracle
+These are things that users could do themselves, but save in gas and attention costs by trading on behalf of the whole pool
+The strategy contract handles deposits and withdrawals, and takes some actions to carry out its objective
+ Short squeeth strategies modify their mixture of squeeth debt and ETH collateral to achieve a desired exposure to ETH
+ Three animal spirits embody these objectives:bull : positive exposure to ETH bear: negative exposure to ETHcrab: neutral exposure to ETH​Crab vault pnl immediately after a hedgeSince squeeth is non-linear (it is ETH^2), this exposure will change as the ETH price changes, so the strategy will trade wSqueeth for ETH to maintain its target
+ How much ETH exposure does a squeeth have (what is squeeth delta)?The ETH exposure of squeeth is the delta (first derivative with respect to the ETH price)
+ The first derivative of x^2 is 2x so (oSQTH delta) = 2 * (oSQTH/ETH price)If I hold 5 oSQTH and the price of oSQTH in ETH is 0
+35, the (oSQTH delta) = 5 * 2 * 0
+35 =3
+5This means that the 5 oSQTH has the same exposure to the ETH price as 3
+5 ETH
+ As the price of oSQTH changes, this will change
+ Simply put, an oSQTH's delta is twice its value in ETH
+​How can we change the squeeth delta for a short squeeth position?Short oSQTH uses ETH as collateral
+ This generates a negative exposure to ETH
+ The collateral has a positive exposure to ETH (because it is ETH)
+The total delta of a short oSQTH position is therefore
+(short oSQTH delta ) = #oSQTH * 2 * (oSQTH/ETH price) - # (ETH collateral)If we hold different amounts of collateral in the short squeeth vault, we can change the total delta
+ If we hold twice the value in ETH as the short oSQTH value in ETH, we have zero delta
+ This is crab strategy
+How deposits translate into ownershipToken holders have a proportional share of the (ETH) collateral and (short squeeth) liability
+ The deposit and withdraw logic follows two rules:1
+Strategy tokens are are proportional to collateral
+ If I provide 10 ETH to a strategy which already has 90 ETH, my strategy token is worth 10/100 = 10% of the pool
+2
+The strategy mints or burns oSQTH so that the ratio of debt to collateral is unchanged after a deposit or withdrawal
+  If I deposit 10 ETH to a strategy which has 1 unit of debt and 100 ETH collateral, the strategy mints 10 *1/100 = 0
+1 oSQTH
+ The new debt to collateral ratio is unchanged at 1
+1/110

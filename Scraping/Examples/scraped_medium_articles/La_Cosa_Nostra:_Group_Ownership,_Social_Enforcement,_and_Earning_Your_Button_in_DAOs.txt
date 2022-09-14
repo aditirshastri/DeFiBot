@@ -1,0 +1,50 @@
+url: https://drakedanner.medium.com/la-cosa-nostra-group-ownership-social-enforcement-and-earning-your-button-in-daos-bae6be639a1d
+
+Title: LA COSA NOSTRA: GROUP OWNERSHIP, SOCIAL ENFORCEMENT, AND EARNING YOUR BUTTON IN DAOS
+by Drake Danner
+
+INTRODUCTION
+
+La Cosa Nostra: Group Ownership, Social Enforcement, and Earning Your Button in DAOs
+
+I’ve spent the past couple weeks re-bingeing The Sopranos in between responding to DMs, posting on forums, and facilitating a variety of operational groups.
+
+As always, I decided that nothing made more sense than combining two things that I’m spending time on into one piece of nonsensical content.
+Before we jump in, I want to preface this with a recognition that there are probably tens or hundreds of posts that could be written comparing various aspects of The Sopranos to the multitude of experiences that participants in web3 encounter. This will be mostly surface level, I’m going to leave a lot unexplored and leave myself and others space to write more in the future.
+
+
+MAFIA HIERARCHIES & DAO PODS
+
+There are two aspects of the Mafia hierarchy that stand out to me when thinking about their team structure in the context of a DAO. At the top level, we see the Consigliere that provides guidance to the boss but does not have direct hierarchical power over other members. At the bottom level, we see the Associates that support a number of different teams without a direct allegiance to a specific team.
+
+Going from the Mafia hierarchy to a DAO pod hierarchy is not a major leap. A core team is responsible for delegation to various working groups. A council provides advisory input as well as access to an extended network. Pod Leaders work with Core and their Contributors to move things forward. Some Contributors may be local to a pod, some may be more nimble or less initiated and work across a number of pods.
+Contributors who want to increase their involvement may seek more formal positions and eventually may seek leadership positions.
+
+BEING MADE & BECOMING PART OF CORE
+
+As associates of the Mafia increase their engagement, they work towards becoming a “made man” and earning respect and protection of their peers and the extended network. To be sponsored for the initiation ceremony, individuals must be nominated by another made man. Sound familiar?
+In DAOs, it’s not uncommon for Core election processes to kick off with a nomination from an existing Core team member. Those who hold power and/or influence are often the best situated to extend and increase the power and influence of others.
+
+BUTTONS & BADGES
+
+Becoming a made man is also called earning your button. In on-chain, digital organizations we use a number of signifiers both on and off-chain to demonstrate someone’s position amongst the crowd. POAPs have been used to represent someone’s attendance or participation in an event, on-chain reputation systems will continue to provide badge systems for identity and hierarchical purposes.
+Read more about the future of digital identity could look like…
+Multi-Faceted Identities in Web3drakedanner.medium.com
+
+SOCIAL REGULATION & SUPPORT SYSTEMS
+
+The Mafia does not respect or seek out official authorities when an issue arises, they take out their own dirty laundry. Mafia captains and soldiers manage their spaces through a level of enforcement and regulation that exists outside the traditional authoritative hierarchy. Social regulation and support systems are key in DAO spaces where leaders may come to the forefront and fall to the back depending on the need or their performance. As a whole, DAO members raise and limit the reach of each other all while providing various support systems that provide a foundation for success.
+
+SKIN IN THE GAME
+
+When you’re in the mob, you have skin in the game. Not only is your livelihood tied to the organization, your life is on the line in day-to-day operations. Obviously, by participating in a DAO you aren’t risking your life but you are putting your reputation on the line and you may be taking a financial risk depending on any financial barrier to entry or any expected earnings from your participation in the organization. Beyond the direct risks, indirect risks such as wider market turmoil can impact the landscape and create a shifting foundation upon which an organization may need to pivot on or maintain status quo during.
+
+THE ALLURE OF THE GAME
+
+From the outside, being part of “the game” is highly attractive. Those that are in “the game” seem well connected and in power. External individuals may be excited by the proximity to the action that they feel by spending time or interacting with those who are exposed to the very real risks associated with being highly active. Individuals who are actively part of a DAO are at far less risk than those engaged with the Mafia… that goes without saying (but I’ll say it anyway cause we’re hunting word counts this week).
+The truth (both in DAOs and in the Mafia) is that being part of “the game” is a lot less glamorous and a lot less exciting than it appears from the outside. I can’t speak to Mafia engagements, but I can speak to DAO activities and note that while the day-to-day internal work is not glamorous, it is highly exciting and fulfilling.
+Creating structure out of nothing, activating contributors to engage, and making things happen is hard work.
+Just when I thought I was out, they pull me back in.
+0x95200b003aD624A94C5971639eE66F254A93701b
+Need something else to read? Jump back to the main branch…
+Milady Market &amp; Goblin TownAnyone seen Bandersnatch?drakedanner.medium.com

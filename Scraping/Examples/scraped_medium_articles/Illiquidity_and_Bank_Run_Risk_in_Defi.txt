@@ -1,0 +1,110 @@
+url: https://medium.com/alethio/overlooked-risk-illiquidity-and-bank-runs-on-compound-finance-5d6fc3922d0d
+
+Title: ILLIQUIDITY AND BANK RUN RISK IN DEFI
+by alethio
+
+INTRODUCTION
+
+Illiquidity and Bank Run Risk in Defi
+An analysis of risk in the emerging defi ecosystem, observed through the lens of Compound Finance.
+
+INTRO
+Open Finance (a.k.a. Decentralized Finance or “DeFi”) platforms running on the Ethereum blockchain are garnering the attention of blockchain enthusiasts and institutional investors. In an era of historically low interest rates, open finance applications potentially offer higher rates of return compared to traditional alternatives. They afford financial products and services with emergent properties of transparency, decentralization, and disintermediation by way of smart contracts and blockchain technologies.
+Fig. 0: The user relationship between popular defi protocols on Ethereum
+A prominent open finance application on the Ethereum blockchain is the Compound Finance lending platform. Compound is a hub within Ethereum’s burgeoning DeFi ecosystem, demonstrating marked growth in usage and accumulated assets.
+Fig 1: ETH Locked in Defi vs. ETH Price [USD]
+With its growing popularity and utility, Compound is crucial to a better understanding of the opportunities and risks posed by open finance. Unlike opaque financial systems, blockchains — transparent and immutable — afford us opportunities to examine the inner workings of decentralized systems concerning money and debt. Preparing users for the future world of finance is predicated upon sharing knowledge rooted in factual analysis.
+Compound users should be well aware of the risks associated with decentralized lending. These include:
+Smart-contract security riskGovernance/Protocol risk (includes the risk of admin keys being compromised)Liquidity / bank run riskCredit risk
+In What You Should Know Before Putting Half a Million DAI in Compound, Ameen Soleimani details the first two risks and alludes to the possibility of the third: liquidity / bank run risk.
+In this article, we focus on the third risk, and conduct an empirical analysis that examines moments of liquidity risk in the Compound money markets.
+All mentions of SAI in this article refer to the legacy token formerly called DAI in Maker DAO’s single-collateral stablecoin system. (0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359)
+
+LIQUIDITY RISK IN OPEN FINANCE
+The Compound lending platform is “a decentralized protocol which establishes money markets with algorithmically set interest rates based on supply and demand, allowing users to frictionlessly exchange the time value of Ethereum assets.”*
+In short, Compound allows users to:
+supply crypto assets to money markets to earn interest;borrow crypto assets from money markets.
+Fig. 2: Simplified money markets diagram
+In the Compound lending protocol, users supply tokens into one of several money markets — BAT,DAI, SAI, ETH, REP, USDC, WBTC, ZRX — in order to earn interest. The supplied tokens form liquidity pools from which other users may borrow.
+A common understanding is that suppliers are free to withdraw their principal and interest at any given point — i.e. Compound will remain liquid enough for suppliers to access their funds whenever they wish. However, just as borrowers are limited by the size of the liquidity pools, so too are suppliers. Each loan shrinks the pool of liquidity. The total amount of loans that can be taken out and the total amount of supply that can be withdrawn are capped at the size of the liquidity pool.
+Fig. 3: Illiquidity in the SAI money market, July 2019. On three separate dates, liquidity reached nearly 0, meaning both suppliers and borrowers on Compound would have been unable to initiate actions above a certain amount.
+When liquidity starts to dwindle, withdrawals and/or borrows that surpass the available amount of liquidity will start to fail. In and of itself, occasional illiquidity is not necessarily a bad thing. It may simply be a symptom of pronounced trends of supply and demand. It is also endemic to emerging markets, and thus reasonably expected in the nascent crypto industry. The designers of Compound anticipated moments of illiquidity would occur, and the protocol would respond by modulating supply and demand for lending markets through dynamic interest rates. The algorithms that drive these dynamic interest rates are encoded into the money market smart contracts. In a given money market,
+When liquidity is low:
+Supply APR increases, incentivizing users to supply tokensBorrow APR increases, incentivizing users to repay borrowed tokens
+When liquidity is high:
+Supply APR decreases, providing less incentive for users to supply tokensBorrow APR decreases, incentivizing users to take out cheap loans
+In decentralized fashion, the protocol’s dynamic interest rates are intended to counteract illiquidity. However, what could potentially be harmful to users of such an open financial application is a bank run.
+A bank run happens when suppliers, suddenly anxious about a market’s stability, attempt to rapidly and simultaneously withdraw more funds than are available in the platform, causing further panic and distrust of the system. In the context of open finance blockchain applications, a bank run would signify forces — market or gamed — that overwhelm the design of a decentralized protocol and its autonomous control mechanisms.
+Fig. 4: Simplified model of a bank run
+Johannes Pfeffer, Co-founder of Alethio, states, “bank runs in DeFi are very likely to happen once any sort of piece in the system fails, such as a failure with DAI or any other stablecoin.” This is not an unknown possibility; neither ignored or taken lightly by the blockchain community. The Maker DAO, issuer of the SAI and DAI stablecoins, has a global settlement mechanism to mitigate the effects of a potential market collapse. We reiterate that Compound employs incentivization mechanisms to control for consequential illiquidity events (see addendum for details). Nevertheless, it is crucial to ask rigorous questions of open finance applications:
+Have moments of illiquidity happened before?Does the value proposition of Compound hold up over time?Have there been bank runs, or could there be in the future?
+To answer these questions, we focus most of our attention on SAI (formerly known as DAI), which at the time of writing is the most actively loaned asset in the Compound lending markets.
+
+ILLIQUIDITY EXPLAINED
+Through this analysis of Compound, we organized our conclusions by three guiding definitions or ‘stages’ of illiquidity:
+Near-illiquidity: When illiquidity almost reaches 0, but no withdrawal or borrow attempts are actually voided due to the pool not being large enough.Actual illiquidity: When an attempted withdrawal or borrow fails because of insufficient funds in the liquidity pool.Bank run: The behavior of successive withdrawals that rapidly drain the liquidity pool to the point of ‘supply = 0’, at which point market panic sets in.
+The chart below shows the Total Borrows and Total Supply amounts in Compound’s SAI market in July of 2019.
+Fig. 5: SAI Borrow and Supply — stats around first interest rate contract change
+In figure 5:
+The green line is the total amount of SAI suppliedThe red line is the total amount of SAI borrowedThe gray line is the utilization ratio (borrowed/supplied)The blue circles — where the green and red lines almost meet — are moments of illiquidity or near-illiquidity
+There were three near-illiquidity events and one actual illiquidity event in the SAI money market in July, on July 15th, 19th, and 23rd. We noticed a couple interesting things about them.
+Near-illiquidity did not result by attempts to withdraw by suppliers. There are no significant dips in the green line (i.e. sudden, large withdrawals) on those dates.Near-illiquidity did result from a sequence of large loans being successively taken out. There are sudden spikes in the red line (i.e. sudden, large borrows) on those dates.Those borrows reduced the liquidity pool enough to nearly match the available supply.
+Of the two possible causes for a failure, a failure to borrow is the lesser evil. Obviously, it is much worse to not be able to withdraw your funds than it is to not be able to borrow as much as you want. Our focus, therefore, is on moments when people have attempted to withdraw their funds, but have been unable to do so because of insufficient liquidity.
+Now, have there been actual illiquidity problems on Compound? In other words, despite liquidity reaching nearly 0, has anyone ever actually had a problem withdrawing liquidity from the protocol?
+The short answer is yes.
+Fig. 6: History of all of the illiquidity events
+As we can see in the table above, a failure to withdraw (“Redeem” in ‘Info Description’ column) has happened three times across all of Compound’s money markets. Two occurrences concern Basic Attention Token (BAT). We do not find these particularly notable because the BAT market was in its earliest days of formation at the time and thinly traded. We are focusing on the other instance, which occurred on the more popular SAI market on July 19, 2019. We can conclude, therefore, that of the three near-illiquidity moments in July 2019 shown in figure 5, one of them (July 19) turned into an actual illiquidity event.
+Fig. 7: Zoom in on the chart above — the exact point in which the only SAI withdrawal transaction that failed took place. Check it out in the block explorer.
+The July 19th inability to withdraw highlighted yellow in figure 6 can be seen in figures 3 and 5. Figure 7 is a zoomed-in illustration of this moment. The invalid withdrawal transaction was attempting to redeem 344,020.128054 cSAI tokens — and the exchange rate between cSAI and SAI at that point was 0.0203495763, which puts the failed withdrawal at 7,000.66 SAI. Liquidity at this point was at just 5,790.16 SAI, with a utilization ratio of over 99.97%.
+For the user, this meant they attempted to withdraw their 344k cSAI and was unable to because the application could not support such a high withdrawal. Compound’s response was to adjust the interest rate model to attempt to re-incentivize the pool to return to higher liquidity (discussed in the addendum). As a consequence, the withdrawal succeeded &lt; 5 minutes later (figure 8).
+Fig. 8: The successful withdrawal of 344k SAI, &lt;5 minutes after the failed attempt.
+
+CLOSE CALLS?
+A case can be made that the July 19th actual inability to withdraw due to liquidity issues was a rare, singular occurrence. While this might be accurate, further analysis shows that Compound Finance has experienced a few close calls in the past.
+We’ll show the top 5 of these, and dive deeper into the largest one.
+Fig. 9: Top 5 “close calls” — withdrawals that drained a significant percentage of available liquidity
+On these five occasions, Compound experienced single withdrawal transactions that drained over a quarter of the available liquidity.
+The largest one (by percentage), happened on block 8,208,406 on July 23, at 6:04 PM. (You can see it in Fig. 5, it’s the moment marked where utilization ratios reached 99.17%). An address withdrew a little over 216k SAI, leaving the liquidity pool at just 10.9k SAI. The following chart (figure 10) shows the top suppliers and how the liquidity looked like immediately before this withdrawal.
+Fig. 10: Cutoff line of leftover liquidity, showing how some users would be able to fully withdraw their supplies, while others would not.
+Even before the large withdrawal of +216k SAI, we can see that most of the top 30 would not have been able to withdraw their entire supply. We can imagine the vertical line being subjected to pressure from both sides — suppliers try to push it to the right by making their corresponding bar on the chart bigger, while those that withdraw and borrow pushing it back to the left. After the withdrawal of +216k SAI by address 0x…5e3d (highlighted in fig. 10), the available liquidity dropped to &lt;10k SAI, leaving even more addresses unable to withdraw had they tried. After the withdrawal, an additional 2,125 addresses would have been unable to withdraw their supply.
+
+BLACK SWAN DANGER: BANK RUNS
+Looking at the broader picture, therefore, we can say: At least five major moments of near-complete illiquidity (figure 9) and one moment of realized illiquidity (figure 6) have occurred on Compound Finance. There was some attention from the crypto ecosystem, but for the most part, people looked past these events. The interest rate model was adjusted and the protocol went back to a state of functionality and liquidity.
+With evidence that Compound’s incentivization mechanisms cannot necessarily hedge against illiquidity and voided withdrawals, we need to properly evaluate the danger of a bank run. Whereas an identified illiquidity event may affect the one or few users (usually larger holders) who are unable to withdraw their funds, a bank run affects a multitude of smaller holders, who are left unable to withdraw their relatively small holdings.
+As the user base of Compound grows, massive upticks in borrowing that drastically reduce liquidity may spook suppliers, and cause them to begin withdrawing funds. Larger withdrawal amounts would begin defaulting first, and as the liquidity pool continues to shrink, fewer and fewer users would be able to recoup their funds. The result is something reminiscent of a traditional bank run, just replicated onto a decentralized platform.
+An argument could be made that a bank run such as this would be a ‘black swan’ event — a once-in-a-lifetime event that is unpredictable and impossible for users to protect against. We have seen, however, five moments of historical illiquidity (three in July alone) and already one instance of a defaulted withdrawal. Moreover, we know we can track how close liquidity is to 0 in real time by monitoring suppliers and borrowers.
+
+PART 2: MITIGATING ILLIQUIDITY & BANK RUN RISK
+
+MONITORING INTRO
+Illiquidity events are inevitable. Helping open finance users avoid and/or respond to liquidity events (and thus protecting against more acute crises like bank runs) boils down to providing them with relevant information as quickly as possible. Timely alerts promote understanding of DeFi applications, prompting its users to make decisions and take actions in order to better achieve financial goals.
+A successful alerts and monitoring product:
+makes sense of data from the blockchain and decentralized applicationsrepeatedly informs ➞ promotes decision/action ➞ informs ➞ promotes decision/actionmeasures the effects of decisions/actions and integrates those effects back into the data
+This is where we believe Alethio steps in.
+With Alethio’s Monitoring Tool, users can set active, customizable monitors on any deployed smart contract or account. With these monitors in place, users will receive real-time alerts as soon as the desired condition or rule is met. Alethio Monitoring addresses a user’s need to access relevant on-chain data in real time without requiring that user to seek that information actively.
+Fig. 11: Setting up a target on Alethio Monitoring is that easy
+Fig. 12: Set up a specific alert on your target — in this case on the cToken contract (add the cSAI contract as a target in the previous step). This alert monitors SAI liquidity.
+The screenshot above shows how a Compound liquidity alert would look like on Alethio’s Monitoring page. This specific alert monitors for a 1% decrease in liquidity — but the percentage can be customized, or instead of a percentage, you can monitor for a specific value (i.e when liquidity drops below a certain threshold — or exceeds a certain threshold for that matter).
+Altogether, we’ve built out this alerting functionality to better equip existing and future users to act more assuredly with an open finance product like Compound, and hopefully grow the overall defi ecosystem along the way. Confident use of open platforms requires confident access to data, information, and analysis. We have built out the Alethio suite of products to help Ethereum users do just that, and we will continue to develop as the ecosystem grows.
+*https://compound.finance/documents/Compound.Whitepaper.pdf
+Authors: Bogdan Gheorghe, Momo Araki, Everett Muzzy
+
+ADDENDUM: COMPOUND’S INTEREST RATE INCENTIVE TECHNIQUE
+As a lending protocol, Compound works (more or less) as follows:
+Fig. A: Simplified diagram of Compound liquidity pools**
+Suppliers pool Tokens into one of the 7 markets offered (BAT, SAI, ETH, REP, USDC, WBTC, ZRX), while Borrowers deposit collateral and take out loans in those tokens. The loans are withdrawn from the pool of supplier deposits. Because each loan withdrawn shrinks the pool of liquidity, the total amount of loans that can be taken out is capped at the size of the liquidity pool. But that’s not the only way the liquidity pool can get smaller.
+Fig. B: Liquidity pool diagram, this time with Supplier withdrawals accounted for
+The common understanding of Compound is that suppliers are free to withdraw their supply at any given point. Or are they? As we mentioned before in the case of borrowers, the size of the loans they can take out is dictated by the size of the liquidity pool. In figure B, we see that there are outward flows on both sides of the protocol. The liquidity pool has 2 ‘taps’ — one for suppliers, which serves as their withdrawal mechanism, and one for borrowers, from which they take out their loans. If liquidity starts to dwindle, withdrawals or borrows that surpass the amount of liquidity will start to fail.
+Of course, the ratio between the flows from each of these ‘taps’ can be summed up in one number — the utilization ratio. As per the Compound whitepaper***:
+
+This ratio not only helps show which token markets are more in demand, but actually serves as a mechanism to help regulate those markets. Therefore, interest rates are algorithmically set through a model designed to achieve equilibrium. This can be described through a simple equation, also mentioned in the whitepaper:
+
+Now, the 2 constants in the formula above are just as an example; and although they are hardcoded in the interest rate model contract that is attached to each market, they can be changed through governance (the protocol admin address — which is currently a multi-user address held by Compound), by updating the interest rate contract altogether. The first one is called the Base Rate, and the second one the Multiplier. We can also see that this formula gives us a ceiling for the Borrowing Interest Rate (at a 100% utilization ratio, the Borrowing Interest Rate maxes out at the sum of the 2 constants).
+At the time of this writing, there are 3 different Interest Rate model contracts in use across the 7 Compound money markets, each with its unique parameters. Let’s explore the history of these changes — and more importantly, the context in which they took place (we are only pointing the lens at the SAI market, there is such a thing as too much detail).
+
+INTEREST RATE MODELS
+By far the most interesting one, the SAI market (up until recently, also the most “loaned”, USDC has achieved the flippening mid November) has had 2 changes (to be fair, it was just one other contract, the second change was to revert back to the original contract). The changes happened as follows:
+0xa1046abfc2598f48c44fb320d281d3f3c0733c9a — the original one, set up with the creation of the cSAI contract in transaction 0x8caa40e8b5227b7a1079a9e883d92de018957e5256f356aa6d28b2610e7b1c44 on May 7th
+Base Rate: 5%
+Multiplier: 12%
+Max Borrow Interest Rate = Max Supply Interest Rate = 17%

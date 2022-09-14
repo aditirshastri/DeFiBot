@@ -1,0 +1,31 @@
+url: https://medium.com/stargate-official/stargate-a-farewell-to-bridges-28831d0f9439
+
+Title: STARGATE- A FAREWELL TO BRIDGES. TLDR: BRIDGES ARE DEAD, LONG LIVE…
+by Ryan Zarick
+
+INTRODUCTION
+
+Stargate- A Farewell to Bridges
+tldr: bridges are dead, long live bridges
+
+The omnichain universe is here to stay, but the infrastructure is fragmented. For bridging, the focus is on user driven asset movement between chains. Although this sounds like an intuitive approach, it’s actually far from practical. For example if you want to yield farm on a hot new chain you must swap your assets to a bridgeable asset, bridge, and then farm all in a 20+ click multi-transaction session. In an ideal world you could swap, bridge and farm all in one transaction from the source chain.
+
+Introducing Stargate, the first and only bridge to solve the Bridging Trilemma, unlocking seamless composability; enabling the wrapping of all existing DeFi applications. For example, the video below shows how you could wrap Stargate and Uniswap to perform an any asset to any asset swap in a single click between chains.
+
+
+LAUNCH
+In two days (March 17th), Stargate’s liquidity generation event begins, leading off with an auction followed by Stargate going live with a simultaneous bonding curve. All funds raised during the event will be owned by the protocol.
+
+AUCTION
+Starts 12pm EDT March 17th, 2022 on https://stargate.finance100M STG tokens available (10% of total supply) [MetaMask &amp; WalletConnect supported]Auction ends when $25M USDC has been purchased or after 48 hours have elapsed, whichever comes first, making the maximum price per token $0.25At the end of the auction the 100M STG is frozen for 12mo followed by 6mo linear unlocking for participants
+
+Assuming the auction is sold out within the 48 hours, the collected $25M will be paired with an additional 50M STG and be immediately put into a Curve v2 pool, pricing the token at $0.50/STG with $50M of liquidity depth.
+
+BONDING CURVE
+Upon conclusion of the auction, Stargate and the bonding curves will go live on all seven chains (Ethereum, Polygon, Avalanche, BNB Chain, Fantom, Arbitrum and Optimism). Assuming the auction phase ends at the hard cap, bonding curves will run from $0.50 - $1.50.
+
+With Stargate live on all seven chains you will be able to swap Stargate enabled assets freely between the chains allowing for everyone to participate in bonding everywhere. The bonding curve will last for 72 hours and the remainder of the tokens will be returned to the protocol.
+
+
+STG
+This will conclude the liquidity generation event providing depth for STG on AMMs and protocol owned liquidity for Stargate. STG will be the first Omnichain Fungible Token (OFT), a native token that can freely move between all chains LayerZero exists. This is the first step towards an omnichain future. Welcome home.

@@ -1,0 +1,32 @@
+Introduction
+Welcome to the Dexsport documentation portalToday, the betting platforms market is occupied by monopolists - big players, who control the odds on various events
+ It complicates the situation not only for the owners of smaller platforms but also for players themselves: even if they win fairly, they will find it difficult to get their money due to constant identification procedures and stricter payouts
+In order to change the situation, authors of the Dexsport project developed decentralized betting platform, in which users will play with a shared pool of liquidity and receive winnings via blockchain
+ This platform includes sports betting, play to earn betting, prediction marketplace, P2P betting on exchange rates, and NFT art collecting
+The decentralized platform format was chosen due to the transparency of procedures and the increasing popularity of DAO
+ DeFi provides unique opportunities for players in the gambling space
+ Has a decentralized protocol, betting will need no bookmaker for a bet to be placed
+The market for DeFi projects is becoming increasingly solid, vast and saturated, and Dexsport will obviously enhance its growth and development and be entitled as a brand new decentralized betting platform, where every user will be able to observe in person all the processes previously hidden from him and receive his winnings honestly
+
+Roadmap
+The roadmap of theDexsport projectBetween 2021 and 2022, the Core Team will complete all the core functionality of the platform and release specific applications
+ In addition to product development, every phase includes thorough testing, bug detection process and a third-party security audit
+Throughout the Dexsport project development process, its core team strives to create a global community of players using the project and its features
+ In order to constantly improve user experience, the feedback received is carefully processed and handled
+This is the first public version of our product
+ In it, we will test the initial functionality of our platform on bets in the test network, after which we will go to the mainet
+This update will affect the complete redesign of the platform
+ New chain and pools will be added, as well as work on bugs based on the feedback collected from the community
+This update will be aimed at the full gamification of the platform and the creation of public custom user profiles
+ Work will also continue on improving the performance of the product
+
+Sports betting
+A user places a bet on one of the possible events
+ His balance goes into the common pool of liquidity, and if the bet turns out to be a winning one, he can get the money instantly
+ The balance is displayed in the Web 3
+0 wallet
+ Each event outcome is checked through a data oracle
+Oracle IntegrationDexsport will be utilizing ChainLink as the preferred oracle to port data from off-chain API's on to the BSC
+ ChainLink has proven to be the most reliable and fastest growing oracle service in the space
+ ChainLink allows developers to custom code access to any off-chain API
+ The oracle will check the outcomes of the data for reliability, which is why we chose ChainLink so that there was a transparent validity of all events

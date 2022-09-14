@@ -1,0 +1,68 @@
+url: https://drakedanner.medium.com/multi-faceted-identities-in-web3-24f5e1592750
+
+Title: MULTI-FACETED IDENTITIES IN WEB3. SOME IDEALIZE CRYPTO AS AN ANON UTOPIA…
+by Drake Danner
+
+INTRODUCTION
+
+Multi-Faceted Identities in Web3
+“Who am I? … Who are you?”
+Some idealize crypto as an anon utopia with zero paper trail — what up Monero — but those of us that spend time on-chain know that much of what we and our friends are doing is parsable. As we continue to spend time as digital citizens, we will continue to augment and enrich our experiences through data sharing that allows us to find the right spaces to blossom.
+
+OPERATIONS AND INFORMATION SECURITY
+
+As you go down the rabbithole, you start to hear about “OpSec” — and once you get down to where you think the rabbithole ends you start to think that you understand OpSec and InfoSec.
+None of us are ready for the future of citizen operations security. It feels incredible to believe that everyday individuals will be prepared to handle multiple sets of private and public key pairs.
+Operations security is a term most often used in military contexts and is a process that evaluates risks associated with information leaks. It provides frameworks for analyzing how information shared can be weaponized against the sharer by adversaries. Information security is a framework to mitigate risks associated with data access vulnerabilities through trusted source access. Together the concepts of OpSec and InfoSec evaluate the likelihood of information being shared externally and the power of that information in a malicious actor’s hands.
+I’ve yet to properly explore these topics and it is easy to see less technical individuals as completely unable to engage with the responsibility related to public / private key pair management. For the purpose of the rest, we will assume that the everyday person develops adequate key etiquette and is mindful of OpSec and InfoSec.
+
+PAUSE — LET’S DISCO
+Watch this.
+
+We’ll come back to Disco — a lot of the above and below is an expansion on concepts raised by Evin so take a breath and watch the video. It does a better job of exploring the future than this does.
+
+KEY ROTATION VS. SOULBOUND NFTS
+
+Soulbound NFTs are under-explored and easily implemented. They allow issuers to publicly and with finality mark addresses with an identifier. As I’ve seen more projects deal with bots and struggle to identify known good actors in sustainable ways, I’ve started to see soulbound NFTs as a one size fits all solution that allows trusted credentials and various accreditations to be associated with a public key.
+In the above presentation, Evin pushes against soulbound NFTs for a variety of reasons. Quick run down on the anti-soulbound view (again, from Evin):
+no consentopposite of web3 promised autonomyan attacker could mint a nude to your accountinability to signal consent related to NFTs to external partiespotential for illegal content to be permanently attached to accountreliance on front-ends to hide undesirable content
+The case against soulbound NFTs is the case for key rotation. If you amass undesirable un-burnable tokens, you can simply move your assets to a new set of keys. Transfer the important things to your new account and distance yourself from the old account.
+Key rotation is a healthy practice for InfoSec ; generating new keys and discarding old keys makes it harder for attackers to access protected assets. Soulbound NFTs are terrible for OpSec, they make it harder to conceal connections between various operational accounts and therefore create more attack vectors.
+
+SOCIAL IDENTIFIERS & DIDS
+I know there are a lot of you in this room that have mad love for dids
+— Evin
+idk what a “did” is but fuck it we ball.
+They are a link between our data, our reputation, and our public addresses.. they are like off-chain data backpacks that allow you to control and sign information associated with your identity.
+— Evin
+There’s also an aspect to VCs that allow higher key rotation than traditional on-chain accounts that I am not yet totally grasping.
+There are verifiable credentials (VCs per W3C) that can be shared between keys — an attestation between keys that share information about one party to another. These “VCs” are also non-transferable.
+Again, nearly captioning Evin (so please watch the video) but also going to ask some questions…
+How is a “VC” different than a soulbound NFT?
+ZK badges received pushback because they could be created then sold…
+Are “VCs” a zkp that is soulbound? Cause that would be bomb.
+I’m think that I am getting closer but I have more research to do. I’d also like to shout out caden for providing more clarifying insight into DIDs and various nuances of protocol implementation.
+Verifiable credentials will allow individuals to prove their skills through on-chain methods that also maintain their privacy.
+
+Rabbithole has been an active proponent of on-chain credential issuance and their CEO Brian Flynn has been active in his journey towards developing a framework for the issuance of these types of tokens.
+
+As issuers continue to evolve and citizens continue to learn how to implement proper OpSec, digital identities will be empowered to develop and to be maintained.
+
+DISCO
+But what if we think beyond the chain…
+
+There is a plethora of data begging to be linked to our on-chain accounts. I wrote about this recently scoped to on-chain analytics and tweets.
+Public Keys as Primary KeysWallets were a hot topic in 2021. Mike Demarais and Rainbow made themselves known, the name “wallet” was questioned…drakedanner.medium.com
+Disco provides a way for an individual to curate their digital identity through a mix of on-chain and off-chain data sources.
+Disco
+There is a digital future where we are empowered to curate the many facets of our identity through purpose driven nodes. The me that I am here is different than the me I share with my friends IRL. The me that I share with my friends IRL is different than the me that I share with my parents.
+There is a mix of on and off-chain experiences and credentials that can provide various windows into who we are.
+
+As we continue to amass these experiences and credentials, we would benefit from mindfulness regarding our OpSec and InfoSec. We should remain conscious of what we choose to expose to external parties.
+Disco provides a framework and infrastructure for strategic implementation of multiple identities in web3. A cluster of on and off-chain identities can be expressed through a variety of lenses. Specific slices of our personality can be provided when needed and to those who need it. Various aspects of our identity and personality/ies can be exposed in the spaces relevant to their exposure.
+
+WHO AM I? WHO ARE YOU?
+
+The outward expression of our self should and will be controlled by us as we progress further technologically and societally. While it is comical to expect existing citizens to adopt these standards and to implement the concepts presented, the future is bright and the possibilities are endless.
+gm 🌞
+0xd76471b419df9716EEE698bd1C6426D3e21C536c

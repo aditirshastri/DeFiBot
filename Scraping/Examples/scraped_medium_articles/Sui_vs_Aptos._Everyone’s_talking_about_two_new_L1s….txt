@@ -1,0 +1,49 @@
+url: https://medium.com/@marthenaudts1/sui-vs-aptos-2729cb304c80
+
+Title: SUI VS APTOS. EVERYONE’S TALKING ABOUT TWO NEW L1S…
+by Marthe Naudts
+
+INTRODUCTION
+
+
+ONCE UPON A TIME…
+Meta (originally named Facebook) built Diem (originally named Libra) to be a permissioned blockchain-based stablecoin payment system. Essentially they wanted to dabble in peer-to-peer payments whilst pursuing their monopolistic corporate agenda. But predictably, regulatory backlash and antitrust concerns plagued their efforts and they abandoned the project in January this year.
+But they did leave something useful behind- its Rust-based smart contract and custom transactions programming language, Move. Move has a number of benefits over Solidity, the main ones being:
+Compared to Solidity in which assets are permanently locked in a contract, asset properties are easily customisable, allowing assets to flow through smart contracts as arguments and returned by functions. This has a number of useful applications which I’ll get to later.Security: tokens and smart contracts are stored as ‘resources’, which have high status in Move’s code architecture that prevents them from being duplicated or destroyed.
+Developers I’ve spoken to have also cited how superior the development experience is with Move. It allows for the real composability of assets and intraoperative contracts. Code that takes 3 weeks in Solidity takes a day in Move.
+Product killed. Leaves behind fledgling Code.
+Enter, Aptos and Sui.
+Both Aptos and Sui’s teams are from the original Diem teams at Meta. They’re Layer 1s that use proof of stake as their consensus mechanism. However, they use different versions of Move and have different algorithmic designs behind their parallel execution- which means their consensus algorithms differ.
+Ultimately, they both claim to have cracked the scalability issues that plague other L1s. Aptos’ testnets were able to process over 160k TPS and &gt;1s TTF, while Sui claims almost instant settlement of most transactions with up to 120k TPS each. Compare that to Ethereum’s maximum of 45 TPS and Solana’s 2.3–46s TTF, and it’s easy to see what the excitement’s all about. In case you missed it they’ve raised/are raising about $600m between them from the top togs in Web3 VC. But as always in crypto, there’s always the potential for lofty promises, so anyone interested should do their due dilligence into the actual architectural differences. Let’s dive in.
+
+EXECUTE FIRST, ASK QUESTIONS LATER
+❗ Most blockchains use sequential execution, meaning thousands of nodes continuously update a single ledger containing a chronology of every transaction ever executed. Because each one is added one at a time, it’s necessary to wait for each new transaction to be verified, limiting throughput and causing the high gas fees we all know and love, especially as network usage spikes.Sequential execution unnecessarily restricts throughput on these chains- most transactions are independent. And as application demand scales, high latency can also become an issue, so affecting the responsiveness of dApps.
+Sui explains it better than I do:
+
+Sui and Aptos both use parallel execution in order to have the capacity to infinitely scale the network throughput as demand and utilisation increases. This is nothing new, but parallel execution is easier said than done. How to reach consensus over the order? How to differentiate independent from conflicting transactions?
+Aptos uses the BFT consensus algorithm, where parallelisation is implemented by dynamically detecting dependencies and execution tasks using BlockSTM (an evolution of the seductively named HotStuff algorithm).
+Essentially, transactions are optimistically executed, where conflicts are then detected by maximum one thread in the parallel execution engine and then re-executed and re-validated through a queue, then synchronising and changing the final state.
+
+Sui uses a DAG-based mempool (Narwhal) and a Tusk consensus algorithm, where the DAG is then exploited at the execution layer for parallelisation. It requires that dependencies of transactions be explicitly stated, meaning it can process most in parallel and in the minority of cases where transactions are intertwined still order and execute them sequentially. This is done by using 2 different paths to consensus- Byzantine Consistent Broadcast for independent transactions and BFT consensus for dependent transactions.
+It only runs consensus as needed to checkpoint its state, forgoing consensus for the majority of transactions by utilising ‘casual ordering’ (vs other blockchains that completely order them).
+This contrasts to Aptos which ‘waits until the transactional dust has settled’ before verifying all chains at once, and then re-executes the failed ones, letting the validated ones pass through.
+
+HOW DOES MOVE FEATURE IN ALL OF THIS?
+Move is necessary for their version of parallel execution. Aptos uses more or less the textbook Diem Move, but Sui uses an adapted version, enabling its smart contracts to receive objects as inputs, manipulate them, and return them as outputs. Both versions have the following benefits:
+Security: Move differs from Solidity in its focus on scarcity and access control. It treats formulas as fundamental resources that can never be cloned or discarded- only moved. This improves security by preventing re-entry vulnerabilities, poison tokens, and spoofed token approvals.Scalability: Each object has ownership metadata that allows Sui validators to execute and commit transactions using the object in parallel with causally unrelated transactions. Move’s type system ensures the integrity of this ownership metadata across transactions. Solidity does not allow for this because assets are stored in dynamically indexable maps, so it is unclear to a validator whether transactions are independent or not. So Sui needs a language like Move for parallel execution because it allows structured assets to flow freely across contracts.
+
+AND HOW DO WE LINK ALL OF THE ABOVE TO THE TOKENOMICS?
+Well, Aptos doesn’t even have a token, so we’ll put them to one side for now and make up for it with a lovely coloured diagram of Sui.
+
+Sui’s gas price mechanism and storage fund facilitate Sui’s ability to parallelise transactions and store arbitrary amounts of on-chain data, meaning it is architecturally highly scalable. The SUI token (capped at 10bn) can be staked to participate in the proof-of-stake mechanism, used to pay gas fees, used as a liquid asset for smart contract and monetary policy applications, and finally used for governance/ on-chain voting.
+A share of SUI’s total supply will be liquid at mainnet launch. The storage fund creates important monetary dynamics in the sense that higher on-chain data requirements translate into a larger storage fund, reducing the amount of SUI in circulation.
+Sui’s Gas Pricing mechanism
+Sui’s gas pricing works to keep gas pricing predictable and low.
+Validators agree on a network-wide reference price at the start of each epoch (an epoch is a fixed duration in which the set of validators participating is fixed) serving as an anchor for users when submitting transactions.
+Users pay separate fees for execution (gas fees) and storage (fees set through governance proposals). The former is determined through a three step process operating repeatedly across Sui epochs, serving to incentivise validators to honestly declare their reservation price and then honour it.
+At the start of the epoch, a gas price survey asks validators to submit the minimum gas price they’re willing to process transactions. The protocol sets the 2/3s percentile by stake as the epoch’s reference gas priceAs the epoch progresses, validators obtain signals about one anotherAt the epoch close, each validator submits their beliefs over other validator behaviour, which is used to determine the stake reward distribution rule. Those who submitted low price quotes during the gas survey or who processed all transactions above their self-declared reference price will be rewarded, and vice versa. Genius.
+Sui’s storage fund
+Sui aims to handle arbitrary amounts of on-chain data. Users pay fees upfront for both computation and storage (so future users do not have to subsidise part users for their storage). The storage fees are deposited into a storage fund used to adjust the future share of stake rewards distributed to validators relative to SUI delegators. If on-chain storage requirements are high, validators are compensated.
+Grand finale
+Sui’s Move’s object-centric design lets validators execute transactions in a causal-ordering approach, so independent transactions can be processed in any order.
+Each validator can therefore increase its transaction throughput by just adding more computing power. This means as network activity increases, throughput and costs scale linearly.

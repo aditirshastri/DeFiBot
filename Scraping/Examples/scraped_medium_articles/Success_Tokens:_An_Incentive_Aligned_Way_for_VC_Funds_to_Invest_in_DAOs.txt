@@ -1,0 +1,32 @@
+url: https://medium.com/uma-project/success-tokens-an-incentive-aligned-way-for-vc-funds-to-invest-in-daos-1e8b8244f2f4
+
+Title: SUCCESS TOKENS: AN INCENTIVE ALIGNED WAY FOR VC FUNDS TO INVEST IN DAOS
+by Hart Lambur
+
+INTRODUCTION
+
+Success Tokens: An Incentive Aligned Way for VC Funds to Invest in DAOs
+UMA Success Tokens Provide a “Series B” Option for Crypto Investors
+
+tl;dr — Success tokens provide a way for VC investors to buy tokens from a DAO that is more palatable to a tokenholder community but maintains proper upside alignment with the VCs.
+
+A PLACE FOR VCS IN CRYPTO
+I recently spoke with a crypto VC who stated
+“There are no Series B deals in crypto.”
+What he meant is that a typical crypto project will launch a token after their seed or Series A deal, leaving a later stage investor with no option for a private investment. Instead, that investor will have to negotiate an investment in publicly traded tokens with the DAO that controls a project’s treasury.
+This means crypto is democratizing access to otherwise private investment opportunities — I think this is pretty cool. But crypto projects still want access to VC capital and expertise. Good VC investors can provide a lot of value and help projects grow and succeed.
+The current path forward is that the VC fund will attempt to buy “tokens at a discount” from a DAO. This is what a16z did with Maker, what a16z did with Solana, and what Sushi is considering doing now.
+The problem with “tokens at a discount” is that it is not always well received by communities. Many token holders question what value a VC investor will bring. Right now, the Sushi community is actively questioning if a discount is “worth it” in their forums and Discord.
+One solution that UMA proposed was something we termed a Range Token. This structure looks more like a DAO taking a loan, without liquidation risk, instead of selling tokens. We continue to think this structure is really compelling when investors are primarily interested in yield. Venture investors want pure upside exposure — they don’t want debt-like products.
+So we engineered a solution: Success Tokens.
+“Success tokens” are two tokens wrapped in one: a project token with a call option on that token.
+This means that instead of offering the VC investor a discount, we offer the investor a call option alongside their token purchase. They pay the full price of the token for this package. The option portion is only valuable if the project rallies, which better aligns incentives: the VC investor only gets their “bonus” if the project performs well, which of course benefits the whole community.
+Instead of paying the VC investor a bonus upfront (in the form of a discount), the success token pays the VC investor a bonus only if good things happen. In fact, VCs will have doubled exposure as the price rallies. It’s a win-win.
+An example for $SUSHI:
+Create a “success token” that combines 1 $SUSHI and 1 $25 strike $SUSHI call optionSell the success token at current $SUSHI price (not at a discount)This success token expires in X years (let’s say 2 years)At expiry, the token is redeemable for 1 $SUSHI + the value of the $25 strike call option (paid in $SUSHI)
+The parameters that can be tweaked here are (a) the strike of the call option, (b) the expiry date, and (c) the price at which this success token is sold. The numbers above were just picked as examples. Picking these parameters would be what the VC investor and the DAO community should negotiate.
+
+NEXT STEPS
+Success tokens offer an alternative way for DAOs to diversify their treasury and sell tokens to VC investors in an incentive aligned way (no discount).
+We believe this structure has the potential to become the standard way that venture investors do “Series B” deals with crypto projects. The UMA team encourages any DAOs or VCs interested in range tokens to contact us. We are happy to strategize together. As usual, all questions and feedback are welcome.
+Please join the discussion on discord.

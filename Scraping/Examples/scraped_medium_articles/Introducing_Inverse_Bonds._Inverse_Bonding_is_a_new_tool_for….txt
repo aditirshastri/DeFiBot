@@ -1,0 +1,24 @@
+url: https://olympusdao.medium.com/introducing-inverse-bonds-9199cc7bf089
+
+Title: INTRODUCING INVERSE BONDS. INVERSE BONDING IS A NEW TOOL FOR…
+by OlympusDAO
+
+INTRODUCTION
+
+Introducing Inverse Bonds
+
+Inverse Bonding is a new tool for OlympusDAO to increase $OHM’s liquid backing and absorb market volatility.
+Bonding has always been the cornerstone of Olympus. We put ourselves on the map by introducing bonding to DeFi as a way to drive protocol-owned liquidity (POL). Not only have we made this a reality for ourselves (with 99% POL), but innovations like Olympus Pro have brought the power of bonding and POL to many other protocols.
+Now, it’s time to introduce a new bonding innovation: inverse bonds. Inverse bonds are part of an overarching strategy, defined in Olympus12, that seeks to produce value for Olympus holders through a strong Treasury. This cements our position as the reserve currency and central bank of DeFi.
+OlympusDAO aims to build the decentralized reserve currency of DeFi. With an ambitious aim, comes a willingness to do whatever it takes to bring this mission to fruition. That’s easy to say when it’s smooth sailing in the green sea of Up Only. However, in the rough waters of challenging market conditions, it involves digging deep to ensure that our value is properly established and preserved.
+Fortunately, the DAO is fully aware of this dynamic and has put time and effort into creating OIP 76 to introduce inverse bonding as a policy lever. Inverse bonds allow Olympus to create a means to bring OHM out of circulation, which increases the backing per OHM on every inverse bond that is executed below liquid backing. The basic mechanism is simple, you give the treasury your OHM in return for some treasury assets.
+With this in mind, let’s lay out a few basic ideas about inverse bonds. At the time of writing, our liquid backing is at $34.53, which is less than what our total treasury market value is at $42.07. You can see both of these values on the dashboard. This distinction is important to make because inverse bonds will only be enacted if the price were to be at parity with or lower than the liquid backing. Any inverse bond sold below liquid backing will increase said backing; this is an important relationship to remember. The intention of the inverse bonds is not to “save” price, but instead to act as a lever to absorb market volatility and exemplify to Ohmies a way that the treasury is here to back you.
+It is most crucial to understand that the Olympus treasury is a basket of diversified assets. When valuing the treasury, it is not only important to consider the backing per token in liquid assets, but also in illiquid assets. However, inverse bonds will only be enacted around the liquid backing. A detailed breakdown of our treasury can be found here.
+
+OIP-76 grants the DAO discretion to implement inverse bonds as required given market conditions. Here’s a few specific details keep in mind: inverse bonds will be deployed when token price nears 5% below liquid backing (note: this number will change as we approach it) and max bond size will be at 100% of daily capacity. Just to reiterate, inverse bonding will not be used when above liquid backing.
+The Olympus Treasury will ensure the health of our protocol through inverse bonds. We will continue to do whatever is necessary to ensure the long-term success of the Olympus Protocol. We invite you to join the discussion and help us build its future.
+#ohmisbacked
+
+ABOUT OLYMPUSDAO
+Olympus is a decentralized financial reserve protocol that provides sustainable compounding interest through its community-owned and protected treasury.
+Twitter | Discord | Medium | Forum

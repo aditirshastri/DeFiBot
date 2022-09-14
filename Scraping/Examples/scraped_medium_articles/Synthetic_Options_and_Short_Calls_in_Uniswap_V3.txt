@@ -1,0 +1,54 @@
+url: https://lambert-guillaume.medium.com/synthetic-options-and-short-calls-in-uniswap-v3-a3aea5e4e273
+
+Title: SYNTHETIC OPTIONS AND SHORT CALLS IN UNISWAP V3
+by Guillaume Lambert
+
+INTRODUCTION
+
+Synthetic Options and Short Calls in Uniswap V3
+Short Straddle. Selling a short put and a short call is a delta-neutral strategy that can reduce portfolio volatility and mitigate impermanent loss.
+See part 1 of this series for an introduction of Uniswap v3 LP options and how they mimic Covered Call and Short Put options.
+Update 2017/07/14: see part 3 of this ongoing series about Uni v3 LP options: Understanding the Value of Uniswap v3 Liquidity Positions
+You may have come across the tweet below, which describes how a Uniswap v3 LP position worth $127,000 at the time was sold on Rarible for 1 ETH:
+How to fail at selling a covered call. Extrinsic value = negative 14ETH
+Basically, someone minted a Uniswap v3 LP token by locking 15 ETH and SUNI tokens at the sweet price of 25,022 SUNI/ETH. Then, the minter sold the NFT itself, which contained the 15 ETH and the SUNI token, for 1 ETH.
+Since we know that Uniswap v3 LP positions behave like a covered call, the SUNI liquidity provider has sold a covered call for less than its intrinsic value. In other words, selling this position for 1 ETH meant an immediate realized loss of 14 ETH for the seller.
+This transaction shows how, in the future, Uniswap v3 LP tokens could be traded as options instruments on decentralized markets like Rarible or Opensea. There would be no need to develop smart contracts for the minting/buying/selling of options because users can leverage the existing Uniswap v3 smart contract infrastructure to mint covered call options for all existing trading pairs already on Uniswap.
+While selling a Uni v3 short put can be used as a neutral-to-bullish strategy to profit during bull markets, how do we profit in a bear market? Can we use Uni v3 short options to devise strategies to hedge against both downward moves? It turns out we can do this by creating a short call position. But before we can mint a Uni v3 short call, we must first learn about synthetic options.
+
+PUT-CALL PARITY AND SYNTHETIC OPTIONS
+As discussed in part 1 of this series, the expected payoff of a covered call is exactly the same as a short put. The reason why combining a long stock with a short call reproduces the payoff of a short put is because of put-call parity.
+The most intuitive way to derive the put-call parity relationship is by considering the scenario where an option trader wants to acquire a stock for a price K. They can send a limit order to their broker to purchase the stock outright when it hits K. If the spot price after the stock has been purchased is S, then the expected return is going to be (S-K).
+Another way to acquire a stock is by either buying a call at strike K or selling a put at strike K. The call can only be exercised if the spot price S is higher than K at expiration. In that case, the return will be (S-K)-C, where C is the cost of the long call. The put, on the other hand, can only be exercised if the S &lt; K, and the return will be (S-K)+P where P is the cost of the short put.
+If the trader buys the call and sells the put at the same time, they will always have the ability to purchase the stock at expiration regardless of the spot price. This is a no risk position because the probability to be assigned is 100%. Thus, the trader should not be able to extract any value from that transaction — ie. there will be no arbitrage opportunity and the return, which is (S-K) minus the cost of the transaction (C-P), will always be zero.
+Putting it all together, we get the Put-Call Parity Equation:
+(C-P )= (S-K)
+This expression implies that the combined value of the short put and the long call will track the difference between the spot price and the strike price. If the spot price increases by 1$, the value of the short put+call will increase by 1$. If the spot decreases by 10$, the put+call will also decrease by 10$.
+Effectively, the combined value of a short put and a long call constitutes a synthetic long stock. We can see how this works graphically:
+Synthetic Long Stock. The return obtained from buying a Long Call and selling a Short Put is exactly the same as a long stock position.
+It turns out that it is possible to leverage the put-call parity relationship to recreate the payoff relationship of any options instrument. For instance, as we’ve seen in the previous post, combining a long position with a short call (ie. a covered call) creates a synthetic short put position.
+This figure shows all possible combinations of underlying stock with long/short puts and calls to create synthetic options.
+Synthetic Options. The payoff of any option can be replicated by combining puts and calls with a long/short stock position. The last one shows how a covered call (short call + long stock) is identical to a short put.
+
+SHORT CALL IN UNISWAP V3
+Armed with this knowledge, we can now see how a Uniswap v3 LP token can be combined with a short ETH position to create a short call:
+Short Call. A short call has the same return as a short put and a short stock position. The short stock position “cancels out” the long stock position of a covered call.
+Here, it makes sense to think of the short ETH position “canceling out” the long ETH position of the covered call. There are a few ways to create a short 1 ETH position on chain, including:
+Sell 1 ETH for Dai, purchase it back later.Borrow 1 ETH on Aave or Compound, sell it for Dai.Create a short ETH position on Synthetix.Sell 1 ETH on a futures exchange like dydx, futureswap, etc.Trade the short leg of a pair of long-short 🩳 on UMA, when available.
+The simplest way to create a short position is to sell 1 ETH outright and buy it back later, but you need to be ready to trigger a taxable event when doing that.
+Aave, Compound and Synthetix are all very easy to use, but they require the user to lock more than 1 ETH of collateral to create the short position.
+The riskiest may be to sell futures at up to 25x leverage, but you will be at risk of being liquidated after minor moves in the underlying. It all depends on your risk tolerance.
+
+REAL-LIFE EXAMPLE OF A SHORT PUT AND CALL
+The reason why we went through this whole process was to find a way to sell call options, which should allow us to create complex options strategies using Uniswap v3 LP tokens to hedge against both upward and downward moves.
+I provided an example of the returns of a Covered Call option in my previous post, but the option position was hypothetical and the returns were not guaranteed. So, to put my money where my mouth is, I’ve created a short put and a short call Uniswap V3 options using real ETH:Dai LP positions on mainnet.
+Since these are perpetual options, it’s always a good idea to have a clear entry and exit criteria when establishing the position (I did this on June 24 when ETH was at $1975). Here, I wanted to deploy my options with a 28-day timeline. I deployed my short put 10% OTM and my short call 15% OTM (gotta protect against stonks always going up!).
+My aim was to center my LP positions around the 1775 tick for my put and the 2270 tick for my call but I extended the ranges so that they would touch the current price. Here are the transactions:
+I locked 170.70 Dai between 1603 and 1977.6. This is my 1775 short put. (Token ID: 59230).I locked 0.086 ETH between 1977.6 and 2606.1. This is a covered call 
+(Token ID: 59235). But I also sold 0.086 ETH for 169.09 Dai in a different transaction, so the end result is a 2270 short call.
+Combining the short put and call together constitutes a strangle. Below is the theoretical payoff and a snapshot of the returns after 10 days. Notice the flat part in the strangle return curve near the 1975 strike, which means my position’s return will remain stable with respect to small changes in ETH price (ie. the position’s delta is zero).
+Uni v3 LP Strangle. The total fees collected for the short put (left) and the short call (right) correspond to a 2.5% return on my initial investment after 10 days. My upper strike has been breached (oh no!). Closing this position at the current price of 2358 Dai/ETH would result in a -0.09% realized loss. I’ll keep it on for now.
+The last 10 days were pretty eventful: the ETH price decreased to 1718, its lowest level since February, before recovering to 2360. Overall, there has been some price churn between my strangle strikes which resulted in a 2.5% return in 10 days, While price churn helped offset impermanent loss, my position is currently sitting at a -0.09% loss. It would become profitable again if the price were to decrease below 2302 (or if fees continue to accumulate).
+I also created a straddle by locking 0.172 ETH to the single tick closest to 1975 (Token ID: 59219) and created a short position by selling 0.086 ETH for 170 Dai (txn). Here’s the payoff and returns after 10 days:
+Uni v3 LP Straddle. This straddle position was deployed to a single tick (1966..1978) and collected 14.43 Dai in fees, resulting in a theoretical 4.2% max return in 10 days. I’m keeping this on because closing this position at the current price would result in a realized loss of 5.4%.
+Straddles are inherently more risky than strangles but have a higher potential for collecting fees. Indeed, since the LP position is deployed to a single tick, most of the fees will be collected when the price hovers near the (1965..1978) range. The 14.43 return on my 340 initial investment means that the strike was crossed ~14 times since I deployed my position, all of which happened between June 24th and June 28th. My only hope right now is that the price of ETH decreases below my 2144 break-even point to turn this position into a winner.
